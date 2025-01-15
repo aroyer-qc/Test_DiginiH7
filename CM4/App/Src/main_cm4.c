@@ -26,7 +26,7 @@ main(void) {
     /* CPU1 will wakeup CPU2 with semaphore take and release events */
     /* HW semaphore Clock enable */
     __HAL_RCC_HSEM_CLK_ENABLE();
-    HAL_HSEM_ActivateNotification(HSEM_WAKEUP_CPU2_MASK);
+    HSEM_ActivateNotification(HSEM_WAKEUP_CPU2_MASK);
     HAL_PWREx_ClearPendingEvent();
 
 #ifndef DEBUG
@@ -34,7 +34,7 @@ main(void) {
     HAL_PWREx_EnterSTOPMode(PWR_MAINREGULATOR_ON, PWR_STOPENTRY_WFE, PWR_D2_DOMAIN);
 #endif
 
-    __HAL_HSEM_CLEAR_FLAG(HSEM_WAKEUP_CPU2_MASK);
+    HSEM_CLEAR_FLAG(HSEM_WAKEUP_CPU2_MASK);
 
     /* MCU Configuration--------------------------------------------------------*/
 
