@@ -220,6 +220,13 @@
 		<Unit filename="..\middlewares\ringbuff\src\ringbuff\ringbuff.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\lib_io.h" />
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7_io.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

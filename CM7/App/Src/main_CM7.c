@@ -29,6 +29,10 @@ uint32_t time, t1;
 int
 main(void) {
 
+
+
+
+
     /*
      * To be independent on CM4 boot option bytes config,
      * application will force second core to start by setting its relevant bit in RCC registers.
