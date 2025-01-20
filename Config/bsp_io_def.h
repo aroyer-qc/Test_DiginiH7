@@ -4,7 +4,7 @@
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2020 Alain Royer.
+// Copyright(c) 2025 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -60,39 +60,13 @@
 //
 //-------------------------------------------------------------------------------------------------
 
-#ifdef STM32F401xE
 #define IO_DEF(X_IO) \
 /*        ENUM ID of the IO,     IO Port,    IO Pin, Mode,               Pin type,              IO Speed,                 Pin Option           */\
+/* input IO's ---------------------------------------------------------------------------------------------------------------------------------*/\
+    X_IO( IO_USER_BUTTON,        GPIOC,      13,     IO_MODE_INPUT,      IO_TYPE_PIN_NO_PULL,   IO_SPEED_FREQ_LOW,        0)                     \
 /* Output IO's --------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO( IO_LED_RED,            GPIOB,      14,     IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        0)                     \
-    X_IO( IO_LED_GREEN,          GPIOB,      0,      IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        0)                     \
-    X_IO( IO_LED_BLUE,           GPIOB,      7,      IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        0)                     \
-/* SPI IO's -----------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO( IO_SPI3_CLK,           GPIOB,      3,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF5_SPI3)           \
-    X_IO( IO_SPI3_MOSI,          GPIOB,      5,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF5_SPI3)           \
-    X_IO( IO_SPI1_CLK,           GPIOA,      5,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF5_SPI1)           \
-    X_IO( IO_SPI1_MOSI,          GPIOA,      7,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF5_SPI1)           \
-    X_IO( IO_SPI1_CS,            GPIOB,      9,      IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       1)                     \
-/* UART IO's ----------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO( IO_UART2_RX,           GPIOxx,     3,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        IO_AF7_USART2)/* N/U */\
-    X_IO( IO_UART2_TX,           GPIOxx,     2,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF7_USART2)         \
-/* PWM Output ---------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO( IO_VFD_BLANK,          GPIOxx,     0,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF1_TIM2)           \
-    X_IO( IO_VFD_LOAD,           GPIOxx,     9,      IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        0)                     \
-    X_IO( IO_NEO_DATA,           GPIOx,      14,     IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF1_TIM1)           \
-/* MCO ----------------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO( IO_MCO_2,              GPIOC,      9,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF0_MCO)            \
-
-//-------------------------------------------------------------------------------------------------
-#endif
-
-#ifdef STM32F429xx
-#define IO_DEF(X_IO) \
-/*        ENUM ID of the IO,     IO Port,    IO Pin, Mode,               Pin type,              IO Speed,                 Pin Option           */\
-/* Output IO's --------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO( IO_LED_RED,            GPIOB,      14,     IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        1)                     \
-    X_IO( IO_LED_GREEN,          GPIOB,      0,      IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        1)                     \
-    X_IO( IO_LED_BLUE,           GPIOB,      7,      IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        0)                     \
+    X_IO( IO_LED_RED,            GPIOJ,      2,      IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        0)                     \
+    X_IO( IO_LED_GREEN,          GPIOI,      13,     IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        0)                     \
 /* SPI IO's -----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO( IO_SPI3_CLK,           GPIOB,      3,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF5_SPI3)           \
     X_IO( IO_SPI3_MOSI,          GPIOB,      5,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF5_SPI3)           \
@@ -104,36 +78,100 @@
     X_IO( IO_UART3_TX,           GPIOD,      8,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        IO_AF7_USART3)         \
     X_IO( IO_UART6_RX,           GPIOxx,     7,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        IO_AF8_USART6)/* N/U */\
     X_IO( IO_UART6_TX,           GPIOC,      6,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF8_USART6)         \
-/* PWM Output ---------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO( IO_VFD_BLANK,          GPIOA,      0,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_MEDIUM,     IO_AF1_TIM2)           \
-    X_IO( IO_VFD_LOAD,           GPIOG,      9,      IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        0)                     \
-    X_IO( IO_NEO_DATA,           GPIOE,      14,     IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        IO_AF1_TIM1)           \
 /* MCO ----------------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO( IO_MCO_2,              GPIOC,      9,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF0_MCO)            \
-/* Ethernet -----------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO( IO_ETH_REF_CLK,        GPIOA,      1,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF11_ETH)           \
-    X_IO( IO_ETH_MDIO,           GPIOA,      2,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF11_ETH)           \
-    X_IO( IO_ETH_MDC,            GPIOC,      1,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF11_ETH)           \
-    X_IO( IO_ETH_CRS_DV,         GPIOA,      7,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF11_ETH)           \
-    X_IO( IO_ETH_RXD0,           GPIOC,      4,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF11_ETH)           \
-    X_IO( IO_ETH_RXD1,           GPIOC,      5,      IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF11_ETH)           \
-    X_IO( IO_ETH_TX_EN,          GPIOG,      11,     IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF11_ETH)           \
-    X_IO( IO_ETH_TXD0,           GPIOG,      13,     IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF11_ETH)           \
-    X_IO( IO_ETH_TXD1,           GPIOB,      13,     IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF11_ETH)           \
+/* LCD ----------------------------------------------------------------------------------------------------------------------------------------*/\
+    X_IO( IO_LCD_DISPLAY,        GPIOD,      7,      IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       1)                     \
+    X_IO( LCD_INT                GPIOG,      2,      IO_MODE_INPUT,      IO_TYPE_PIN_NO_PULL,   IO_SPEED_FREQ_HIGH,       0)                     \
 
 //-------------------------------------------------------------------------------------------------
-#endif
+//
+//  IO_GROUP is useful for pin sharing configuration and they are not used individually at run time because they are control by module.
+//      Examples: LCD, SDRAM, ETH, etc...
+//
+
+// Notes : Some group might share same config
 
 
+//-------------------------------------------------------------
+// SDRAM grouping configuration
 
+#define SDRAM_ON_PORT_D_ALT_12  (IO_PIN_0  | IO_PIN_1  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | \
+                                 IO_PIN_14 | IO_PIN_15)
+#define SDRAM_ON_PORT_E_ALT_12  (IO_PIN_0  | IO_PIN_1  | IO_PIN_7  | IO_PIN_8  | IO_PIN_9  | \
+                                 IO_PIN_10 | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | \
+                                 IO_PIN_15)
+#define SDRAM_ON_PORT_F_ALT_12  (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | \
+                                 IO_PIN_5  | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | \
+                                 IO_PIN_15)
+#define SDRAM_ON_PORT_G_ALT_12  (IO_PIN_0  | IO_PIN_1  | IO_PIN_4  | IO_PIN_5  | IO_PIN_8  | \
+                                 IO_PIN_15)
+#define SDRAM_ON_PORT_H_ALT_12  (IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
 
-#define IO_ETH_RX_ER        IO_NOT_DEFINED          // no RX error pin support
-#define IO_ETH_EXT_LED      IO_LED_BLUE
+//-------------------------------------------------------------
+// ETH grouping configuration
 
+#define ETH_ON_PORT_A_ALT_x     (IO_PIN_1  | IO_PIN_2  | IO_PIN_7)
+#define ETH_ON_PORT_B_ALT_x     (IO_PIN_0  | IO_PIN_1  | IO_PIN_2)
+#define ETH_ON_PORT_C_ALT_x     (IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | IO_PIN_5)
+#define ETH_ON_PORT_E_ALT_x     (IO_PIN_2)
+#define ETH_ON_PORT_G_ALT_x     (IO_PIN_11 | IO_PIN_12 | IO_PIN_13)
+//#define ETH_ON_PORT_H_ALT_x     (IO_PIN_2)  | IO_PIN_3))   this I think are optional
+#define ETH_ON_PORT_I_ALT_x     (IO_PIN_10)
 
-/* SPI IO's -----------------------------------------------------------------------------------------------------------------------------------*/\
+//-------------------------------------------------------------
+// QSPI grouping configuration
 
+#define QSPI_ON_PORT_C_ALT_9    (IO_PIN_11)
+#define QSPI_ON_PORT_D_ALT_9    (IO_PIN_11)
+#define QSPI_ON_PORT_F_ALT_9    (IO_PIN_6  | IO_PIN_7  | IO_PIN_10)
+#define QSPI_ON_PORT_F_ALT_10   (IO_PIN_9)
+#define QSPI_ON_PORT_G_ALT_9    (IO_PIN_9  | IO_PIN_14)
+#define QSPI_ON_PORT_G_ALT_10   (IO_PIN_6)
+#define QSPI_ON_PORT_H_ALT_9    (IO_PIN_2  | IO_PIN_3)
 
+//-------------------------------------------------------------
+// LCD grouping configuration
+
+#define LCD_ON_PORT_H_ALT_14    (IO_PIN_9)
+#define LCD_ON_PORT_I_ALT_14    (IO_PIN_0  | IO_PIN_1  | IO_PIN_9  | IO_PIN_12 | IO_PIN_14 | \
+                                 IO_PIN_15)
+#define LCD_ON_PORT_J_ALT_14    (IO_PIN_0  | IO_PIN_1  | IO_PIN_3  | IO_PIN_4  | IO_PIN_5  | \
+                                 IO_PIN_6  | IO_PIN_7  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | \
+                                 IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | IO_PIN_15)
+#define LCD_ON_PORT_K_ALT_14    (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | \
+                                 IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
+
+//-------------------------------------------------------------
+
+#define IO_GROUP_DEF(X_IO_GROUP) \
+/* LCD -------------------------------------------------------------------------------------------------------------------------------------------------------*/ \
+    X_IO_GROUP( IO_LCD_ON_PORT_H_ALT_14,    GPIOH,      LCD_ON_PORT_H_ALT_14,       IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF14_LTDC)    \
+    X_IO_GROUP( IO_LCD_ON_PORT_I_ALT_14,    GPIOI,      LCD_ON_PORT_I_ALT_14,       IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF14_LTDC)    \
+    X_IO_GROUP( IO_LCD_ON_PORT_J_ALT_14,    GPIOJ,      LCD_ON_PORT_J_ALT_14,       IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF14_LTDC)    \
+    X_IO_GROUP( IO_LCD_ON_PORT_K_ALT_14,    GPIOK,      LCD_ON_PORT_K_ALT_14,       IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF14_LTDC)    \
+/* SDRAM -----------------------------------------------------------------------------------------------------------------------------------------------------*/ \
+    X_IO_GROUP( IO_SDRAM_ON_PORT_D_ALT_12,  GPIOD,      SDRAM_ON_PORT_D_ALT_12,     IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF12_FMC)     \
+    X_IO_GROUP( IO_SDRAM_ON_PORT_E_ALT_12,  GPIOE,      SDRAM_ON_PORT_E_ALT_12,     IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF12_FMC)     \
+    X_IO_GROUP( IO_SDRAM_ON_PORT_F_ALT_12,  GPIOF,      SDRAM_ON_PORT_F_ALT_12,     IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF12_FMC)     \
+    X_IO_GROUP( IO_SDRAM_ON_PORT_G_ALT_12,  GPIOG,      SDRAM_ON_PORT_G_ALT_12,     IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF12_FMC)     \
+    X_IO_GROUP( IO_SDRAM_ON_PORT_H_ALT_12,  GPIOH,      SDRAM_ON_PORT_H_ALT_12,     IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF12_FMC)     \
+/* ETH -------------------------------------------------------------------------------------------------------------------------------------------------------*/ \
+    X_IO_GROUP( IO_ETH_ON_PORT_A_ALT_x,     GPIOA,      ETH_ON_PORT_A_ALT_x,        IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF)  \
+    X_IO_GROUP( IO_ETH_ON_PORT_B_ALT_x,     GPIOB,      ETH_ON_PORT_B_ALT_x,        IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF)  \
+    X_IO_GROUP( IO_ETH_ON_PORT_C_ALT_x,     GPIOC,      ETH_ON_PORT_C_ALT_x,        IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF)  \
+    X_IO_GROUP( IO_ETH_ON_PORT_E_ALT_x,     GPIOE,      ETH_ON_PORT_E_ALT_x,        IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF)  \
+    X_IO_GROUP( IO_ETH_ON_PORT_G_ALT_x,     GPIOG,      ETH_ON_PORT_G_ALT_x,        IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF)  \
+  /*X_IO_GROUP( IO_ETH_ON_PORT_H_ALT_x,     GPIOH,      ETH_ON_PORT_G_ALT_x,        IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF)*/\
+    X_IO_GROUP( IO_ETH_ON_PORT_I_ALT_x,     GPIOI,      ETH_ON_PORT_I_ALT_x,        IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF)  \
+/* QSPI ---------------------------------------------------------------------------------------------------------------------------------------------*/ \
+    X_IO_GROUP( IO_QSPI_ON_PORT_C_ALT_9,    GPIOC,      QSPI_ON_PORT_C_ALT_9,       IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF9_QUADSPI)  \
+    X_IO_GROUP( IO_QSPI_ON_PORT_D_ALT_9,    GPIOD,      QSPI_ON_PORT_D_ALT_9,       IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF9_QUADSPI)  \
+    X_IO_GROUP( IO_QSPI_ON_PORT_F_ALT_9,    GPIOF,      QSPI_ON_PORT_F_ALT_9,       IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF9_QUADSPI)  \
+    X_IO_GROUP( IO_QSPI_ON_PORT_F_ALT_10,   GPIOF,      QSPI_ON_PORT_F_ALT_10,      IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF10_QUADSPI) \
+    X_IO_GROUP( IO_QSPI_ON_PORT_G_ALT_9,    GPIOG,      QSPI_ON_PORT_G_ALT_9,       IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF9_QUADSPI)  \
+    X_IO_GROUP( IO_QSPI_ON_PORT_G_ALT_10,   GPIOG,      QSPI_ON_PORT_G_ALT_10,      IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF10_QUADSPI) \
+    X_IO_GROUP( IO_QSPI_ON_PORT_H_ALT_9,    GPIOH,      QSPI_ON_PORT_G_ALT_9,       IO_MODE_ALTERNATE, IO_TYPE_PIN_PP, IO_SPEED_FREQ_VERY_HIGH, IO_AF9_QUADSPI)  \
 
 
 // Note(s) the pin IO_CALIB_OUT_DEBUG is only use in some debug case and must not be initialized on permanent base

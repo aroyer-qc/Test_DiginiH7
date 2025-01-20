@@ -1,9 +1,7 @@
 *.elay
 *.eds
-TEST_DiginiF4/bin/
-TEST_DiginiF4/obj/
+TEST_DiginiH7/bin/
+TEST_DiginiH7/obj/
 *.depend
 module
-STM32_Cube/
-
-/Test_DiginiF4/*.eds
+/Test_DiginiH7/*.eds
