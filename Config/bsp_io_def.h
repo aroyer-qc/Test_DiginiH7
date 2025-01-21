@@ -64,6 +64,7 @@
 //-------------------------------------------------------------------------------------------------
 
 #define IO_CFG_DEF(X_IO_CFG) \
+/* -----------------------------------------------------------------------------------------------------------------------------------------------*/\
 /*            ENUM ID IO CFG,                           Mode,               Pin type,              IO Speed,                 Pin Option           */\
 /* input IO's CFG --------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_INPUT_NP_LS,                       IO_MODE_INPUT,      IO_TYPE_PIN_NO_PULL,   IO_SPEED_FREQ_LOW,        0)                     \
@@ -102,6 +103,7 @@
 //-------------------------------------------------------------------------------------------------
 
 #define IO_DEF(X_IO) \
+/* ---------------------------------------------------------------------------------------------*/\
 /*        ENUM ID of the IO,     IO Port,    IO Pin, IO ConfigMode                              */\
 /* input IO's ----------------------------------------------------------------------------------*/\
     X_IO( IO_USER_BUTTON,        GPIOC,      13,     IO_CFG_INPUT_NP_LS)                          \
@@ -125,94 +127,100 @@
     X_IO( IO_LCD_DISPLAY,        GPIOD,      7,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
     X_IO( LCD_INT                GPIOG,      2,      IO_CFG_INPUT_NP_LS)                          \
 
+
 //-------------------------------------------------------------------------------------------------
 //
-//  IO_GROUP is useful for pin sharing configuration and they are not used individually at run time because they are control by module.
-//      Examples: LCD, SDRAM, ETH, etc...
+//  IO_GROUP is useful for pin sharing configuration and they are not used individually at run time
+//  because they are control by module.
+//  
+//    Examples: LCD, SDRAM, ETH, etc...
 //
-
-// Notes : Some group might share same config
-
+//  Notes : Some group might share same config
+//
+//-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------
 // SDRAM grouping configuration
 
-#define SDRAM_ON_PORT_D_ALT_12  (IO_PIN_0  | IO_PIN_1  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | \
-                                 IO_PIN_14 | IO_PIN_15)
-#define SDRAM_ON_PORT_E_ALT_12  (IO_PIN_0  | IO_PIN_1  | IO_PIN_7  | IO_PIN_8  | IO_PIN_9  | \
-                                 IO_PIN_10 | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | \
-                                 IO_PIN_15)
-#define SDRAM_ON_PORT_F_ALT_12  (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | \
-                                 IO_PIN_5  | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | \
-                                 IO_PIN_15)
-#define SDRAM_ON_PORT_G_ALT_12  (IO_PIN_0  | IO_PIN_1  | IO_PIN_4  | IO_PIN_5  | IO_PIN_8  | \
-                                 IO_PIN_15)
-#define SDRAM_ON_PORT_H_ALT_12  (IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
+#define SDRAM_PIN_ON_PORT_D_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | \
+                                         IO_PIN_14 | IO_PIN_15)
+#define SDRAM_PIN_ON_PORT_E_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_7  | IO_PIN_8  | IO_PIN_9  | \
+                                         IO_PIN_10 | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | \
+                                         IO_PIN_15)
+#define SDRAM_PIN_ON_PORT_F_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | \
+                                         IO_PIN_5  | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | \
+                                         IO_PIN_15)
+#define SDRAM_PIN_ON_PORT_G_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_4  | IO_PIN_5  | IO_PIN_8  | \
+                                         IO_PIN_15)
+#define SDRAM_PIN_ON_PORT_H_ALT_12      (IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
 
 //-------------------------------------------------------------
 // ETH grouping configuration
 
-#define ETH_ON_PORT_A_ALT_x     (IO_PIN_1  | IO_PIN_2  | IO_PIN_7)
-#define ETH_ON_PORT_B_ALT_x     (IO_PIN_0  | IO_PIN_1  | IO_PIN_2)
-#define ETH_ON_PORT_C_ALT_x     (IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | IO_PIN_5)
-#define ETH_ON_PORT_E_ALT_x     (IO_PIN_2)
-#define ETH_ON_PORT_G_ALT_x     (IO_PIN_11 | IO_PIN_12 | IO_PIN_13)
-//#define ETH_ON_PORT_H_ALT_x     (IO_PIN_2)  | IO_PIN_3))   this I think are optional
-#define ETH_ON_PORT_I_ALT_x     (IO_PIN_10)
+#define ETH_PIN_ON_PORT_A_ALT_x         (IO_PIN_1  | IO_PIN_2  | IO_PIN_7)
+#define ETH_PIN_ON_PORT_B_ALT_x         (IO_PIN_0  | IO_PIN_1  | IO_PIN_2)
+#define ETH_PIN_ON_PORT_C_ALT_x         (IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | IO_PIN_5)
+#define ETH_PIN_ON_PORT_E_ALT_x         (IO_PIN_2)
+#define ETH_PIN_ON_PORT_G_ALT_x         (IO_PIN_11 | IO_PIN_12 | IO_PIN_13)
+//#define ETH_PIN_ON_PORT_H_ALT_x       (IO_PIN_2)  | IO_PIN_3))   this I think are optional
+#define ETH_PIN_ON_PORT_I_ALT_x         (IO_PIN_10)
 
 //-------------------------------------------------------------
 // QSPI grouping configuration
 
-#define QSPI_ON_PORT_C_ALT_9    (IO_PIN_11)
-#define QSPI_ON_PORT_D_ALT_9    (IO_PIN_11)
-#define QSPI_ON_PORT_F_ALT_9    (IO_PIN_6  | IO_PIN_7  | IO_PIN_10)
-#define QSPI_ON_PORT_F_ALT_10   (IO_PIN_9)
-#define QSPI_ON_PORT_G_ALT_9    (IO_PIN_9  | IO_PIN_14)
-#define QSPI_ON_PORT_G_ALT_10   (IO_PIN_6)
-#define QSPI_ON_PORT_H_ALT_9    (IO_PIN_2  | IO_PIN_3)
+#define QSPI_PIN_ON_PORT_C_ALT_9        (IO_PIN_11)
+#define QSPI_PIN_ON_PORT_D_ALT_9        (IO_PIN_11)
+#define QSPI_PIN_ON_PORT_F_ALT_9        (IO_PIN_6  | IO_PIN_7  | IO_PIN_10)
+#define QSPI_PIN_ON_PORT_F_ALT_10       (IO_PIN_9)
+#define QSPI_PIN_ON_PORT_G_ALT_9        (IO_PIN_9  | IO_PIN_14)
+#define QSPI_PIN_ON_PORT_G_ALT_10       (IO_PIN_6)
+#define QSPI_PIN_ON_PORT_H_ALT_9        (IO_PIN_2  | IO_PIN_3)
 
 //-------------------------------------------------------------
 // LCD grouping configuration
 
-#define LCD_ON_PORT_H_ALT_14    (IO_PIN_9)
-#define LCD_ON_PORT_I_ALT_14    (IO_PIN_0  | IO_PIN_1  | IO_PIN_9  | IO_PIN_12 | IO_PIN_14 | \
-                                 IO_PIN_15)
-#define LCD_ON_PORT_J_ALT_14    (IO_PIN_0  | IO_PIN_1  | IO_PIN_3  | IO_PIN_4  | IO_PIN_5  | \
-                                 IO_PIN_6  | IO_PIN_7  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | \
-                                 IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | IO_PIN_15)
-#define LCD_ON_PORT_K_ALT_14    (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | \
-                                 IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
+#define LCD_PIN_ON_PORT_H_ALT_14        (IO_PIN_9)
+#define LCD_PIN_ON_PORT_I_ALT_14        (IO_PIN_0  | IO_PIN_1  | IO_PIN_9  | IO_PIN_12 | IO_PIN_14 | \
+                                         IO_PIN_15)
+#define LCD_PIN_ON_PORT_J_ALT_14        (IO_PIN_0  | IO_PIN_1  | IO_PIN_3  | IO_PIN_4  | IO_PIN_5  | \
+                                         IO_PIN_6  | IO_PIN_7  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | \
+                                         IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | IO_PIN_15)
+#define LCD_PIN_ON_PORT_K_ALT_14        (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | \
+                                         IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
 
 //-------------------------------------------------------------
 
 #define IO_GROUP_DEF(X_IO_GROUP) \
-/* LCD ------------------------------------------------------------------------------------------------------*/ \
-    X_IO_GROUP( IO_LCD_ON_PORT_H_ALT_14,    GPIOH,      LCD_ON_PORT_H_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
-    X_IO_GROUP( IO_LCD_ON_PORT_I_ALT_14,    GPIOI,      LCD_ON_PORT_I_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
-    X_IO_GROUP( IO_LCD_ON_PORT_J_ALT_14,    GPIOJ,      LCD_ON_PORT_J_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
-    X_IO_GROUP( IO_LCD_ON_PORT_K_ALT_14,    GPIOK,      LCD_ON_PORT_K_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
-/* SDRAM ----------------------------------------------------------------------------------------------------*/ \
-    X_IO_GROUP( IO_SDRAM_ON_PORT_D_ALT_12,  GPIOD,      SDRAM_ON_PORT_D_ALT_12,     IO_CFG_SDRAM_AF12)          \
-    X_IO_GROUP( IO_SDRAM_ON_PORT_E_ALT_12,  GPIOE,      SDRAM_ON_PORT_E_ALT_12,     IO_CFG_SDRAM_AF12)          \
-    X_IO_GROUP( IO_SDRAM_ON_PORT_F_ALT_12,  GPIOF,      SDRAM_ON_PORT_F_ALT_12,     IO_CFG_SDRAM_AF12)          \
-    X_IO_GROUP( IO_SDRAM_ON_PORT_G_ALT_12,  GPIOG,      SDRAM_ON_PORT_G_ALT_12,     IO_CFG_SDRAM_AF12)          \
-    X_IO_GROUP( IO_SDRAM_ON_PORT_H_ALT_12,  GPIOH,      SDRAM_ON_PORT_H_ALT_12,     IO_CFG_SDRAM_AF12)          \
-/* ETH ------------------------------------------------------------------------------------------------------*/ \
-    X_IO_GROUP( IO_ETH_ON_PORT_A_ALT_x,     GPIOA,      ETH_ON_PORT_A_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
-    X_IO_GROUP( IO_ETH_ON_PORT_B_ALT_x,     GPIOB,      ETH_ON_PORT_B_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
-    X_IO_GROUP( IO_ETH_ON_PORT_C_ALT_x,     GPIOC,      ETH_ON_PORT_C_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
-    X_IO_GROUP( IO_ETH_ON_PORT_E_ALT_x,     GPIOE,      ETH_ON_PORT_E_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
-    X_IO_GROUP( IO_ETH_ON_PORT_G_ALT_x,     GPIOG,      ETH_ON_PORT_G_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
-  /*X_IO_GROUP( IO_ETH_ON_PORT_H_ALT_x,     GPIOH,      ETH_ON_PORT_G_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)*/    \
-    X_IO_GROUP( IO_ETH_ON_PORT_I_ALT_x,     GPIOI,      ETH_ON_PORT_I_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
-/* QSPI -----------------------------------------------------------------------------------------------------*/ \
-    X_IO_GROUP( IO_QSPI_ON_PORT_C_ALT_9,    GPIOC,      QSPI_ON_PORT_C_ALT_9,       IO_CFG_QSPI_AF9)            \
-    X_IO_GROUP( IO_QSPI_ON_PORT_D_ALT_9,    GPIOD,      QSPI_ON_PORT_D_ALT_9,       IO_CFG_QSPI_AF9)            \
-    X_IO_GROUP( IO_QSPI_ON_PORT_F_ALT_9,    GPIOF,      QSPI_ON_PORT_F_ALT_9,       IO_CFG_QSPI_AF9)            \
-    X_IO_GROUP( IO_QSPI_ON_PORT_F_ALT_10,   GPIOF,      QSPI_ON_PORT_F_ALT_10,      IO_CFG_QSPI_AF10)           \
-    X_IO_GROUP( IO_QSPI_ON_PORT_G_ALT_9,    GPIOG,      QSPI_ON_PORT_G_ALT_9,       IO_CFG_QSPI_AF9)            \
-    X_IO_GROUP( IO_QSPI_ON_PORT_G_ALT_10,   GPIOG,      QSPI_ON_PORT_G_ALT_10,      IO_CFG_QSPI_AF10)           \
-    X_IO_GROUP( IO_QSPI_ON_PORT_H_ALT_9,    GPIOH,      QSPI_ON_PORT_G_ALT_9,       IO_CFG_QSPI_AF9)            \
+/* -----------------------------------------------------------------------------------------------------------*/\
+/*              ENUM ID of the Group,   IO Port,    IO Group Pin,                   IO ConfigMode             */\
+/* LCD -------------------====-------------------------------------------------------------------------------*/ \
+    X_IO_GROUP( IO_LCD_ON_PORT_H,       GPIOH,      LCD_PIN_ON_PORT_H_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
+    X_IO_GROUP( IO_LCD_ON_PORT_I,       GPIOI,      LCD_PIN_ON_PORT_I_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
+    X_IO_GROUP( IO_LCD_ON_PORT_J,       GPIOJ,      LCD_PIN_ON_PORT_J_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
+    X_IO_GROUP( IO_LCD_ON_PORT_K,       GPIOK,      LCD_PIN_ON_PORT_K_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
+/* SDRAM -------------====-----------------------------------------------------------------------------------*/ \
+    X_IO_GROUP( IO_SDRAM_ON_PORT_D,     GPIOD,      SDRAM_PIN_ON_PORT_D_ALT_12,     IO_CFG_SDRAM_AF12)          \
+    X_IO_GROUP( IO_SDRAM_ON_PORT_E,     GPIOE,      SDRAM_PIN_ON_PORT_E_ALT_12,     IO_CFG_SDRAM_AF12)          \
+    X_IO_GROUP( IO_SDRAM_ON_PORT_F,     GPIOF,      SDRAM_PIN_ON_PORT_F_ALT_12,     IO_CFG_SDRAM_AF12)          \
+    X_IO_GROUP( IO_SDRAM_ON_PORT_G,     GPIOG,      SDRAM_PIN_ON_PORT_G_ALT_12,     IO_CFG_SDRAM_AF12)          \
+    X_IO_GROUP( IO_SDRAM_ON_PORT_H,     GPIOH,      SDRAM_PIN_ON_PORT_H_ALT_12,     IO_CFG_SDRAM_AF12)          \
+/* ETH -----------====---------------------------------------------------------------------------------------*/ \
+    X_IO_GROUP( IO_ETH_ON_PORT_A,       GPIOA,      ETH_PIN_ON_PORT_A_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
+    X_IO_GROUP( IO_ETH_ON_PORT_B,       GPIOB,      ETH_PIN_ON_PORT_B_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
+    X_IO_GROUP( IO_ETH_ON_PORT_C,       GPIOC,      ETH_PIN_ON_PORT_C_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
+    X_IO_GROUP( IO_ETH_ON_PORT_E,       GPIOE,      ETH_PIN_ON_PORT_E_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
+    X_IO_GROUP( IO_ETH_ON_PORT_G,       GPIOG,      ETH_PIN_ON_PORT_G_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
+  /*X_IO_GROUP( IO_ETH_ON_PORT_H,       GPIOH,      ETH_PIN_ON_PORT_G_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)*/    \
+    X_IO_GROUP( IO_ETH_ON_PORT_I,       GPIOI,      ETH_PIN_ON_PORT_I_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
+/* QSPI ------====-------------------------------------------------------------------------------------------*/ \
+    X_IO_GROUP( IO_QSPI_ON_PORT_C,      GPIOC,      QSPI_PIN_ON_PORT_C_ALT_9,       IO_CFG_QSPI_AF9)            \
+    X_IO_GROUP( IO_QSPI_ON_PORT_D,      GPIOD,      QSPI_PIN_ON_PORT_D_ALT_9,       IO_CFG_QSPI_AF9)            \
+    X_IO_GROUP( IO_QSPI_ON_PORT_F,      GPIOF,      QSPI_PIN_ON_PORT_F_ALT_9,       IO_CFG_QSPI_AF9)            \
+    X_IO_GROUP( IO_QSPI_ON_PORT_F,      GPIOF,      QSPI_PIN_ON_PORT_F_ALT_10,      IO_CFG_QSPI_AF10)           \
+    X_IO_GROUP( IO_QSPI_ON_PORT_G,      GPIOG,      QSPI_PIN_ON_PORT_G_ALT_9,       IO_CFG_QSPI_AF9)            \
+    X_IO_GROUP( IO_QSPI_ON_PORT_G,      GPIOG,      QSPI_PIN_ON_PORT_G_ALT_10,      IO_CFG_QSPI_AF10)           \
+    X_IO_GROUP( IO_QSPI_ON_PORT_H,      GPIOH,      QSPI_PIN_ON_PORT_G_ALT_9,       IO_CFG_QSPI_AF9)            \
+
 
 
 // Note(s) the pin IO_CALIB_OUT_DEBUG is only use in some debug case and must not be initialized on permanent base
