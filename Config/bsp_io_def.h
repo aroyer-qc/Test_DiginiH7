@@ -84,8 +84,7 @@
 /* SDRAM IO's CFG --------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_SDRAM_AF12,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF12_FMC)           \
 /* SPI IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_SPI1_AF5,                          IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF5_SPI1)           \
-    X_IO_CFG( IO_CFG_SPI3_AF5,                          IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF5_SPI3)           \
+    X_IO_CFG( IO_CFG_SPI_AF5,                           IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF5_SPI)            \
 /* UART IO's CFG ---------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_UART3_AF7,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        IO_AF7_USART3)         \
     X_IO_CFG( IO_CFG_UART6_AF8,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        IO_AF8_USART6)         \
@@ -111,10 +110,10 @@
     X_IO( IO_LED_RED,            GPIOJ,      2,      IO_CFG_OUTPUT_PP_LS_DEF0)                    \
     X_IO( IO_LED_GREEN,          GPIOI,      13,     IO_CFG_OUTPUT_PP_LS_DEF0)                    \
 /* SPI IO's ------------------------------------------------------------------------------------*/\
-    X_IO( IO_SPI3_CLK,           GPIOB,      3,      IO_CFG_SPI3_AF5)                             \
-    X_IO( IO_SPI3_MOSI,          GPIOB,      5,      IO_CFG_SPI3_AF5)                             \
-    X_IO( IO_SPI1_CLK,           GPIOA,      5,      IO_CFG_SPI1_AF5)                             \
-    X_IO( IO_SPI1_MOSI,          GPIOA,      7,      IO_CFG_SPI1_AF5)                             \
+    X_IO( IO_SPI3_CLK,           GPIOB,      3,      IO_CFG_SPI_AF5)                              \
+    X_IO( IO_SPI3_MOSI,          GPIOB,      5,      IO_CFG_SPI_AF5)                              \
+    X_IO( IO_SPI1_CLK,           GPIOA,      5,      IO_CFG_SPI_AF5)                              \
+    X_IO( IO_SPI1_MOSI,          GPIOA,      7,      IO_CFG_SPI_AF5)                              \
     X_IO( IO_SPI1_CS,            GPIOB,      9,      IO_CFG_OUTPUT_PP_HS_D1)                      \
 /* UART IO's -----------------------------------------------------------------------------------*/\
     X_IO( IO_UART3_RX,           GPIOD,      9,      IO_CFG_UART3_AF7)                            \
