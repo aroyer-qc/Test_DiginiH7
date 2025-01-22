@@ -1,10 +1,37 @@
-/**
- * \file            main.c
- *
- * Cortex-M7 main.c file
- */
+//-------------------------------------------------------------------------------------------------
+//
+//  File : main.cpp
+//
+//-------------------------------------------------------------------------------------------------
+//
+// Copyright(c) 2024 Alain Royer.
+// Email: aroyer.qc@gmail.com
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+// and associated documentation files (the "Software"), to deal in the Software without
+// restriction, including without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all copies or
+// substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+// AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+//-------------------------------------------------------------------------------------------------
 
-/* Includes ------------------------------------------------------------------*/
+//-------------------------------------------------------------------------------------------------
+// Include file(s)
+//-------------------------------------------------------------------------------------------------
+
+#include "./lib_digini.h"
+#include "taskIdle.h"
+#include "bsp.h"
+
 #include "main.h"
 #include "common.h"
 
@@ -23,17 +50,66 @@ static void led_init(void);
 
 uint32_t time, t1;
 
-/**
- * \brief           The application entry point
- */
-int
-main(void) {
 
 
 
+uint32_t swap(uint32_t in)
+{
+ //uint32_t out ;
+
+  in = __builtin_bswap32(in);
+ //out = (in >> 16) | (in << 16);
+  return in;
+}
+
+//-------------------------------------------------------------------------------------------------
+//
+// Name:           main
+// Parameter(s):   void
+// Return:         int
+//
+// Description:    main() what more can be said
+//
+// Note(s):        Here we create the task that will start all the other
+//
+//-------------------------------------------------------------------------------------------------
+
+int main()
+{
+    //uint32_t testID = 0x00123456;
+    //uint32_t SwaptestID;
+    //SwaptestID = swap(testID);
 
 
-    /*
+//printf("allo");
+  //  uint8_t* pTestID = (void*)&testID;
+
+    ISR_Disable();
+    nOS_Init();
+    BSP_Initialize();                           // All hardware and system initialization
+    nOS_Start();
+    BSP_PostOS_Initialize();                    // All initialization that must be done after the OS is started
+
+  #ifdef 0 //DEBUG
+    DateAndTime_t DateTime;
+
+    DateTime.Date.Day    = 25;
+    DateTime.Date.Month  = 6;
+    DateTime.Date.Year   = 2024;
+    DateTime.Time.Hour   = 15;
+    DateTime.Time.Minute = 30;
+    DateTime.Time.Second = 1;
+    LIB_SetDateAndTime(&DateTime);
+  #endif
+
+    TaskIdle();
+    return 0;
+    
+    
+    
+    #if 0
+    
+        /*
      * To be independent on CM4 boot option bytes config,
      * application will force second core to start by setting its relevant bit in RCC registers.
      *
@@ -117,13 +193,20 @@ main(void) {
          */
         ringbuff_write(rb_cm7_to_cm4, "my_data", 7);
     }
+
+    
+    #endif
+    
+    
 }
 
+#if 0
 /**
  * \brief           Initialize LEDs controlled by core
  */
 void
-led_init(void) {
+led_init(void)
+{
     GPIO_InitTypeDef GPIO_InitStruct = {0};
 
     LD1_GPIO_CLK_EN();
@@ -198,18 +281,10 @@ MX_USART3_UART_Init(void) {
     huart3.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
     huart3.Init.ClockPrescaler = UART_PRESCALER_DIV1;
     huart3.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-    if (HAL_UART_Init(&huart3) != HAL_OK) {
-        Error_Handler();
-    }
-    if (HAL_UARTEx_SetTxFifoThreshold(&huart3, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK) {
-        Error_Handler();
-    }
-    if (HAL_UARTEx_SetRxFifoThreshold(&huart3, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK) {
-        Error_Handler();
-    }
-    if (HAL_UARTEx_DisableFifoMode(&huart3) != HAL_OK) {
-        Error_Handler();
-    }
+    HAL_UART_Init(&huart3);
+    HAL_UARTEx_SetTxFifoThreshold(&huart3, UART_TXFIFO_THRESHOLD_1_8);
+    HAL_UARTEx_SetRxFifoThreshold(&huart3, UART_RXFIFO_THRESHOLD_1_8);
+    HAL_UARTEx_DisableFifoMode(&huart3);
 }
 
 /**
@@ -221,15 +296,7 @@ MX_GPIO_Init(void) {
     __HAL_RCC_GPIOD_CLK_ENABLE();
 }
 
-/**
- * @brief           This function is executed in case of error occurrence
- */
-void
-Error_Handler(void) {
-    while (1) {}
-}
-
-
+#endif
 
 #if 0
 
