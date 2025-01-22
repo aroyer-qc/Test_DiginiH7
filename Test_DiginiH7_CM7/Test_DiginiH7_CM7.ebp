@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<EmBitz_project_file>
+	<EmBitzVersion release="2.63" revision="0" />
+	<FileVersion major="2" minor="0" />
+	<Project>
+		<Option title="Test_DiginiH7_CM7" />
+		<Option pch_mode="2" />
+		<Option compiler="armgcc_eb" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\Test_DiginiH7_CM7.elf" />
+				<Option object_output="obj\Debug\" />
+				<Option type="0" />
+				<Option compiler="armgcc_eb" />
+				<Option projectDeviceOptionsRelation="0" />
+				<Compiler>
+					<Add option="-O0" />
+					<Add option="-g2" />
+					<Add symbol="DEBUG" />
+				</Compiler>
+				<Assembler>
+					<Add option="-Wa,--gdwarf-2" />
+				</Assembler>
+				<Linker>
+					<Add option="-eb_lib=n" />
+					<Add option="-eb_start_files" />
+					<Add option="-Wl,--gc-sections" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\Test_DiginiH7_CM7.elf" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="armgcc_eb" />
+				<Option projectDeviceOptionsRelation="0" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-g2" />
+					<Add option="-fdata-sections" />
+					<Add option="-ffunction-sections" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,--gc-sections" />
+				</Linker>
+			</Target>
+		</Build>
+		<Device>
+			<Add option="$device=cortex-m7" />
+			<Add option="$lscript=STM32H745ZITX_FLASH.ld" />
+		</Device>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add symbol="STM32H745xx" />
+			<Add symbol="DEBUG" />
+			<Add symbol="CORE_CM7" />
+			<Add symbol="USE_HAL_DRIVER" />
+		</Compiler>
+		<Unit filename="App\Inc\main.h" />
+		<Unit filename="App\Inc\stm32h7xx_hal_conf.h" />
+		<Unit filename="App\Inc\stm32h7xx_it.h" />
+		<Unit filename="App\Src\main_CM7.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="App\Src\stm32h7xx_hal_msp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="App\Src\stm32h7xx_it.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="App\Src\syscalls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="App\Src\sysmem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="App\startup_stm32h745zitx.s">
+			<Option compilerVar="ASM" />
+		</Unit>
+		<Unit filename="STM32H745ZITX_FLASH.ld" />
+		<Unit filename="..\Common\Inc\common.h" />
+		<Unit filename="..\Common\Src\system_stm32h7xx_dualcore_boot_cm4_cm7.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Config\bsp_io_def.h" />
+		<Unit filename="..\Config\cli_cfg.h" />
+		<Unit filename="..\Config\cli_var.h" />
+		<Unit filename="..\Config\clock_cfg.h" />
+		<Unit filename="..\Config\console_cfg.h" />
+		<Unit filename="..\Config\console_var.h" />
+		<Unit filename="..\Config\crc_cfg.h" />
+		<Unit filename="..\Config\database_cfg.h" />
+		<Unit filename="..\Config\device_cfg.h" />
+		<Unit filename="..\Config\device_var.h" />
+		<Unit filename="..\Config\digini_cfg.h" />
+		<Unit filename="..\Config\dma_var.h" />
+		<Unit filename="..\Config\driver_cfg.h" />
+		<Unit filename="..\Config\ip_cfg.h" />
+		<Unit filename="..\Config\ip_var.h" />
+		<Unit filename="..\Config\label_cfg.h" />
+		<Unit filename="..\Config\memory_cfg.h" />
+		<Unit filename="..\Config\nOSConfig.h" />
+		<Unit filename="..\Config\project_def.h" />
+		<Unit filename="..\Config\pwm_cfg.h" />
+		<Unit filename="..\Config\pwm_var.h" />
+		<Unit filename="..\Config\spi_cfg.h" />
+		<Unit filename="..\Config\spi_var.h" />
+		<Unit filename="..\Config\tim_cfg.h" />
+		<Unit filename="..\Config\tim_var.h" />
+		<Unit filename="..\Config\uart_cfg.h" />
+		<Unit filename="..\Config\uart_var.h" />
+		<Unit filename="..\Config\vt100_cfg.h" />
+		<Unit filename="..\drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h745xx.h" />
+		<Unit filename="..\drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h7xx.h" />
+		<Unit filename="..\drivers\CMSIS\Device\ST\STM32H7xx\Include\system_stm32h7xx.h" />
+		<Unit filename="..\drivers\CMSIS\Include\cmsis_armcc.h" />
+		<Unit filename="..\drivers\CMSIS\Include\cmsis_armclang.h" />
+		<Unit filename="..\drivers\CMSIS\Include\cmsis_compiler.h" />
+		<Unit filename="..\drivers\CMSIS\Include\cmsis_gcc.h" />
+		<Unit filename="..\drivers\CMSIS\Include\cmsis_iccarm.h" />
+		<Unit filename="..\drivers\CMSIS\Include\cmsis_version.h" />
+		<Unit filename="..\drivers\CMSIS\Include\core_armv8mbl.h" />
+		<Unit filename="..\drivers\CMSIS\Include\core_armv8mml.h" />
+		<Unit filename="..\drivers\CMSIS\Include\core_cm0.h" />
+		<Unit filename="..\drivers\CMSIS\Include\core_cm0plus.h" />
+		<Unit filename="..\drivers\CMSIS\Include\core_cm1.h" />
+		<Unit filename="..\drivers\CMSIS\Include\core_cm23.h" />
+		<Unit filename="..\drivers\CMSIS\Include\core_cm3.h" />
+		<Unit filename="..\drivers\CMSIS\Include\core_cm33.h" />
+		<Unit filename="..\drivers\CMSIS\Include\core_cm4.h" />
+		<Unit filename="..\drivers\CMSIS\Include\core_cm7.h" />
+		<Unit filename="..\drivers\CMSIS\Include\core_sc000.h" />
+		<Unit filename="..\drivers\CMSIS\Include\core_sc300.h" />
+		<Unit filename="..\drivers\CMSIS\Include\mpu_armv7.h" />
+		<Unit filename="..\drivers\CMSIS\Include\mpu_armv8.h" />
+		<Unit filename="..\drivers\CMSIS\Include\tz_context.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_cortex.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_def.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_dma.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_dma_ex.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_exti.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_flash.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_flash_ex.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_gpio.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_gpio_ex.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_hsem.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_i2c.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_i2c_ex.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_mdma.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_pwr.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_pwr_ex.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_tim.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_tim_ex.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h" />
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_cortex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_exti.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_flash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_flash_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_gpio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_hsem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_i2c.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_i2c_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_mdma.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart_ex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\middlewares\ringbuff\src\include\ringbuff\ringbuff.h" />
+		<Unit filename="..\middlewares\ringbuff\src\ringbuff\ringbuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\lib_io.h" />
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7_io.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger>
+				<target_debugging_settings target="Debug">
+					<debug_interface description="" options="10" reg_filter="0" probe="STlink" device="auto" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="true" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
+				</target_debugging_settings>
+			</debugger>
+		</Extensions>
+	</Project>
+</EmBitz_project_file>

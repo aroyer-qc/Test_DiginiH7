@@ -1,7 +1,9 @@
 *.elay
 *.eds
-TEST_DiginiH7/bin/
-TEST_DiginiH7/obj/
+TEST_DiginiH7/Test_DiginiH7_CM4/bin/
+TEST_DiginiH7/Test_DiginiH7_CM4/obj/
+TEST_DiginiH7/Test_DiginiH7_CM7/bin/
+TEST_DiginiH7/Test_DiginiH7_CM7/obj/
 *.depend
 module
 /Test_DiginiH7/*.eds
