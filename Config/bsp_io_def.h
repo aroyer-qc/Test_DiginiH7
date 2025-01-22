@@ -88,6 +88,7 @@
 /* UART IO's CFG ---------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_UART3_AF7,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        IO_AF7_USART3)         \
     X_IO_CFG( IO_CFG_UART6_AF8,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        IO_AF8_USART6)         \
+/* -----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 //-------------------------------------------------------------------------------------------------
 //
@@ -125,6 +126,7 @@
 /* LCD -----------------------------------------------------------------------------------------*/\
     X_IO( IO_LCD_DISPLAY,        GPIOD,      7,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
     X_IO( LCD_INT                GPIOG,      2,      IO_CFG_INPUT_NP_LS)                          \
+/* ---------------------------------------------------------------------------------------------*/
 
 
 //-------------------------------------------------------------------------------------------------
@@ -138,7 +140,7 @@
 //
 //-------------------------------------------------------------------------------------------------
 
-//-------------------------------------------------------------
+//-----------------------------
 // SDRAM grouping configuration
 
 #define SDRAM_PIN_ON_PORT_D_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | \
@@ -153,7 +155,7 @@
                                          IO_PIN_15)
 #define SDRAM_PIN_ON_PORT_H_ALT_12      (IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
 
-//-------------------------------------------------------------
+//---------------------------
 // ETH grouping configuration
 
 #define ETH_PIN_ON_PORT_A_ALT_x         (IO_PIN_1  | IO_PIN_2  | IO_PIN_7)
@@ -164,7 +166,7 @@
 //#define ETH_PIN_ON_PORT_H_ALT_x       (IO_PIN_2)  | IO_PIN_3))   this I think are optional
 #define ETH_PIN_ON_PORT_I_ALT_x         (IO_PIN_10)
 
-//-------------------------------------------------------------
+//----------------------------
 // QSPI grouping configuration
 
 #define QSPI_PIN_ON_PORT_C_ALT_9        (IO_PIN_11)
@@ -175,7 +177,7 @@
 #define QSPI_PIN_ON_PORT_G_ALT_10       (IO_PIN_6)
 #define QSPI_PIN_ON_PORT_H_ALT_9        (IO_PIN_2  | IO_PIN_3)
 
-//-------------------------------------------------------------
+//---------------------------
 // LCD grouping configuration
 
 #define LCD_PIN_ON_PORT_H_ALT_14        (IO_PIN_9)
@@ -187,23 +189,23 @@
 #define LCD_PIN_ON_PORT_K_ALT_14        (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | \
                                          IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
 
-//-------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
 
 #define IO_GROUP_DEF(X_IO_GROUP) \
 /* -----------------------------------------------------------------------------------------------------------*/\
 /*              ENUM ID of the Group,   IO Port,    IO Group Pin,                   IO ConfigMode             */\
-/* LCD -------------------====-------------------------------------------------------------------------------*/ \
+/* LCD -------------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_LCD_ON_PORT_H,       GPIOH,      LCD_PIN_ON_PORT_H_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
     X_IO_GROUP( IO_LCD_ON_PORT_I,       GPIOI,      LCD_PIN_ON_PORT_I_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
     X_IO_GROUP( IO_LCD_ON_PORT_J,       GPIOJ,      LCD_PIN_ON_PORT_J_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
     X_IO_GROUP( IO_LCD_ON_PORT_K,       GPIOK,      LCD_PIN_ON_PORT_K_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
-/* SDRAM -------------====-----------------------------------------------------------------------------------*/ \
+/* SDRAM -----------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_SDRAM_ON_PORT_D,     GPIOD,      SDRAM_PIN_ON_PORT_D_ALT_12,     IO_CFG_SDRAM_AF12)          \
     X_IO_GROUP( IO_SDRAM_ON_PORT_E,     GPIOE,      SDRAM_PIN_ON_PORT_E_ALT_12,     IO_CFG_SDRAM_AF12)          \
     X_IO_GROUP( IO_SDRAM_ON_PORT_F,     GPIOF,      SDRAM_PIN_ON_PORT_F_ALT_12,     IO_CFG_SDRAM_AF12)          \
     X_IO_GROUP( IO_SDRAM_ON_PORT_G,     GPIOG,      SDRAM_PIN_ON_PORT_G_ALT_12,     IO_CFG_SDRAM_AF12)          \
     X_IO_GROUP( IO_SDRAM_ON_PORT_H,     GPIOH,      SDRAM_PIN_ON_PORT_H_ALT_12,     IO_CFG_SDRAM_AF12)          \
-/* ETH -----------====---------------------------------------------------------------------------------------*/ \
+/* ETH -------------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_ETH_ON_PORT_A,       GPIOA,      ETH_PIN_ON_PORT_A_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
     X_IO_GROUP( IO_ETH_ON_PORT_B,       GPIOB,      ETH_PIN_ON_PORT_B_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
     X_IO_GROUP( IO_ETH_ON_PORT_C,       GPIOC,      ETH_PIN_ON_PORT_C_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
@@ -211,7 +213,7 @@
     X_IO_GROUP( IO_ETH_ON_PORT_G,       GPIOG,      ETH_PIN_ON_PORT_G_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
   /*X_IO_GROUP( IO_ETH_ON_PORT_H,       GPIOH,      ETH_PIN_ON_PORT_G_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)*/    \
     X_IO_GROUP( IO_ETH_ON_PORT_I,       GPIOI,      ETH_PIN_ON_PORT_I_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
-/* QSPI ------====-------------------------------------------------------------------------------------------*/ \
+/* QSPI ------------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_QSPI_ON_PORT_C,      GPIOC,      QSPI_PIN_ON_PORT_C_ALT_9,       IO_CFG_QSPI_AF9)            \
     X_IO_GROUP( IO_QSPI_ON_PORT_D,      GPIOD,      QSPI_PIN_ON_PORT_D_ALT_9,       IO_CFG_QSPI_AF9)            \
     X_IO_GROUP( IO_QSPI_ON_PORT_F,      GPIOF,      QSPI_PIN_ON_PORT_F_ALT_9,       IO_CFG_QSPI_AF9)            \
@@ -219,6 +221,7 @@
     X_IO_GROUP( IO_QSPI_ON_PORT_G,      GPIOG,      QSPI_PIN_ON_PORT_G_ALT_9,       IO_CFG_QSPI_AF9)            \
     X_IO_GROUP( IO_QSPI_ON_PORT_G,      GPIOG,      QSPI_PIN_ON_PORT_G_ALT_10,      IO_CFG_QSPI_AF10)           \
     X_IO_GROUP( IO_QSPI_ON_PORT_H,      GPIOH,      QSPI_PIN_ON_PORT_G_ALT_9,       IO_CFG_QSPI_AF9)            \
+/* -----------------------------------------------------------------------------------------------------------*/
 
 
 
@@ -239,20 +242,28 @@
 //                          EXTI9_5_IRQn                External Line[9:5] Interrupts
 //                          EXTI15_10_IRQn              External Line[15:10] Interrupts
 //
-//          Parameter 4:    IO_EXTI_TRIGGER_RISING
+//          Parameter 4:    Priority
+//
+//          Parameter 5:    IO_EXTI_TRIGGER_RISING
 //                          IO_EXTI_TRIGGER_FALLING
 //                          IO_EXTI_TRIGGER_RISING_FALLING
+//
+//          Parameter 6:    Callback function pointer
+//
+//          Parameter 7:    Argument pointer for callback
 //
 //-------------------------------------------------------------------------------------------------
 
 #if 0
 #define IO_IRQ_DEF(X_IO_IRQ) \
-/*           Enum ID                    Pin ID                 EXTI Pin Source     Trigger                         */\
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------*/\
+/*         Enum ID                 Pin ID              EXTI Pin Source  Priority    Trigger                             CallBack                Argument    */\
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------*/\
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
 #endif
-//-------------------------------------------------------------------------------------------------
-
 
 //-------------------------------------------------------------------------------------------------
 
