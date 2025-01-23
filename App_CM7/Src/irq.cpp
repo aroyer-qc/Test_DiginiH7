@@ -45,6 +45,7 @@ extern "C"
 //
 //-------------------------------------------------------------------------------------------------
 
+/*
 NOS_ISR(DMA1_Stream3_IRQHandler)
 {
   #ifdef STM32F429xx
@@ -98,7 +99,7 @@ NOS_ISR(DMA2_Stream5_IRQHandler)
 //IO_SetPinLow(IO_DEBUG);
 }
 
-
+*/
 //-------------------------------------------------------------------------------------------------
 //
 //   SSSSS  PPPPP  IIII
@@ -127,12 +128,28 @@ NOS_ISR(DMA2_Stream5_IRQHandler)
 //
 //-------------------------------------------------------------------------------------------------
 
-#ifdef STM32F429xx
+/*
 NOS_ISR(USART3_IRQHandler)
 {
     myUART_Terminal.IRQ_Handler();
 }
-#endif
+*/
+
+//-------------------------------------------------------------------------------------------------
+//
+//   OOOO  TTTTTT HH  HH EEEEEE RRRRR
+//  OO  OO   TT   HH  HH EE     RR  RR
+//  OO  OO   TT   HHHHHH EEEEE  RRRRR
+//  OO  OO   TT   HH  HH EE     RR RR
+//   OOOO    TT   HH  HH EEEEEE RR  RR
+//
+//-------------------------------------------------------------------------------------------------
+
+void HSEM1_IRQHandler(void)
+{
+    //HAL_HSEM_IRQHandler();
+}
+
 //-------------------------------------------------------------------------------------------------
 
 } // extern "C"

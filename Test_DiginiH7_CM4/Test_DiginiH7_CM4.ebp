@@ -57,28 +57,6 @@
 			<Add option="-eb_lib=n" />
 			<Add option="-eb_start_files" />
 		</Linker>
-		<Unit filename="App\Inc\main.h" />
-		<Unit filename="App\Inc\stm32h7xx_hal_conf.h" />
-		<Unit filename="App\Inc\stm32h7xx_it.h" />
-		<Unit filename="App\Src\main_cm4.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\Src\stm32h7xx_hal_msp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\Src\stm32h7xx_it.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\Src\syscalls.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\Src\sysmem.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\startup_stm32h745zitx.s">
-			<Option compilerVar="ASM" />
-		</Unit>
-		<Unit filename="STM32H745ZITX_FLASH.ld" />
 		<Unit filename="..\Common\Inc\common.h" />
 		<Unit filename="..\Common\Src\system_stm32h7xx_dualcore_boot_cm4_cm7.c">
 			<Option compilerVar="CC" />
@@ -194,6 +172,71 @@
 		<Unit filename="..\middlewares\ringbuff\src\ringbuff\ringbuff.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSAlarm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSBarrier.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSEvent.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSFlag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSList.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSMem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSMutex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSQueue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSSched.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSSem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSSignal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSThread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSTime.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\nOSTimer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\nOS\src\port\GCC\ARM_Cortex_M7\nOSPort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="App\Inc\stm32h7xx_hal_conf.h" />
+		<Unit filename="App\Src\main_cm4.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="App\Src\stm32h7xx_hal_msp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="App\Src\stm32h7xx_it.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="App\Src\syscalls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="App\Src\sysmem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="App\startup_stm32h745zitx.s">
+			<Option compilerVar="ASM" />
+		</Unit>
+		<Unit filename="STM32H745ZITX_FLASH.ld" />
 		<Extensions>
 			<code_completion />
 			<envvars />

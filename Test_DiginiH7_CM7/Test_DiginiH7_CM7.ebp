@@ -54,29 +54,10 @@
 			<Add symbol="DEBUG" />
 			<Add symbol="CORE_CM7" />
 			<Add symbol="USE_HAL_DRIVER" />
+			<Add directory="..\Module\Digini" />
+			<Add directory="..\Module\Digini\Digini\inc" />
+			<Add directory="..\Module\nOS\inc" />
 		</Compiler>
-		<Unit filename="App\Inc\main.h" />
-		<Unit filename="App\Inc\stm32h7xx_hal_conf.h" />
-		<Unit filename="App\Inc\stm32h7xx_it.h" />
-		<Unit filename="App\Src\main_CM7.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\Src\stm32h7xx_hal_msp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\Src\stm32h7xx_it.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\Src\syscalls.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\Src\sysmem.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\startup_stm32h745zitx.s">
-			<Option compilerVar="ASM" />
-		</Unit>
-		<Unit filename="STM32H745ZITX_FLASH.ld" />
 		<Unit filename="..\Common\Inc\common.h" />
 		<Unit filename="..\Common\Src\system_stm32h7xx_dualcore_boot_cm4_cm7.c">
 			<Option compilerVar="CC" />
@@ -120,16 +101,8 @@
 		<Unit filename="..\drivers\CMSIS\Include\cmsis_version.h" />
 		<Unit filename="..\drivers\CMSIS\Include\core_armv8mbl.h" />
 		<Unit filename="..\drivers\CMSIS\Include\core_armv8mml.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm0.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm0plus.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm1.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm23.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm3.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm33.h" />
 		<Unit filename="..\drivers\CMSIS\Include\core_cm4.h" />
 		<Unit filename="..\drivers\CMSIS\Include\core_cm7.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_sc000.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_sc300.h" />
 		<Unit filename="..\drivers\CMSIS\Include\mpu_armv7.h" />
 		<Unit filename="..\drivers\CMSIS\Include\mpu_armv8.h" />
 		<Unit filename="..\drivers\CMSIS\Include\tz_context.h" />
@@ -227,6 +200,35 @@
 		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7_io.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\Module\nOS\inc\port\GCC\ARM_Cortex_M7\nOSPort.h" />
+		<Unit filename="..\App_CM7\Inc\main.h" />
+		<Unit filename="..\App_CM7\Inc\stm32h7xx_hal_conf.h" />
+		<Unit filename="..\App_CM7\Inc\stm32h7xx_it.h" />
+		<Unit filename="..\App_CM7\Src\bsp.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\Src\irq.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\Src\main_CM7.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\Src\stm32h7xx_it.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\Src\syscalls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\Src\sysmem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\Src\taskIdle.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\startup_stm32h745zitx.s">
+			<Option compilerVar="ASM" />
+		</Unit>
+		<Unit filename="STM32H745ZITX_FLASH.ld" />
 		<Extensions>
 			<code_completion />
 			<envvars />
