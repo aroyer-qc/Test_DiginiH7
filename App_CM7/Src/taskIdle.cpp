@@ -105,13 +105,14 @@ void TaskIdle(void)
   //  Test[0] = 0xA5;
    // Test[1] = 0x69;
 
+/* H7
     CRC_Driver Poutine;
     CRC_Driver Poutine2;
 
     Poutine.Initialize(CRC32_HW_MPEG_2);
     Poutine2.Initialize(CRC32_HW_MPEG_2);
 
-
+*/
 
     // --------------------------------------------------------------------------------------------
     // Low level main control loop

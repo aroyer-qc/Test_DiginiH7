@@ -50,7 +50,7 @@
 // because for now we don't have eeprom for this test board
 const TempUnit_e T_Unit = TEMP_CELSIUS;
 const SystemDebugLevel_e DebugLvl = SystemDebugLevel_e(0);//SystemDebugLevel_e(SYS_DEBUG_LEVEL_ETHERNET | SYS_DEBUG_LEVEL_MEMORY_POOL);
-const Language_e Lang = LANG_ENGLISH;
+// H7const Language_e Lang = LANG_ENGLISH;
 
 //#if (BSP_TEST_HARDWARE == DEF_ENABLED)
 void BSP_HardwareTest (void);
@@ -74,35 +74,8 @@ void BSP_HardwareTest (void);
 void BSP_Initialize(void)
 {
     SysTick_Config(SYSTEM_CORE_CLOCK / CFG_SYSTICK_RATE);
-
     ISR_Initialize();
     IO_InitializeAll();
-    //IO_PinInit(IO_LED_RED);
-    //IO_PinInit(IO_LED_GREEN);
-
-    // Ethernet
-    //IO_GroupPinInit(IO_ETH_ON_PORT_A);
-    //IO_GroupPinInit(IO_ETH_ON_PORT_B);
-    //IO_GroupPinInit(IO_ETH_ON_PORT_C);
-    //IO_GroupPinInit(IO_ETH_ON_PORT_G);
-
-    // SPI
-    //IO_GroupPinInit(IO_SPI1_ON_PORT_A);
-    //IO_GroupPinInit(IO_SPI3_ON_PORT_B);
-
-    // UART
-  #ifdef STM32F401xE
-    //IO_GroupPinInit(IO_UART2_ON_PORT_xx);
-  #endif
-  #ifdef STM32F429xx
-    //IO_GroupPinInit(IO_UART3_ON_PORT_D);
-    //IO_GroupPinInit(IO_UART6_ON_PORT_C);
-  #endif
-
-
-    // IO_PinInit(IO_LED_BLUE);  transfert to ETH for now
-    // IO_PinInit(IO_MCO_2);        // Output the MCO for clock validation
-
     DIGINI_Initialize();
 }
 
@@ -133,7 +106,7 @@ SystemState_e BSP_PostOS_Initialize(void)
     State = DIGINI_PostInitialize();
 
     // WS2812 LED stream
-    WS281x_LedStream.Initialize();
+/* H7    WS281x_LedStream.Initialize();
 
 
     WS281x_LedStream.Start();
@@ -169,7 +142,7 @@ uint8_t R,G,B;
         nOS_Sleep(16);
         WS281x_LedStream.Start();
 }
-
+*/
 
     return State;
 }

@@ -42,17 +42,17 @@
 //-------------------------------------------------------------------------------------------------
 // Static memory allocation
 //
-#define DIGINI_USE_STATIC_MEMORY_ALLOC                  DEF_ENABLED
+#define DIGINI_USE_STATIC_MEMORY_ALLOC                  DEF_DISABLED //DDEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // Database support
 //
-#define DIGINI_USE_DATABASE                             DEF_ENABLED
+#define DIGINI_USE_DATABASE                             DEF_DISABLED //DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // Label support and option
 //
-#define DIGINI_USE_LABEL                                DEF_ENABLED
+#define DIGINI_USE_LABEL                                DEF_DISABLED //DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // COMM support (Console, CLI, VT100)
@@ -70,7 +70,7 @@
 #endif
 
 #define DIGINI_USE_DEBUG_IN_CONSOLE                     DEF_DISABLED        // seem to be a bug when enabled
-#define DIGINI_USE_HELP_IN_CONSOLE                      DEF_ENABLED     // Adding the help command to the command line
+#define DIGINI_USE_HELP_IN_CONSOLE                      DEF_DISABLED //DEF_ENABLED     // Adding the help command to the command line
 
 #define DIGINI_USE_COMM_AS_A_TASK                       DEF_ENABLED     // Otherwise it is a process that need to be include in your choice of task
 #define TASK_COMM_PRIO                                  7
@@ -112,7 +112,7 @@
 //-------------------------------------------------------------------------------------------------
 // Software CRC Configuration
 //
-#define DIGINI_USE_CRC                                  DEF_ENABLED
+#define DIGINI_USE_CRC                                  DEF_DISABLED //DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // MPU Configuration

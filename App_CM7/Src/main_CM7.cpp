@@ -32,8 +32,7 @@
 #include "taskIdle.h"
 #include "bsp.h"
 
-#include "main.h"
-#include "common.h"
+//#include "common.h"
 
 /* Private variables ---------------------------------------------------------*/
 //UART_HandleTypeDef huart3;
@@ -90,7 +89,7 @@ int main()
     nOS_Start();
     BSP_PostOS_Initialize();                    // All initialization that must be done after the OS is started
 
-  #ifdef 0 //DEBUG
+  #if 0 // def DEBUG
     DateAndTime_t DateTime;
 
     DateTime.Date.Day    = 25;

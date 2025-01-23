@@ -73,9 +73,9 @@
     X_IO_CFG( IO_CFG_OUTPUT_PP_LS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        1)                     \
     X_IO_CFG( IO_CFG_OUTPUT_PP_HS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       1)                     \
 /* ETH IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_ETH_PP_VHS_AFx,                    IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF                  \
+    X_IO_CFG( IO_CFG_ETH_PP_VHS_AFx,                    IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF1)                \
 /* LCD IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_LCD_PORT_AF14,                     IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF14_LTDC           \
+    X_IO_CFG( IO_CFG_LCD_PORT_AF14,                     IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF14_LTDC)          \
 /* MCO IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_MCO_OUTPUT,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF0_MC0)            \
 /* QSPI IO's CFG ---------------------------------------------------------------------------------------------------------------------------------*/\
@@ -125,7 +125,7 @@
     X_IO( IO_MCO_2,              GPIOC,      9,      IO_CFG_MCO_OUTPUT)                           \
 /* LCD -----------------------------------------------------------------------------------------*/\
     X_IO( IO_LCD_DISPLAY,        GPIOD,      7,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
-    X_IO( LCD_INT                GPIOG,      2,      IO_CFG_INPUT_NP_LS)                          \
+    X_IO( LCD_INT,               GPIOG,      2,      IO_CFG_INPUT_NP_LS)                          \
 /* ---------------------------------------------------------------------------------------------*/
 
 
@@ -133,7 +133,7 @@
 //
 //  IO_GROUP is useful for pin sharing configuration and they are not used individually at run time
 //  because they are control by module.
-//  
+//
 //    Examples: LCD, SDRAM, ETH, etc...
 //
 //  Notes : Some group might share same config
@@ -216,10 +216,10 @@
 /* QSPI ------------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_QSPI_ON_PORT_C,      GPIOC,      QSPI_PIN_ON_PORT_C_ALT_9,       IO_CFG_QSPI_AF9)            \
     X_IO_GROUP( IO_QSPI_ON_PORT_D,      GPIOD,      QSPI_PIN_ON_PORT_D_ALT_9,       IO_CFG_QSPI_AF9)            \
-    X_IO_GROUP( IO_QSPI_ON_PORT_F,      GPIOF,      QSPI_PIN_ON_PORT_F_ALT_9,       IO_CFG_QSPI_AF9)            \
-    X_IO_GROUP( IO_QSPI_ON_PORT_F,      GPIOF,      QSPI_PIN_ON_PORT_F_ALT_10,      IO_CFG_QSPI_AF10)           \
-    X_IO_GROUP( IO_QSPI_ON_PORT_G,      GPIOG,      QSPI_PIN_ON_PORT_G_ALT_9,       IO_CFG_QSPI_AF9)            \
-    X_IO_GROUP( IO_QSPI_ON_PORT_G,      GPIOG,      QSPI_PIN_ON_PORT_G_ALT_10,      IO_CFG_QSPI_AF10)           \
+    X_IO_GROUP( IO_QSPI_ON_PORT_F_AF9,  GPIOF,      QSPI_PIN_ON_PORT_F_ALT_9,       IO_CFG_QSPI_AF9)            \
+    X_IO_GROUP( IO_QSPI_ON_PORT_F_AF10, GPIOF,      QSPI_PIN_ON_PORT_F_ALT_10,      IO_CFG_QSPI_AF10)           \
+    X_IO_GROUP( IO_QSPI_ON_PORT_G_AF9,  GPIOG,      QSPI_PIN_ON_PORT_G_ALT_9,       IO_CFG_QSPI_AF9)            \
+    X_IO_GROUP( IO_QSPI_ON_PORT_G_AF10, GPIOG,      QSPI_PIN_ON_PORT_G_ALT_10,      IO_CFG_QSPI_AF10)           \
     X_IO_GROUP( IO_QSPI_ON_PORT_H,      GPIOH,      QSPI_PIN_ON_PORT_G_ALT_9,       IO_CFG_QSPI_AF9)            \
 /* -----------------------------------------------------------------------------------------------------------*/
 

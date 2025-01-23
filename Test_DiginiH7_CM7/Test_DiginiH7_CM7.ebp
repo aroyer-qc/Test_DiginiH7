@@ -51,16 +51,40 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add symbol="STM32H745xx" />
-			<Add symbol="DEBUG" />
+			<Add symbol="STM32H7xx" />
 			<Add symbol="CORE_CM7" />
-			<Add symbol="USE_HAL_DRIVER" />
+			<Add symbol="ARM_MATH_CM7" />
+			<Add symbol="xUSE_HAL_DRIVER" />
+			<Add symbol="x__FPU_PRESENT=1" />
+			<Add symbol="xUSE_USB_FS" />
 			<Add directory="..\Module\Digini" />
 			<Add directory="..\Module\Digini\Digini\inc" />
 			<Add directory="..\Module\nOS\inc" />
+			<Add directory="..\Module\Digini\Peripheral\inc\port" />
+			<Add directory="..\Module\Digini\Peripheral\inc\port\STM32H7xx" />
 		</Compiler>
+		<Unit filename="..\App_CM7\Inc\stm32h7xx_hal_conf.h" />
+		<Unit filename="..\App_CM7\Inc\stm32h7xx_it.h" />
+		<Unit filename="..\App_CM7\Src\bsp.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\Src\irq.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\Src\main_CM7.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\Src\taskIdle.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\startup_stm32h745zitx.s">
+			<Option compilerVar="ASM" />
+		</Unit>
 		<Unit filename="..\Common\Inc\common.h" />
 		<Unit filename="..\Common\Src\system_stm32h7xx_dualcore_boot_cm4_cm7.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="..\Config\bsp_io_def.h" />
 		<Unit filename="..\Config\cli_cfg.h" />
@@ -192,42 +216,29 @@
 		<Unit filename="..\middlewares\ringbuff\src\include\ringbuff\ringbuff.h" />
 		<Unit filename="..\middlewares\ringbuff\src\ringbuff\ringbuff.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\lib_io.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\lib_isr.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\lib_system_clock.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_STM32H7.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_STM32H7_io.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_STM32H7_isr.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_STM32H7_system_clock.h" />
 		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7_io.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7_isr.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7_system_clock.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\Module\nOS\inc\port\GCC\ARM_Cortex_M7\nOSPort.h" />
-		<Unit filename="..\App_CM7\Inc\main.h" />
-		<Unit filename="..\App_CM7\Inc\stm32h7xx_hal_conf.h" />
-		<Unit filename="..\App_CM7\Inc\stm32h7xx_it.h" />
-		<Unit filename="..\App_CM7\Src\bsp.cpp">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\App_CM7\Src\irq.cpp">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\App_CM7\Src\main_CM7.cpp">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\App_CM7\Src\stm32h7xx_it.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\App_CM7\Src\syscalls.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\App_CM7\Src\sysmem.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\App_CM7\Src\taskIdle.cpp">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\App_CM7\startup_stm32h745zitx.s">
-			<Option compilerVar="ASM" />
-		</Unit>
 		<Unit filename="STM32H745ZITX_FLASH.ld" />
 		<Extensions>
 			<code_completion />
