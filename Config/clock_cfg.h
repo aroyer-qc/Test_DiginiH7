@@ -55,20 +55,39 @@
 #define CFG_PLL1_N_MULTIPLIER                       480
 #define CFG_PLL1_P_DIVIDER                          2
 #define CFG_PLL1_Q_DIVIDER                          5
-#define CFG_PLL1_R_DIVIDER                          5
+#define CFG_PLL1_R_DIVIDER                          4
 
 // Arbitrary value at this configure as needed by peripheral
 #define CFG_PLL2_M_DIVIDER                          25
-#define CFG_PLL2_N_MULTIPLIER                       480
+#define CFG_PLL2_N_MULTIPLIER                       50
 #define CFG_PLL2_P_DIVIDER                          2
-#define CFG_PLL2_Q_DIVIDER                          5
-#define CFG_PLL2_R_DIVIDER                          5
+#define CFG_PLL2_Q_DIVIDER                          10
+#define CFG_PLL2_R_DIVIDER                          2
 
 #define CFG_PLL3_M_DIVIDER                          5
 #define CFG_PLL3_N_MULTIPLIER                       48                              // Needed to configure LTDC correct spee
 #define CFG_PLL3_P_DIVIDER                          1
 #define CFG_PLL3_Q_DIVIDER                          5
 #define CFG_PLL3_R_DIVIDER                          4                               // LTDC source
+
+#define CFG_ENABLE_PLL1P                            1
+#define CFG_ENABLE_PLL1Q                            1
+#define CFG_ENABLE_PLL1R                            0
+
+#define CFG_ENABLE_PLL2P                            1
+#define CFG_ENABLE_PLL2Q                            1
+#define CFG_ENABLE_PLL2R                            1
+
+#define CFG_ENABLE_PLL3P                            1
+#define CFG_ENABLE_PLL3Q                            1
+#define CFG_ENABLE_PLL3R                            1
+
+
+
+
+
+
+
 
 #define CFG_D1CPRE_DIVIDER                          CFG_RCC_CFGR_D1CPRE_DIV1        // (D1CPRE Prescaler) CFG_RCC_CFGR_D1CPRE_DIVx -> 1,2,4,8,16,64,128,256,512
 #define CFG_HPRE_DIVIDER                            CFG_RCC_CFGR_HPRE_DIV1          // (HPRE Prescaler) CFG_RCC_CFGR_HPRE_DIVx -> 1,2,4,8,16,64,128,256,512
