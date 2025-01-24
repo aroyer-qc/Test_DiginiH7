@@ -41,21 +41,20 @@
 #define CFG_DELAY_TIMING_LOOP_VALUE_FOR_1_USEC      38 // TODO need to be set and fine tuned
 
 // User clock selection
-#define CFG_SYS_CLOCK_MUX                           CFG_RCC_CFGR_SW_PLL1         // CFG_RCC_CFGR_SW_HSI, CFG_RCC_CFGR_SW_CSI, CFG_RCC_CFGR_SW_HSE or CFG_RCC_CFGR_SW_PLL1
-#define CFG_MUX_PLL_SOURCE                          CFG_RCC_PLLCFGR_PLLSRC_HSE  // CFG_RCC_PLLCFGR_PLLSRC_HSI, RCC_PLLCKSELR_PLLSRC_CSI or RCC_PLLCKSELR_PLLSRC_HSE
+#define CFG_SYS_CLOCK_MUX                           CFG_RCC_CFGR_SW_PLL1            // CFG_RCC_CFGR_SW_HSI, CFG_RCC_CFGR_SW_CSI, CFG_RCC_CFGR_SW_HSE or CFG_RCC_CFGR_SW_PLL1
+#define CFG_MUX_PLL_SOURCE                          CFG_RCC_PLLCFGR_PLLSRC_HSE      // CFG_RCC_PLLCFGR_PLLSRC_HSI, RCC_PLLCKSELR_PLLSRC_CSI or RCC_PLLCKSELR_PLLSRC_HSE
 #define CFG_FREQ_PLL_SOURCE                         CFG_HSE_VALUE
 #define CFG_SYSTEM_CLOCK_NUMBER_OF_RETRY            1000
-
-
 
 //-------------------------------------------------------------------------------------------------
 // multiplier and Prescaler
 
-#define CFG_PLL1_M_DIVIDER                          25
-#define CFG_PLL1_N_MULTIPLIER                       480
+#define CFG_PLL1_M_DIVIDER                          5
+#define CFG_PLL1_N_MULTIPLIER                       192
 #define CFG_PLL1_P_DIVIDER                          2
-#define CFG_PLL1_Q_DIVIDER                          5
+#define CFG_PLL1_Q_DIVIDER                          10
 #define CFG_PLL1_R_DIVIDER                          4
+#define CFG_PLL1_FRACTIONAL_VALUE                   0                               // 0 Disable the Sigma-Delta modulator (Range: 0 - 8191)
 
 // Arbitrary value at this configure as needed by peripheral
 #define CFG_PLL2_M_DIVIDER                          25
@@ -63,12 +62,14 @@
 #define CFG_PLL2_P_DIVIDER                          2
 #define CFG_PLL2_Q_DIVIDER                          10
 #define CFG_PLL2_R_DIVIDER                          2
+#define CFG_PLL2_FRACTIONAL_VALUE                   0                               // 0 Disable the Sigma-Delta modulator (Range: 0 - 8191)
 
 #define CFG_PLL3_M_DIVIDER                          5
 #define CFG_PLL3_N_MULTIPLIER                       48                              // Needed to configure LTDC correct spee
 #define CFG_PLL3_P_DIVIDER                          1
 #define CFG_PLL3_Q_DIVIDER                          5
 #define CFG_PLL3_R_DIVIDER                          4                               // LTDC source
+#define CFG_PLL3_FRACTIONAL_VALUE                   0                               // 0 Disable the Sigma-Delta modulator (Range: 0 - 8191)
 
 #define CFG_ENABLE_PLL1P                            1
 #define CFG_ENABLE_PLL1Q                            1
@@ -82,15 +83,8 @@
 #define CFG_ENABLE_PLL3Q                            1
 #define CFG_ENABLE_PLL3R                            1
 
-
-
-
-
-
-
-
 #define CFG_D1CPRE_DIVIDER                          CFG_RCC_CFGR_D1CPRE_DIV1        // (D1CPRE Prescaler) CFG_RCC_CFGR_D1CPRE_DIVx -> 1,2,4,8,16,64,128,256,512
-#define CFG_HPRE_DIVIDER                            CFG_RCC_CFGR_HPRE_DIV1          // (HPRE Prescaler) CFG_RCC_CFGR_HPRE_DIVx -> 1,2,4,8,16,64,128,256,512
+#define CFG_HPRE_DIVIDER                            CFG_RCC_CFGR_HPRE_DIV2          // (HPRE Prescaler) CFG_RCC_CFGR_HPRE_DIVx -> 1,2,4,8,16,64,128,256,512
 
 #define CFG_D1PPRE_DIVIDER                          CFG_RCC_CFGR_D1PPRE_DIV2        // (D1PPRE Prescaler) CFG_RCC_CFGR_D1PPRE_DIVx   -> 1,2,4,8,16
 #define CFG_D2PPRE1_DIVIDER                         CFG_RCC_CFGR_D2PPRE1_DIV2       // (D2PPRE1 Prescaler) CFG_RCC_CFGR_D2PPRE1_DIVx -> 1,2,4,8,16

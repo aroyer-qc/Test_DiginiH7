@@ -77,7 +77,7 @@
 /* LCD IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_LCD_PORT_AF14,                     IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF14_LTDC)          \
 /* MCO IO's CFG ----------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_MCO_OUTPUT,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF0_MC0)            \
+    X_IO_CFG( IO_CFG_MCO_OUTPUT,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF0_MCO)            \
 /* QSPI IO's CFG ---------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_QSPI_AF9,                          IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF9_QUADSPI)        \
     X_IO_CFG( IO_CFG_QSPI_AF10,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_VERY_HIGH,  IO_AF10_QUADSPI)       \
@@ -87,7 +87,7 @@
     X_IO_CFG( IO_CFG_SPI_AF5,                           IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_HIGH,       IO_AF5_SPI)            \
 /* UART IO's CFG ---------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_UART3_AF7,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        IO_AF7_USART3)         \
-    X_IO_CFG( IO_CFG_UART6_AF8,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        IO_AF8_USART6)         \
+    X_IO_CFG( IO_CFG_UART6_AF7,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,        IO_SPEED_FREQ_LOW,        IO_AF7_USART6)         \
 /* -----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 //-------------------------------------------------------------------------------------------------
@@ -115,12 +115,12 @@
     X_IO( IO_SPI3_MOSI,          GPIOB,      5,      IO_CFG_SPI_AF5)                              \
     X_IO( IO_SPI1_CLK,           GPIOA,      5,      IO_CFG_SPI_AF5)                              \
     X_IO( IO_SPI1_MOSI,          GPIOA,      7,      IO_CFG_SPI_AF5)                              \
-    X_IO( IO_SPI1_CS,            GPIOB,      9,      IO_CFG_OUTPUT_PP_HS_D1)                      \
+    X_IO( IO_SPI1_CS,            GPIOB,      9,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
 /* UART IO's -----------------------------------------------------------------------------------*/\
     X_IO( IO_UART3_RX,           GPIOD,      9,      IO_CFG_UART3_AF7)                            \
     X_IO( IO_UART3_TX,           GPIOD,      8,      IO_CFG_UART3_AF7)                            \
-    X_IO( IO_UART6_RX,           GPIOxx,     7,      IO_CFG_UART6_AF8)/* N/U */                   \
-    X_IO( IO_UART6_TX,           GPIOC,      6,      IO_CFG_UART6_AF8)                            \
+    X_IO( IO_UART6_RX,           GPIOxx,     7,      IO_CFG_UART6_AF7)/* N/U */                   \
+    X_IO( IO_UART6_TX,           GPIOC,      6,      IO_CFG_UART6_AF7)                            \
 /* MCO -----------------------------------------------------------------------------------------*/\
     X_IO( IO_MCO_2,              GPIOC,      9,      IO_CFG_MCO_OUTPUT)                           \
 /* LCD -----------------------------------------------------------------------------------------*/\
