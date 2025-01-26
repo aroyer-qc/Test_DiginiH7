@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File : main.cpp
+//  File : main_CM7.cpp
 //
 //-------------------------------------------------------------------------------------------------
 //
@@ -50,8 +50,6 @@
 //uint32_t time, t1;
 
 
-
-
 uint32_t swap(uint32_t in)
 {
  //uint32_t out ;
@@ -75,9 +73,9 @@ uint32_t swap(uint32_t in)
 
 int main()
 {
-    //uint32_t testID = 0x00123456;
-    //uint32_t SwaptestID;
-    //SwaptestID = swap(testID);
+    uint32_t testID = 0x00123456;
+    uint32_t SwaptestID;
+    SwaptestID = swap(testID);
 
 
 //printf("allo");

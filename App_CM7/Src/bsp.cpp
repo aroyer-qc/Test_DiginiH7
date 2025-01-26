@@ -76,7 +76,7 @@ void BSP_Initialize(void)
     SysTick_Config(SYSTEM_CORE_CLOCK / CFG_SYSTICK_RATE);
     ISR_Initialize();
     IO_InitializeAll();
-    DIGINI_Initialize();
+    //DIGINI_Initialize();
 }
 
 //-------------------------------------------------------------------------------------------------
@@ -103,7 +103,7 @@ SystemState_e BSP_PostOS_Initialize(void)
    // myTIM_VFD.Initialize();                 // Timer Driver on top of PWM for blank line
    // myPWM_VFD_Blank.Initialize();           // PWM Driver to control blank line (dimming feature)
    // VFD.Initialize();                       // Then initialize the VFD driver
-    State = DIGINI_PostInitialize();
+    //State = DIGINI_PostInitialize();
 
     // WS2812 LED stream
 /* H7    WS281x_LedStream.Initialize();

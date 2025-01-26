@@ -54,6 +54,8 @@ BSP_EXTERN SystemDebugLevel_e BSP_GlobalDebugLevel;
 // Function prototype(s)
 //-------------------------------------------------------------------------------------------------
 
+int               main          ();
+
 void                BSP_Initialize          (void);
 SystemState_e       BSP_PostOS_Initialize   (void);
 
