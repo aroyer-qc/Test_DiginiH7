@@ -77,7 +77,6 @@ int main()
     uint32_t SwaptestID;
     SwaptestID = swap(testID);
 
-
 //printf("allo");
   //  uint8_t* pTestID = (void*)&testID;
 

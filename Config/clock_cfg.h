@@ -41,8 +41,8 @@
 #define CFG_DELAY_TIMING_LOOP_VALUE_FOR_1_USEC      38 // TODO need to be set and fine tuned
 
 // User clock selection
-#define CFG_SYS_CLOCK_MUX                           CFG_RCC_CFGR_SW_PLL1            // CFG_RCC_CFGR_SW_HSI, CFG_RCC_CFGR_SW_CSI, CFG_RCC_CFGR_SW_HSE or CFG_RCC_CFGR_SW_PLL1
-#define CFG_MUX_PLL_SOURCE                          CFG_RCC_PLLCFGR_PLLSRC_HSE      // CFG_RCC_PLLCFGR_PLLSRC_HSI, RCC_PLLCKSELR_PLLSRC_CSI or RCC_PLLCKSELR_PLLSRC_HSE
+#define CFG_SYS_CLOCK_MUX                           CFG_RCC_CFGR_SW_PLL1            // CFG_RCC_CFGR_SW_x   -> HSI, CSI, HSE or PLL1
+#define CFG_MUX_PLL_SOURCE                          CFG_RCC_PLLCKSELR_PLLSRC_HSE    // CFG_RCC_PLLCKSELR_x -> HSI, CSI or HSE
 #define CFG_FREQ_PLL_SOURCE                         CFG_HSE_VALUE
 #define CFG_SYSTEM_CLOCK_NUMBER_OF_RETRY            1000
 
@@ -88,7 +88,7 @@
 #define CFG_D1PPRE_DIVIDER                          CFG_RCC_D1PPRE_DIV2             // (D1PPRE Prescaler) CFG_RCC_D1PPRE_DIVx   -> 1,2,4,8,16
 #define CFG_D2PPRE1_DIVIDER                         CFG_RCC_D2PPRE1_DIV2            // (D2PPRE1 Prescaler) CFG_RCC_D2PPRE1_DIVx -> 1,2,4,8,16
 #define CFG_D2PPRE2_DIVIDER                         CFG_RCC_D2PPRE2_DIV2            // (D2PPRE2 Prescaler) CFG_RCC_D2PPRE2_DIVx -> 1,2,4,8,16
-#define CFG_D2PPRE3_DIVIDER                         CFG_RCC_D2PPRE3_DIV2            // (D2PPRE3 Prescaler) CFG_RCC_D2PPRE3_DIVx -> 1,2,4,8,16
+#define CFG_D3PPRE_DIVIDER                          CFG_RCC_D3PPRE_DIV2             // (D2PPRE3 Prescaler) CFG_RCC_D2PPRE3_DIVx -> 1,2,4,8,16
 
 #define CFG_MCO_1_DIVIDER                           CFG_RCC_MCO1PRE_DIV5            // (MCO1 Prescaler) CFG_RCC_CFGR_MCO1PRE_DIVx -> 0 to 15, if set to 0 prescaler is disabled
 #define CFG_MCO_2_DIVIDER                           CFG_RCC_MCO2PRE_DIV5            // (MCO1 Prescaler) CFG_RCC_CFGR_MCO2PRE_DIVx -> 0 to 15, if set to 0 prescaler is disabled
@@ -127,7 +127,7 @@
 #define CFG_SWP_SOURCE_MUX                          CFG_RCC_D2CCIP1R_SWP_PCLK1
 //#define CFG_TRACE_SOURCE_MUX                        HSI //???
 #define CFG_UART16_SOURCE_MUX                       CFG_RCC_D2CCIP2R_USART16_PCLK2
-#define CFG_UART234578_SOURCE_MUX                   CFG_RCC_D2CCIP2R_USART234578_PCLK1
+#define CFG_UART234578_SOURCE_MUX                   CFG_RCC_D2CCIP2R_USART234578_PLL3Q
 #define CFG_USB_SOURCE_MUX                          CFG_RCC_D2CCIP2R_USB_PLL3Q
 //more to do!!
 
