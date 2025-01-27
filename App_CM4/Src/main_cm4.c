@@ -1,49 +1,30 @@
-/**
- * \file            main.c
- *
- * Cortex-M4 main.c file
- */
-
-/* Includes ------------------------------------------------------------------*/
-#include "main.h"
-#include "common.h"
-
-/* Ringbuffer variables */
-volatile ringbuff_t* rb_cm4_to_cm7 = (void *)BUFF_CM4_TO_CM7_ADDR;
-volatile ringbuff_t* rb_cm7_to_cm4 = (void *)BUFF_CM7_TO_CM4_ADDR;
-static void led_init(void);
-
-uint32_t i = 0, time, t1, t2;
-
-
-/**
- * \brief           The application entry point
- */
-int
-main(void) {
+//           The application entry point
+int main(void)
+{
 
     /* CPU2 goes to STOP mode and waits CPU1 to initialize all the steps first */
     /* CPU1 will wakeup CPU2 with semaphore take and release events */
     /* HW semaphore Clock enable */
-    __HAL_RCC_HSEM_CLK_ENABLE();
-    HSEM_ActivateNotification(HSEM_WAKEUP_CPU2_MASK);
-    HAL_PWREx_ClearPendingEvent();
+ //   __HAL_RCC_HSEM_CLK_ENABLE();
+ //   HSEM_ActivateNotification(HSEM_WAKEUP_CPU2_MASK);
+  //  HAL_PWREx_ClearPendingEvent();
 
 #ifndef DEBUG
     // In debug mode we use the free running CPU
     HAL_PWREx_EnterSTOPMode(PWR_MAINREGULATOR_ON, PWR_STOPENTRY_WFE, PWR_D2_DOMAIN);
 #endif
 
-    HSEM_CLEAR_FLAG(HSEM_WAKEUP_CPU2_MASK);
+  //  HSEM_CLEAR_FLAG(HSEM_WAKEUP_CPU2_MASK);
 
     /* MCU Configuration--------------------------------------------------------*/
 
     /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-    HAL_Init();
+   // HAL_Init();
 
     /* Init LED3 */
-    led_init();
+   // led_init();
 
+#if 0
     /*
      * Wait for buffers to be ready by CPU1
      *
@@ -95,28 +76,6 @@ main(void) {
             ringbuff_skip(rb_cm7_to_cm4, len);
         }
     }
+    #endif
 }
 
-/**
- * \brief           Initialize LEDs controlled by core
- */
-void
-led_init(void) {
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
-
-    LD3_GPIO_CLK_EN();
-
-    GPIO_InitStruct.Pin = LD3_GPIO_PIN;
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(LD3_GPIO_PORT, &GPIO_InitStruct);
-}
-
-/**
- * \brief           This function is executed in case of error occurrence
- */
-void
-Error_Handler(void) {
-
-}

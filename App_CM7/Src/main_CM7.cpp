@@ -32,23 +32,7 @@
 #include "taskIdle.h"
 #include "bsp.h"
 
-//#include "common.h"
-
-/* Private variables ---------------------------------------------------------*/
-//UART_HandleTypeDef huart3;
-
-/* Ringbuffer variables */
-//volatile ringbuff_t* rb_cm4_to_cm7 = (void *)BUFF_CM4_TO_CM7_ADDR;
-//volatile ringbuff_t* rb_cm7_to_cm4 = (void *)BUFF_CM7_TO_CM4_ADDR;
-
-/* Private function prototypes -----------------------------------------------*/
-//void SystemClock_Config(void);
-//static void MX_GPIO_Init(void);
-//static void MX_USART3_UART_Init(void);
-//static void led_init(void);
-
-//uint32_t time, t1;
-
+//-------------------------------------------------------------------------------------------------
 
 uint32_t swap(uint32_t in)
 {

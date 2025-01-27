@@ -45,133 +45,88 @@
 		<Device>
 			<Add option="$device=cortex-m4" />
 			<Add option="$lscript=STM32H745ZITX_FLASH.ld" />
+			<Add option="$stack=0x200" />
+			<Add option="$heap=0x1000" />
 		</Device>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add symbol="USE_HAL_DRIVER" />
 			<Add symbol="CORE_CM4" />
-			<Add symbol="DEBUG" />
+			<Add symbol="ARM_MATH_CM4" />
+			<Add symbol="STM32H7xx" />
 			<Add symbol="STM32H745xx" />
+			<Add symbol="x__FPU_PRESENT=1" />
+			<Add symbol="xUSE_USB_FS" />
 		</Compiler>
 		<Linker>
 			<Add option="-eb_lib=n" />
 			<Add option="-eb_start_files" />
 		</Linker>
-		<Unit filename="..\Common\Inc\common.h" />
-		<Unit filename="..\Common\Src\system_stm32h7xx_dualcore_boot_cm4_cm7.c">
+		<Unit filename="..\App_CM4\Inc\bsp.h" />
+		<Unit filename="..\App_CM4\Inc\taskIdle.h" />
+		<Unit filename="..\App_CM4\Src\bsp.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h745xx.h" />
-		<Unit filename="..\drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h7xx.h" />
-		<Unit filename="..\drivers\CMSIS\Device\ST\STM32H7xx\Include\system_stm32h7xx.h" />
-		<Unit filename="..\drivers\CMSIS\Include\cmsis_armcc.h" />
-		<Unit filename="..\drivers\CMSIS\Include\cmsis_armclang.h" />
-		<Unit filename="..\drivers\CMSIS\Include\cmsis_compiler.h" />
-		<Unit filename="..\drivers\CMSIS\Include\cmsis_gcc.h" />
-		<Unit filename="..\drivers\CMSIS\Include\cmsis_iccarm.h" />
-		<Unit filename="..\drivers\CMSIS\Include\cmsis_version.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_armv8mbl.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_armv8mml.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm0.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm0plus.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm1.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm23.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm3.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm33.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm4.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_cm7.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_sc000.h" />
-		<Unit filename="..\drivers\CMSIS\Include\core_sc300.h" />
-		<Unit filename="..\drivers\CMSIS\Include\mpu_armv7.h" />
-		<Unit filename="..\drivers\CMSIS\Include\mpu_armv8.h" />
-		<Unit filename="..\drivers\CMSIS\Include\tz_context.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_cortex.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_def.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_dma.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_dma_ex.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_exti.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_flash.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_flash_ex.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_gpio.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_gpio_ex.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_hsem.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_i2c.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_i2c_ex.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_mdma.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_pwr.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_pwr_ex.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_tim.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_tim_ex.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h" />
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal.c">
+		<Unit filename="..\App_CM4\Src\irq.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_cortex.c">
+		<Unit filename="..\App_CM4\Src\main_cm4.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma.c">
+		<Unit filename="..\App_CM4\Src\taskIdle.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma_ex.c">
+		<Unit filename="..\App_CM4\startup_stm32h745zitx.s">
+			<Option compilerVar="ASM" />
+		</Unit>
+		<Unit filename="..\App_CM4\startup_stm32h745zitx.S">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_exti.c">
+		<Unit filename="..\Config\bsp_io_def.h" />
+		<Unit filename="..\Config\cli_cfg.h" />
+		<Unit filename="..\Config\cli_var.h" />
+		<Unit filename="..\Config\clock_cfg.h" />
+		<Unit filename="..\Config\console_cfg.h" />
+		<Unit filename="..\Config\console_var.h" />
+		<Unit filename="..\Config\crc_cfg.h" />
+		<Unit filename="..\Config\database_cfg.h" />
+		<Unit filename="..\Config\device_cfg.h" />
+		<Unit filename="..\Config\device_var.h" />
+		<Unit filename="..\Config\digini_cfg.h" />
+		<Unit filename="..\Config\dma_var.h" />
+		<Unit filename="..\Config\driver_cfg.h" />
+		<Unit filename="..\Config\ip_cfg.h" />
+		<Unit filename="..\Config\ip_var.h" />
+		<Unit filename="..\Config\label_cfg.h" />
+		<Unit filename="..\Config\memory_cfg.h" />
+		<Unit filename="..\Config\nOSConfig.h" />
+		<Unit filename="..\Config\project_def.h" />
+		<Unit filename="..\Config\pwm_cfg.h" />
+		<Unit filename="..\Config\pwm_var.h" />
+		<Unit filename="..\Config\spi_cfg.h" />
+		<Unit filename="..\Config\spi_var.h" />
+		<Unit filename="..\Config\tim_cfg.h" />
+		<Unit filename="..\Config\tim_var.h" />
+		<Unit filename="..\Config\uart_cfg.h" />
+		<Unit filename="..\Config\uart_var.h" />
+		<Unit filename="..\Config\vt100_cfg.h" />
+		<Unit filename="..\Module\Digini\lib_digini.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\device\core\core_cm4.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\device\port\STM32H7xx\stm32h745xx.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\device\port\STM32H7xx\stm32h7xx.h" />
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_flash.c">
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7_io.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_flash_ex.c">
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7_isr.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_gpio.c">
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7_system_clock.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_hsem.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_i2c.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_i2c_ex.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_mdma.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr_ex.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc_ex.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim_ex.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_uart_ex.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\middlewares\ringbuff\src\include\ringbuff\ringbuff.h" />
-		<Unit filename="..\middlewares\ringbuff\src\ringbuff\ringbuff.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="..\Module\nOS\inc\nOS.h" />
+		<Unit filename="..\Module\nOS\inc\port\GCC\ARM_Cortex_M4\nOSPort.h" />
 		<Unit filename="..\Module\nOS\src\nOSAlarm.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -213,28 +168,6 @@
 		</Unit>
 		<Unit filename="..\Module\nOS\src\nOSTimer.c">
 			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\Module\nOS\src\port\GCC\ARM_Cortex_M7\nOSPort.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\Inc\stm32h7xx_hal_conf.h" />
-		<Unit filename="App\Src\main_cm4.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\Src\stm32h7xx_hal_msp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\Src\stm32h7xx_it.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\Src\syscalls.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\Src\sysmem.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="App\startup_stm32h745zitx.s">
-			<Option compilerVar="ASM" />
 		</Unit>
 		<Unit filename="STM32H745ZITX_FLASH.ld" />
 		<Extensions>
