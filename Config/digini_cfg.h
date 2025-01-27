@@ -42,32 +42,26 @@
 //-------------------------------------------------------------------------------------------------
 // Static memory allocation
 //
-#define DIGINI_USE_STATIC_MEMORY_ALLOC                  DEF_DISABLED //DDEF_ENABLED
+#define DIGINI_USE_STATIC_MEMORY_ALLOC                  DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // Database support
 //
-#define DIGINI_USE_DATABASE                             DEF_DISABLED //DEF_ENABLED
+#define DIGINI_USE_DATABASE                             DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // Label support and option
 //
-#define DIGINI_USE_LABEL                                DEF_DISABLED //DEF_ENABLED
+#define DIGINI_USE_LABEL                                DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // COMM support (Console, CLI, VT100)
 //
 #define DIGINI_USE_COMM_MODULE                          DEF_DISABLED
 
-#ifdef STM32F429xx
 #define DIGINI_USE_CONSOLE                              DEF_DISABLED
 #define DIGINI_USE_CMD_LINE                             DEF_DISABLED
 #define DIGINI_USE_VT100_MENU                           DEF_DISABLED
-#else
-#define DIGINI_USE_CONSOLE                              DEF_DISABLED
-#define DIGINI_USE_CMD_LINE                             DEF_DISABLED
-#define DIGINI_USE_VT100_MENU                           DEF_DISABLED
-#endif
 
 #define DIGINI_USE_DEBUG_IN_CONSOLE                     DEF_DISABLED        // seem to be a bug when enabled
 #define DIGINI_USE_HELP_IN_CONSOLE                      DEF_DISABLED //DEF_ENABLED     // Adding the help command to the command line
@@ -107,7 +101,10 @@
 //-------------------------------------------------------------------------------------------------
 // GRAFX Configuration
 //
-#define DIGINI_USE_GRAFX                                DEF_ENABLED
+// Note(s) GRAFX need DIGINI_USE_LABEL, DIGINI_USE_DATABASE, DIGINI_USE_STATIC_MEMORY_ALLOC
+//
+
+#define DIGINI_USE_GRAFX                                DEF_DISABLED // DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // Software CRC Configuration

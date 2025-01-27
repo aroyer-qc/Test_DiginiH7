@@ -43,6 +43,12 @@
 #endif
 
 //-------------------------------------------------------------------------------------------------
+// Define(s)
+//-------------------------------------------------------------------------------------------------
+
+#define BSP_TEST_HARDWARE           DEF_DISABLED
+
+//-------------------------------------------------------------------------------------------------
 // Global variable(s) and constant(s)
 //-------------------------------------------------------------------------------------------------
 
@@ -50,11 +56,13 @@
 BSP_EXTERN SystemDebugLevel_e BSP_GlobalDebugLevel;
 #endif
 
+extern const SystemDebugLevel_e DebugLevel;
+extern const TempUnit_e         TemperatureUnit;
+extern const Language_e         LanguageUsed;
+
 //-------------------------------------------------------------------------------------------------
 // Function prototype(s)
 //-------------------------------------------------------------------------------------------------
-
-int               main          ();
 
 void                BSP_Initialize          (void);
 SystemState_e       BSP_PostOS_Initialize   (void);

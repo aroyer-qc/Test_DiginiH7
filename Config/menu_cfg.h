@@ -30,8 +30,8 @@
 
 #ifdef GFX_GLOBAL
 
-const PageWidget_t PageMainDisplay     [4] =  { {   BACK_RCA,               INVALID_LINK        },
-                                                {   ICON_STATUS,            INVALID_LINK        },
+const PageWidget_t PageMainDisplay     [1] =  { //{   BACK_RCA,               INVALID_LINK        },
+                                                //{   ICON_STATUS,            INVALID_LINK        },
                                                 //{   LABEL_TIME,             INVALID_LINK        },
                                                 //{   LABEL_DATE,             INVALID_LINK        },
                                                 //{   LABEL_FREQUENCY,        INVALID_LINK        },

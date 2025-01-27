@@ -134,6 +134,34 @@
 		<Unit filename="..\Config\uart_cfg.h" />
 		<Unit filename="..\Config\uart_var.h" />
 		<Unit filename="..\Config\vt100_cfg.h" />
+		<Unit filename="..\Module\Digini\Database\inc\lib_class_database.h" />
+		<Unit filename="..\Module\Digini\Database\inc\lib_class_eeprom_dbase.h" />
+		<Unit filename="..\Module\Digini\Database\inc\lib_class_hard_dbase.h" />
+		<Unit filename="..\Module\Digini\Database\inc\lib_class_qspi_dbase.h" />
+		<Unit filename="..\Module\Digini\Database\inc\lib_class_ram_dbase.h" />
+		<Unit filename="..\Module\Digini\Database\inc\lib_class_rom_dbase.h" />
+		<Unit filename="..\Module\Digini\Database\inc\lib_database_wrapper.h" />
+		<Unit filename="..\Module\Digini\Database\src\lib_class_database.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Database\src\lib_class_eeprom_dbase.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Database\src\lib_class_hard_dbase.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Database\src\lib_class_qspi_dbase.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Database\src\lib_class_ram_dbase.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Database\src\lib_class_rom_dbase.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Database\src\lib_database_wrapper.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\Module\Digini\Digini\inc\lib_advanced_macro.h" />
 		<Unit filename="..\Module\Digini\Digini\inc\lib_assert.h" />
 		<Unit filename="..\Module\Digini\Digini\inc\lib_class_cbi.h" />
@@ -141,8 +169,42 @@
 		<Unit filename="..\Module\Digini\Digini\inc\lib_label.h" />
 		<Unit filename="..\Module\Digini\Digini\inc\lib_macro.h" />
 		<Unit filename="..\Module\Digini\Digini\inc\lib_typedef.h" />
+		<Unit filename="..\Module\Digini\Digini\src\digini.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Digini\src\lib_label.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\inc\lib_grafx.h" />
+		<Unit filename="..\Module\Digini\Grafx\inc\lib_grafx_const.h" />
+		<Unit filename="..\Module\Digini\Grafx\inc\lib_grafx_dbase.h" />
+		<Unit filename="..\Module\Digini\Grafx\inc\lib_grafx_define.h" />
+		<Unit filename="..\Module\Digini\Grafx\inc\lib_grafx_enum.h" />
+		<Unit filename="..\Module\Digini\Grafx\inc\lib_grafx_enum_x_macro.h" />
+		<Unit filename="..\Module\Digini\Grafx\inc\lib_grafx_font.h" />
+		<Unit filename="..\Module\Digini\Grafx\inc\lib_grafx_link.h" />
+		<Unit filename="..\Module\Digini\Grafx\inc\lib_grafx_skin.h" />
+		<Unit filename="..\Module\Digini\Grafx\inc\lib_grafx_typedef.h" />
 		<Unit filename="..\Module\Digini\Grafx\inc\service\lib_service.h" />
 		<Unit filename="..\Module\Digini\Grafx\src\driver\STM32H7xx\lib_STM32H7_lcd_480x272 - RK043FN48H.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\lib_grafx.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\lib_tools.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Memory\inc\lib_memory.h" />
+		<Unit filename="..\Module\Digini\Memory\inc\lib_memory_node.h" />
+		<Unit filename="..\Module\Digini\Memory\inc\lib_node_list.h" />
+		<Unit filename="..\Module\Digini\Memory\src\lib_memory.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Memory\src\lib_memory_node.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Memory\src\lib_node_list.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\core\core_cm7.h" />
@@ -165,6 +227,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_STM32H7_system_clock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_time_and_delay.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\nOS\inc\nOS.h" />

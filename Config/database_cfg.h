@@ -31,6 +31,7 @@
 //-------------------------------------------------------------------------------------------------
 
 #include "./Digini/inc/lib_label.h"
+#include "bsp.h"
 
 //-------------------------------------------------------------------------------------------------
 // Define(s)
@@ -69,9 +70,9 @@
 // FOR dynamic location RAM_BASE_ADDRESS is declare nullptr, you must then call set address to setup your dynamic RAM BASE location
 //#define RAM_BASE_ADDRESS   nullptr
 
-extern const TempUnit_e T_Unit;
-extern const SystemDebugLevel_e DebugLvl;
-extern const Language_e Lang;
+//extern const TempUnit_e TemperatureUnit;
+//extern const SystemDebugLevel_e DebugLevel;
+//extern const Language_e LanguageUsed;
 
 //               Enum ID                    Item Address                     Items QTY,        Items SubQTY       Item Size
 #define ROM_DBASE_DEF(X_ROM_DBASE) \
@@ -82,8 +83,8 @@ extern const Language_e Lang;
     X_ROM_DBASE( FW_DIGINI_NAME_TEXT,       &OUR_FIRMWARE_DIGINI_NAME[0],    1,                1,                 sizeof(OUR_FIRMWARE_DIGINI_NAME)    ) \
     X_ROM_DBASE( FW_DIGINI_VERSION_TEXT,    &OUR_FIRMWARE_DIGINI_VERSION[0], 1,                1,                 sizeof(OUR_FIRMWARE_DIGINI_VERSION) ) \
 /* no eeprom at this time so we force the value */ \
-    X_ROM_DBASE( SYSTEM_LANGUAGE,           &Lang,                           1,                1,                 sizeof(Language_e)                  ) \
-    X_ROM_DBASE( SYSTEM_TEMPERATURE_UNIT,   &T_Unit,                         1,                1,                 sizeof(TempUnit_e)                  ) \
-    X_ROM_DBASE( SYSTEM_DEBUG_LEVEL,        &DebugLvl,                       1,                1,                 sizeof(SystemDebugLevel_e)          ) \
+    X_ROM_DBASE( SYSTEM_LANGUAGE,           &LanguageUsed,                   1,                1,                 sizeof(Language_e)                  ) \
+    X_ROM_DBASE( SYSTEM_TEMPERATURE_UNIT,   &TemperatureUnit,                1,                1,                 sizeof(TempUnit_e)                  ) \
+    X_ROM_DBASE( SYSTEM_DEBUG_LEVEL,        &DebugLevel,                     1,                1,                 sizeof(SystemDebugLevel_e)          ) \
 
 

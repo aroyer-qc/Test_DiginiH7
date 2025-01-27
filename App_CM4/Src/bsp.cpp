@@ -48,9 +48,9 @@
 //-------------------------------------------------------------------------------------------------
 
 // because for now we don't have eeprom for this test board
-const TempUnit_e T_Unit = TEMP_CELSIUS;
-const SystemDebugLevel_e DebugLvl = SystemDebugLevel_e(0);//SystemDebugLevel_e(SYS_DEBUG_LEVEL_ETHERNET | SYS_DEBUG_LEVEL_MEMORY_POOL);
-// H7const Language_e Lang = LANG_ENGLISH;
+const TempUnit_e         TemperatureUnit = TEMP_CELSIUS;
+const SystemDebugLevel_e DebugLevel      = SystemDebugLevel_e(0);//SystemDebugLevel_e(SYS_DEBUG_LEVEL_ETHERNET | SYS_DEBUG_LEVEL_MEMORY_POOL);
+const Language_e         LanguageUsed    = LANG_ENGLISH;
 
 //#if (BSP_TEST_HARDWARE == DEF_ENABLED)
 void BSP_HardwareTest (void);
