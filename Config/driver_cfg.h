@@ -56,3 +56,20 @@
     #define USE_USB_OTG_FS_CODE     DEF_DISABLED
     #define USE_USB_OTG_HS_CODE     DEF_DISABLED
 
+
+// Driver and/or peripheral to use with this project
+
+// LCD Display
+#define GRAFX_DRIVER_INCLUDE                "./Grafx/inc/driver/STM32H7xx/lib_STM32H7_lcd_480x272 - RK043FN48H.h"
+#define GRAFX_DRIVER_ARGUMENT               nullptr                                     // this driver does not have argument (ex. pointer on structure and/or peripheral)
+
+// Pointing device, here it is the capacitive touch screen
+#define GRAFX_PDI_HARD_INTERFACE            (void*)&myI2C_Control                       // I2C for the pointing device interface
+#define PDI_DRIVER_INCLUDE                  "./Digini/Peripheral/inc/device/lib_class_i2c_FT5336.h"
+
+// For the Audio
+//#include "/Digini/Peripheral/inc/device/lib_class_audio_codec_WM8994.h"
+//#define DIGINI_AUDIO_DRIVER_ARG_CTRL            (void*)&myI2C_Control    // For the audio device interface control
+//#define DIGINI_AUDIO_DRIVER_ARG_DATA            (void*)&mySAI            // For the audio device interface data
+
+//#define SDIO_USE_MAXIMUM_INFORMATION        DEF_ENABLED

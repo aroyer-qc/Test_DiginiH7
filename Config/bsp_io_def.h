@@ -111,20 +111,21 @@
     X_IO( IO_LED_RED,            GPIOJ,      2,      IO_CFG_OUTPUT_PP_LS_DEF0)                    \
     X_IO( IO_LED_GREEN,          GPIOI,      13,     IO_CFG_OUTPUT_PP_LS_DEF0)                    \
 /* SPI IO's ------------------------------------------------------------------------------------*/\
-    X_IO( IO_SPI3_CLK,           GPIOB,      3,      IO_CFG_SPI_AF5)                              \
-    X_IO( IO_SPI3_MOSI,          GPIOB,      5,      IO_CFG_SPI_AF5)                              \
-    X_IO( IO_SPI1_CLK,           GPIOA,      5,      IO_CFG_SPI_AF5)                              \
-    X_IO( IO_SPI1_MOSI,          GPIOA,      7,      IO_CFG_SPI_AF5)                              \
-    X_IO( IO_SPI1_CS,            GPIOB,      9,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
+    X_IO( IO_SPI3_CLK,           GPIOxx,     3,      IO_CFG_SPI_AF5)                              \
+    X_IO( IO_SPI3_MOSI,          GPIOxx,     5,      IO_CFG_SPI_AF5)                              \
+    X_IO( IO_SPI1_CLK,           GPIOxx,     5,      IO_CFG_SPI_AF5)                              \
+    X_IO( IO_SPI1_MOSI,          GPIOxx,     7,      IO_CFG_SPI_AF5)                              \
+    X_IO( IO_SPI1_CS,            GPIOxx,     9,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
 /* UART IO's -----------------------------------------------------------------------------------*/\
-    X_IO( IO_UART3_RX,           GPIOD,      9,      IO_CFG_UART3_AF7)                            \
-    X_IO( IO_UART3_TX,           GPIOD,      8,      IO_CFG_UART3_AF7)                            \
+    X_IO( IO_UART3_RX,           GPIOxx,      9,      IO_CFG_UART3_AF7)                            \
+    X_IO( IO_UART3_TX,           GPIOxx,      8,      IO_CFG_UART3_AF7)                            \
     X_IO( IO_UART6_RX,           GPIOxx,     7,      IO_CFG_UART6_AF7)/* N/U */                   \
-    X_IO( IO_UART6_TX,           GPIOC,      6,      IO_CFG_UART6_AF7)                            \
+    X_IO( IO_UART6_TX,           GPIOxx,      6,      IO_CFG_UART6_AF7)                            \
 /* MCO -----------------------------------------------------------------------------------------*/\
     X_IO( IO_MCO_2,              GPIOC,      9,      IO_CFG_MCO_OUTPUT)                           \
 /* LCD -----------------------------------------------------------------------------------------*/\
     X_IO( IO_LCD_DISPLAY,        GPIOD,      7,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
+    X_IO( IO_LCD_BLANK_CTRL,     GPIOK,      0,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
     X_IO( LCD_INT,               GPIOG,      2,      IO_CFG_INPUT_NP_LS)                          \
 /* ---------------------------------------------------------------------------------------------*/
 

@@ -75,9 +75,6 @@
 		<Unit filename="..\App_CM4\Src\taskIdle.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\App_CM4\startup_stm32h745zitx.s">
-			<Option compilerVar="ASM" />
-		</Unit>
 		<Unit filename="..\App_CM4\startup_stm32h745zitx.S">
 			<Option compilerVar="CC" />
 		</Unit>

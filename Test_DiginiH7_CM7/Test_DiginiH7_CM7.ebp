@@ -141,6 +141,10 @@
 		<Unit filename="..\Module\Digini\Digini\inc\lib_label.h" />
 		<Unit filename="..\Module\Digini\Digini\inc\lib_macro.h" />
 		<Unit filename="..\Module\Digini\Digini\inc\lib_typedef.h" />
+		<Unit filename="..\Module\Digini\Grafx\inc\service\lib_service.h" />
+		<Unit filename="..\Module\Digini\Grafx\src\driver\STM32H7xx\lib_STM32H7_lcd_480x272 - RK043FN48H.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\core\core_cm7.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\port\STM32H7xx\stm32h745xx.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\port\STM32H7xx\stm32h7xx.h" />
