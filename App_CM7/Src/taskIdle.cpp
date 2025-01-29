@@ -137,7 +137,11 @@ void TaskIdle(void)
       //  DAC43508.WriteDAC(1, Value);
 
         Count++;
-        if (Count >= 256) Count = 0;
+        if (Count >= 30000)
+        {
+            Count = 0;
+            IO_TogglePin(IO_LED_RED);
+        }
 
       #ifdef STM32F429xx
         // VFD part test

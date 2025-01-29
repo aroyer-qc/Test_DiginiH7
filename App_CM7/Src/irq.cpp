@@ -147,7 +147,8 @@ NOS_ISR(USART3_IRQHandler)
 
 void HSEM1_IRQHandler(void)
 {
-    //HAL_HSEM_IRQHandler();
+    __asm("nop");
+   // HSEM1_IRQHandler();
 }
 
 //-------------------------------------------------------------------------------------------------

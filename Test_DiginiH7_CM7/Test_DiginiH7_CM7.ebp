@@ -18,6 +18,9 @@
 					<Add option="-g2" />
 					<Add symbol="DEBUG" />
 				</Compiler>
+				<Cpp>
+					<Add option="-g3" />
+				</Cpp>
 				<Assembler>
 					<Add option="-Wa,--gdwarf-2" />
 				</Assembler>
@@ -48,8 +51,8 @@
 			<Add option="$device=cortex-m7" />
 			<Add option="$fpu=fpv5-sp-d16" />
 			<Add option="$lscript=STM32H745ZITX_FLASH.ld" />
-			<Add option="$stack=0x2000" />
-			<Add option="$heap=0x5000" />
+			<Add option="$stack=0x1000" />
+			<Add option="$heap=0x1000" />
 		</Device>
 		<Compiler>
 			<Add option="-mfloat-abi=hard" />
@@ -71,6 +74,8 @@
 		<Cpp>
 			<Add option="-mfloat-abi=hard" />
 			<Add option="-std=gnu++17" />
+			<Add option="-fdata-sections" />
+			<Add option="-ffunction-sections" />
 			<Add option="-Wno-psabi" />
 			<Add option="-Wno-literal-suffix" />
 			<Add option="-fpermissive" />

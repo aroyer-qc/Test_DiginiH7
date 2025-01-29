@@ -268,3 +268,49 @@
 
 //-------------------------------------------------------------------------------------------------
 
+
+
+#if 0       confirm all IO for SDRAM with this
+
+RCC->AHB4ENR |= 0x000001F8;       /* Enable GPIOD, GPIOE, GPIOF, GPIOG, GPIOH and GPIOI interface clock */
+
+  // Port D
+  GPIOD->AFR[0]  = 0x000000CC;      /* Connect PDx pins to FMC Alternate function */
+  GPIOD->AFR[1]  = 0xCC000CCC;
+  GPIOD->MODER   = 0xAFEAFFFA;      /* Configure PDx pins in Alternate function mode */
+  GPIOD->OSPEEDR = 0xF03F000F;      /* Configure PDx pins speed to 100 MHz */
+  GPIOD->OTYPER  = 0x00000000;      /* Configure PDx pins Output type to push-pull */
+  GPIOD->PUPDR   = 0x50150005;      /* Configure PDx pins in Pull-up */
+  
+  GPIOE->AFR[0]  = 0xC00000CC;      /* Connect PEx pins to FMC Alternate function */
+  GPIOE->AFR[1]  = 0xCCCCCCCC;
+  GPIOE->MODER   = 0xAAAABFFA;      /* Configure PEx pins in Alternate function mode */
+  GPIOE->OSPEEDR = 0xFFFFC00F;      /* Configure PEx pins speed to 100 MHz */
+  GPIOE->OTYPER  = 0x00000000;      /* Configure PEx pins Output type to push-pull */
+  GPIOE->PUPDR   = 0x55554005;      /* Configure PEx pins in Pull-up */
+
+  // PORT E
+  GPIOF->AFR[0]  = 0x00CCCCCC;      /* Connect PFx pins to FMC Alternate function */
+  GPIOF->AFR[1]  = 0xCCCCC000;
+  GPIOF->MODER   = 0xAABFFAAA;      /* Configure PFx pins in Alternate function mode */
+  GPIOF->OSPEEDR = 0xFFC00FFF;      /* Configure PFx pins speed to 100 MHz */
+  GPIOF->OTYPER  = 0x00000000;      /* Configure PFx pins Output type to push-pull */
+  GPIOF->PUPDR   = 0x55400555;      /* Configure PFx pins in Pull-up */
+
+  // PORT G
+  GPIOG->AFR[0]  = 0x00CC00CC;      /* Connect PGx pins to FMC Alternate function */
+  GPIOG->AFR[1]  = 0xC000000C;
+  GPIOG->MODER   = 0xBFFEFAFA;      /* Configure PGx pins in Alternate function mode */
+  GPIOG->OSPEEDR = 0xC0030F0F;      /* Configure PGx pins speed to 100 MHz */
+  GPIOG->OTYPER  = 0x00000000;      /* Configure PGx pins Output type to push-pull */
+  GPIOG->PUPDR   = 0x40010505;      /* Configure PGx pins in Pull-up */
+
+  // PORT G
+  GPIOH->AFR[0]  = 0xCCC00000;      /* Connect PHx pins to FMC Alternate function */
+  GPIOH->AFR[1]  = 0xCCCCCCCC;
+  GPIOH->MODER   = 0xAAAAABFF;      /* Configure PHx pins in Alternate function mode */
+  GPIOH->OSPEEDR = 0xFFFFFC00;      /* Configure PHx pins speed to 100 MHz */
+  GPIOH->OTYPER  = 0x00000000;      /* Configure PHx pins Output type to push-pull */
+  GPIOH->PUPDR   = 0x55555400;      /* Configure PHx pins in Pull-up */
+
+#endif
