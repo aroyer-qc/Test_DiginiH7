@@ -49,16 +49,15 @@
 
 // SDRAM access interface configuration
 #define CFG_SDRAM_BANK                          FMC_SDRAM_BANK2
-#define CFG_COLUMN_BITS_NUMBER                  FMC_SDRAM_COLUMN_BITS_NUM_8              
-#define CFG_ROW_BITS_NUMBER                     FMC_SDRAM_ROW_BITS_NUM_12
-#define CFG_MEMORY_DATA_WIDTH                   FMC_SDRAM_MEM_BUS_WIDTH_16
-#define CFG_INTERNAL_BANK_NUMBER                FMC_SDRAM_INTERN_BANKS_NUM_4
+#define CFG_SDRAM_COLUMN_BITS_NUMBER            FMC_SDRAM_COLUMN_BITS_NUM_8              
+#define CFG_SDRAM_ROW_BITS_NUMBER               FMC_SDRAM_ROW_BITS_NUM_12
+#define CFG_SDRAM_MEMORY_DATA_WIDTH             FMC_SDRAM_MEM_BUS_WIDTH_16
+#define CFG_SDRAM_INTERNAL_BANK_NUMBER          FMC_SDRAM_INTERN_BANKS_NUM_4
 #define CFG_SDRAM_CAS_LATENCY                   FMC_SDRAM_CAS_LATENCY_2
-
-#define CFG_WRITE_PROTECTION                    FMC_SDRAM_WRITE_PROTECTION_DISABLE
-#define CFG_SD_CLOCK_PERIOD                     FMC_SDRAM_CLOCK_PERIOD_2
-#define CFG_READ_BURST                          FMC_SDRAM_RBURST_ENABLE
-#define CFG_PIPE_DELAY                          FMC_SDRAM_RPIPE_DELAY_0
+#define CFG_SDRAM_WRITE_PROTECTION              FMC_SDRAM_WRITE_PROTECTION_DISABLE
+#define CFG_SDRAM_SD_CLOCK_PERIOD               FMC_SDRAM_CLOCK_PERIOD_2
+#define CFG_SDRAM_READ_BURST                    FMC_SDRAM_RBURST_ENABLE
+#define CFG_SDRAM_PIPE_DELAY                    FMC_SDRAM_RPIPE_DELAY_0
 
 /*-- FMC Configuration ------------------------------------------------------*/
 

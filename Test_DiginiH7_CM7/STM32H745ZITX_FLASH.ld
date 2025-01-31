@@ -34,21 +34,23 @@
 /* Entry Point */
 ENTRY(Reset_Handler)
 
-/* Highest address of the user mode stack */
-_estack = 0x20010000;    /* end of RAM */
 /* Generate a link error if heap and stack don't fit into RAM */
-_Min_Heap_Size = 0x200 ;      /* required amount of heap  */
-_Min_Stack_Size = 0x400 ; /* required amount of stack */
-
-_StackBottom = _estack - _Min_Stack_Size;
+_Min_Heap_Size  = __HEAP_SIZE;    /* required amount of heap  */
+_Min_Stack_Size = __STACK_SIZE;   /* required amount of stack */
 
 /* Specify the memory areas */
 MEMORY
 {
-FLASH (rx)      : ORIGIN = 0x08000000, LENGTH = 1024K
-RAM (xrw)      : ORIGIN = 0x20000000, LENGTH = 128K
-ITCMRAM (xrw)      : ORIGIN = 0x00000000, LENGTH = 64K
+    FLASH            (rx)  : ORIGIN = 0x08000000, LENGTH = 1024K
+    RAM              (xrw) : ORIGIN = 0x20000000, LENGTH = 128K
+    ITCMRAM          (xrw) : ORIGIN = 0x00000000, LENGTH = 64K
+    GFX_DISPLAY      (rwx) : ORIGIN = 0xC0000000, LENGTH = 15M
+    GFX_RAM_DBASE    (rwx) : ORIGIN = 0xC0F00000, LENGTH = 1M
 }
+
+/* Highest address of the user mode stack */
+_estack = ORIGIN(RAM) + LENGTH(RAM);
+_StackBottom = _estack - __STACK_SIZE;
 
 /* Define output sections */
 SECTIONS
@@ -160,6 +162,7 @@ SECTIONS
     PROVIDE ( _end = . );
     . = . + _Min_Heap_Size;
     . = . + _Min_Stack_Size;
+    __HeapLimit = .;
     . = ALIGN(8);
   } >RAM
 
@@ -174,5 +177,17 @@ SECTIONS
   }
 
   .ARM.attributes 0 : { *(.ARM.attributes) }
+
+
+    __StackLimit = _estack - _Min_Stack_Size;
+
+    __gfx_display_base__   = ORIGIN(GFX_DISPLAY);
+	__gfx_ram_data_base__  = ORIGIN(GFX_RAM_DBASE);
+/*	__user_ram_data_base__ = ORIGIN(RAM_DBASE); */
+/*	__gfx_qspi_data_base__ = ORIGIN(GFX_QSPI_DBASE); */
+
+    /* Check if data + heap + stack exceeds RAM limit */
+    ASSERT(__StackLimit >= __HeapLimit, "Region RAM overflowed with stack")
+
 }
 
