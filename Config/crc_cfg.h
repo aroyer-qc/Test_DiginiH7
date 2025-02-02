@@ -24,7 +24,7 @@
 //
 //-------------------------------------------------------------------------------------------------
 
-//#pragma once
+#pragma once
 
 //-------------------------------------------------------------------------------------------------
 // Define(s)
@@ -116,7 +116,7 @@
 #define DIGINI_USE_CRC_32_ISO_HDLC          DEF_DISABLED
 #define DIGINI_USE_CRC_32_JAMCRC            DEF_DISABLED
 #define DIGINI_USE_CRC_32_MEF               DEF_DISABLED
-#define DIGINI_USE_CRC_32_MPEG_2            DEF_DISABLED
+#define DIGINI_USE_CRC_32_MPEG_2            DEF_ENABLED
 #define DIGINI_USE_CRC_32_POSIX             DEF_DISABLED
 #define DIGINI_USE_CRC_32_Q                 DEF_DISABLED
 #define DIGINI_USE_CRC_32_SATA              DEF_DISABLED

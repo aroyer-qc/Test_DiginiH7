@@ -222,6 +222,7 @@
 		<Unit filename="..\Module\Digini\Grafx\src\lib_tools.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\Module\Digini\lib_digini.h" />
 		<Unit filename="..\Module\Digini\Memory\inc\lib_memory.h" />
 		<Unit filename="..\Module\Digini\Memory\inc\lib_memory_node.h" />
 		<Unit filename="..\Module\Digini\Memory\inc\lib_node_list.h" />
@@ -237,16 +238,22 @@
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\core\core_cm7.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\port\STM32H7xx\stm32h745xx.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\device\port\STM32H7xx\stm32h7xx.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\lib_class_hardware_crc.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\lib_io.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\lib_isr.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\lib_system_clock.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_class_STM32H7_crc.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_class_STM32H7_dma.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_class_STM32H7_spi.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_class_STM32H7_uart.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_STM32H7.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_STM32H7_io.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_STM32H7_isr.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_STM32H7_sdram.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_STM32H7_system_clock.h" />
+		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_class_STM32H7_crc.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\Module\Digini\Peripheral\src\port\STM32H7xx\lib_class_STM32H7_dma.cpp">
 			<Option compilerVar="CC" />
 		</Unit>

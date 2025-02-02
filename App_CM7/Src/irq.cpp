@@ -44,26 +44,18 @@ extern "C"
 //  DDDDD  MM    MM AA  AA
 //
 //-------------------------------------------------------------------------------------------------
+/*
+NOS_ISR(DMA1_Stream0_IRQHandler)
+{
+	myUART_Terminal.DMA_RX_IRQ_Handler();
+}
+*/
+NOS_ISR(DMA1_Stream1_IRQHandler)
+{
+	myUART_Terminal.DMA_TX_IRQ_Handler();
+}
 
 /*
-NOS_ISR(DMA1_Stream3_IRQHandler)
-{
-  #ifdef STM32F429xx
-	myUART_Terminal.DMA_TX_IRQ_Handler();
-  #endif
-}
-
-NOS_ISR(DMA1_Stream6_IRQHandler)
-{
-  #ifdef STM32F401xE
-    bool Result;
-
-    Result = (DMA1->HISR & DMA_HIFCR_CTCIF6) ? true: false;
-    WS281x_LedStream.DMA_Channel_IRQ_Handler(Result);
-    DMA1->HIFCR = (DMA_HIFCR_CTCIF6 | DMA_HIFCR_CHTIF6);
-  #endif
-}
-
 NOS_ISR(DMA2_Stream0_IRQHandler)
 {
 	SPI_Driver::DMA_RX_IRQ_Handler(DRIVER_SPI1_ID);
@@ -73,33 +65,8 @@ NOS_ISR(DMA2_Stream3_IRQHandler)
 {
 	SPI_Driver::DMA_TX_IRQ_Handler(DRIVER_SPI1_ID);
 }
-
-#if 0
-NOS_ISR(DMA1_Stream0_IRQHandler)
-{
-	SPI_Driver::DMA_RX_IRQ_Handler(DRIVER_SPI3_ID);
-}
-
-NOS_ISR(DMA1_Stream5_IRQHandler)
-{
-	SPI_Driver::DMA_TX_IRQ_Handler(DRIVER_SPI3_ID);
-}
-#endif
-
-NOS_ISR(DMA2_Stream5_IRQHandler)
-{
-    bool Result;
-
-//IO_SetPinHigh(IO_DEBUG);
-
-    Result = (DMA2->HISR & DMA_HISR_TCIF5) ? true : false;
-    WS281x_LedStream.DMA_Channel_IRQ_Handler(Result);
-    DMA2->HIFCR = (DMA_HIFCR_CTCIF5 | DMA_HIFCR_CHTIF5);
-
-//IO_SetPinLow(IO_DEBUG);
-}
-
 */
+
 //-------------------------------------------------------------------------------------------------
 //
 //   SSSSS  PPPPP  IIII
@@ -128,12 +95,10 @@ NOS_ISR(DMA2_Stream5_IRQHandler)
 //
 //-------------------------------------------------------------------------------------------------
 
-/*
 NOS_ISR(USART3_IRQHandler)
 {
     myUART_Terminal.IRQ_Handler();
 }
-*/
 
 //-------------------------------------------------------------------------------------------------
 //
