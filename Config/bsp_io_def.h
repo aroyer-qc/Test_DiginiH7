@@ -89,7 +89,6 @@
     X_IO_CFG( IO_CFG_SPI_AF5,                           IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,                            IO_SPEED_FREQ_HIGH,       IO_AF5_SPI)            \
 /* UART IO's CFG -----------------------------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_UART3_AF7,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,                            IO_SPEED_FREQ_LOW,        IO_AF7_USART3)         \
-    X_IO_CFG( IO_CFG_UART6_AF7,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,                            IO_SPEED_FREQ_LOW,        IO_AF7_USART6)         \
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 //-------------------------------------------------------------------------------------------------
@@ -118,11 +117,6 @@
     X_IO( IO_SPI1_CLK,           GPIOxx,     5,      IO_CFG_SPI_AF5)                              \
     X_IO( IO_SPI1_MOSI,          GPIOxx,     7,      IO_CFG_SPI_AF5)                              \
     X_IO( IO_SPI1_CS,            GPIOxx,     9,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
-/* UART IO's -----------------------------------------------------------------------------------*/\
-    X_IO( IO_UART3_RX,           GPIOxx,      9,      IO_CFG_UART3_AF7)                           \
-    X_IO( IO_UART3_TX,           GPIOxx,      8,      IO_CFG_UART3_AF7)                           \
-    X_IO( IO_UART6_RX,           GPIOxx,      7,      IO_CFG_UART6_AF7)/* N/U */                  \
-    X_IO( IO_UART6_TX,           GPIOxx,      6,      IO_CFG_UART6_AF7)                           \
 /* MCO -----------------------------------------------------------------------------------------*/\
     X_IO( IO_MCO_2,              GPIOC,      9,      IO_CFG_MCO_OUTPUT)                           \
 /* LCD -----------------------------------------------------------------------------------------*/\
@@ -198,6 +192,11 @@
                                          IO_PIN_15)
 #define SDRAM_PIN_ON_PORT_H_ALT_12      (IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
 
+//-----------------------------
+// UART grouping configuration
+#define UART_PIN_ON_PORT_B_ALT_7        (IO_PIN_10 | IO_PIN_11)
+
+
 
 //-------------------------------------------------------------------------------------------------
 
@@ -225,15 +224,17 @@
     X_IO_GROUP( IO_QSPI_ON_PORT_G_AF10,     GPIOG,      QSPI_PIN_ON_PORT_G_ALT_10,      IO_CFG_QSPI_AF10)           \
     X_IO_GROUP( IO_QSPI_ON_PORT_H,          GPIOH,      QSPI_PIN_ON_PORT_G_ALT_9,       IO_CFG_QSPI_AF9)            \
 /* SDIO ----------------------------------------------------------------------------------------------------------*/\
-    X_IO_GROUP( IO_SDMMC1_ON_PORT_B_AF12,   GPIOB,      SDIO_PIN_ON_PORT_B_ALT12,       IO_CFG_SDMMC1_AF12)         \
-    X_IO_GROUP( IO_SDMMC1_ON_PORT_C_AF12,   GPIOC,      SDIO_PIN_ON_PORT_C_ALT12,       IO_CFG_SDMMC1_AF12)         \
-    X_IO_GROUP( IO_SDMMC1_ON_PORT_D_AF12,   GPIOD,      SDIO_PIN_ON_PORT_D_ALT12,       IO_CFG_SDMMC1_AF12)         \
+    X_IO_GROUP( IO_SDMMC1_ON_PORT_B_AF12,   GPIOB,      SDMMC1_PIN_ON_PORT_B_ALT12,     IO_CFG_SDMMC1_AF12)         \
+    X_IO_GROUP( IO_SDMMC1_ON_PORT_C_AF12,   GPIOC,      SDMMC1_PIN_ON_PORT_C_ALT12,     IO_CFG_SDMMC1_AF12)         \
+    X_IO_GROUP( IO_SDMMC1_ON_PORT_D_AF12,   GPIOD,      SDMMC1_PIN_ON_PORT_D_ALT12,     IO_CFG_SDMMC1_AF12)         \
 /* SDRAM ---------------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_SDRAM_ON_PORT_D,         GPIOD,      SDRAM_PIN_ON_PORT_D_ALT_12,     IO_CFG_SDRAM_AF12)          \
     X_IO_GROUP( IO_SDRAM_ON_PORT_E,         GPIOE,      SDRAM_PIN_ON_PORT_E_ALT_12,     IO_CFG_SDRAM_AF12)          \
     X_IO_GROUP( IO_SDRAM_ON_PORT_F,         GPIOF,      SDRAM_PIN_ON_PORT_F_ALT_12,     IO_CFG_SDRAM_AF12)          \
     X_IO_GROUP( IO_SDRAM_ON_PORT_G,         GPIOG,      SDRAM_PIN_ON_PORT_G_ALT_12,     IO_CFG_SDRAM_AF12)          \
     X_IO_GROUP( IO_SDRAM_ON_PORT_H,         GPIOH,      SDRAM_PIN_ON_PORT_H_ALT_12,     IO_CFG_SDRAM_AF12)          \
+/* UART ----------------------------------------------------------------------------------------------------------*/\
+    X_IO_GROUP( IO_UART3_ON_PORT_B,         GPIOB,      UART_PIN_ON_PORT_B_ALT_7,       IO_CFG_UART3_AF7)           \
 /* ---------------------------------------------------------------------------------------------------------------*/
 
 

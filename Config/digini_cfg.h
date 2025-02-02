@@ -57,14 +57,14 @@
 //-------------------------------------------------------------------------------------------------
 // COMM support (Console, CLI, VT100)
 //
-#define DIGINI_USE_COMM_MODULE                          DEF_DISABLED
+#define DIGINI_USE_COMM_MODULE                          DEF_ENABLED
 
-#define DIGINI_USE_CONSOLE                              DEF_DISABLED
-#define DIGINI_USE_CMD_LINE                             DEF_DISABLED
-#define DIGINI_USE_VT100_MENU                           DEF_DISABLED
+#define DIGINI_USE_CONSOLE                              DEF_ENABLED
+#define DIGINI_USE_CMD_LINE                             DEF_ENABLED
+#define DIGINI_USE_VT100_MENU                           DEF_ENABLED
 
 #define DIGINI_USE_DEBUG_IN_CONSOLE                     DEF_DISABLED        // seem to be a bug when enabled
-#define DIGINI_USE_HELP_IN_CONSOLE                      DEF_DISABLED //DEF_ENABLED     // Adding the help command to the command line
+#define DIGINI_USE_HELP_IN_CONSOLE                      DEF_ENABLED     // Adding the help command to the command line
 
 #define DIGINI_USE_COMM_AS_A_TASK                       DEF_ENABLED     // Otherwise it is a process that need to be include in your choice of task
 #define TASK_COMM_PRIO                                  7

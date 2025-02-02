@@ -32,11 +32,11 @@
 
 // SDRAM Timing (Value 1 to 16)
 #define CFG_SDRAM_LOAD_TO_ACTIVITY_DELAY        2   // Delay between a 'load mode register' command and an 'active' or 'refresh' command
-#define CFG_SDRAM_EXIT_SELF_REFRESH_DELAY       6   // Delay from releasing the 'self-refresh' command to issuing the 'activate' command 
+#define CFG_SDRAM_EXIT_SELF_REFRESH_DELAY       6   // Delay from releasing the 'self-refresh' command to issuing the 'activate' command
 #define CFG_SDRAM_SELF_REFRESH_TIME             4   // Minimum self-refresh period
 #define CFG_SDRAM_ROW_CYCLE_DELAY               6   // Delay between the 'refresh' command and the Activate command, as well as the delay between two consecutive 'refresh' command
-#define CFG_SDRAM_WRITE_RECOVERY_TIME           2   // Delay between a 'write' and a 'precharge' command
-#define CFG_SDRAM_RP_DELAY                      2   // Delay between a precharge command and another command
+#define CFG_SDRAM_WRITE_RECOVERY_TIME           2   // Delay between a 'write' and a 'pre-charge' command
+#define CFG_SDRAM_RP_DELAY                      2   // Delay between a pre-charge command and another command
 #define CFG_SDRAM_RCD_DELAY                     2   // Delay between the 'activate' command and a Read/Write command
 
 #define CFG_SDRAM_AUTO_REFRESH_CYCLE            8   // Auto refresh cycle
@@ -49,7 +49,7 @@
 
 // SDRAM access interface configuration
 #define CFG_SDRAM_BANK                          FMC_SDRAM_BANK2
-#define CFG_SDRAM_COLUMN_BITS_NUMBER            FMC_SDRAM_COLUMN_BITS_NUM_8              
+#define CFG_SDRAM_COLUMN_BITS_NUMBER            FMC_SDRAM_COLUMN_BITS_NUM_8
 #define CFG_SDRAM_ROW_BITS_NUMBER               FMC_SDRAM_ROW_BITS_NUM_12
 #define CFG_SDRAM_MEMORY_DATA_WIDTH             FMC_SDRAM_MEM_BUS_WIDTH_16
 #define CFG_SDRAM_INTERNAL_BANK_NUMBER          FMC_SDRAM_INTERN_BANKS_NUM_4
@@ -59,44 +59,15 @@
 #define CFG_SDRAM_READ_BURST                    FMC_SDRAM_RBURST_ENABLE
 #define CFG_SDRAM_PIPE_DELAY                    FMC_SDRAM_RPIPE_DELAY_0
 
-/*-- FMC Configuration ------------------------------------------------------*/
+#define CFG_SDRAM_REFRESH_COUNT                 1539                                // ~64 mSec Refresh at 100 Mhz (This value was found in the STM32H745ZI Example.)
 
-  /*SDRAM Timing and access interface configuration*/
-  /*LoadToActiveDelay  = 2
-    ExitSelfRefreshDelay = 6
-    SelfRefreshTime      = 4
-    RowCycleDelay        = 6
-    WriteRecoveryTime    = 2
-    RPDelay              = 2
-    RCDDelay             = 2
-    SDBank             = FMC_SDRAM_BANK2
-    ColumnBitsNumber   = FMC_SDRAM_COLUMN_BITS_NUM_8            (0x00000000)
-    RowBitsNumber      = FMC_SDRAM_ROW_BITS_NUM_12              (0x00000004)
-    MemoryDataWidth    = FMC_SDRAM_MEM_BUS_WIDTH_16             (0x00000010)
-    InternalBankNumber = FMC_SDRAM_INTERN_BANKS_NUM_4           (0x00000040)
-    CASLatency         = FMC_SDRAM_CAS_LATENCY_2                (0x00000100)
-                                                                ------------
-                                                      total     (0x00000154)
-    
-    WriteProtection    = FMC_SDRAM_WRITE_PROTECTION_DISABLE     (0x00000000)
-    SDClockPeriod      = FMC_SDRAM_CLOCK_PERIOD_2               (0x00000800)
-    ReadBurst          = FMC_SDRAM_RBURST_ENABLE                (0x00001000)
-    ReadPipeDelay      = FMC_SDRAM_RPIPE_DELAY_0                (0x00000000)
-                                                                ------------
-                                                      total     (0x00001800) */  
-  
-   
+
   /*
-  FMC_Bank5_6_R->SDCR[0] = 0x00001800;
-  FMC_Bank5_6_R->SDCR[1] = 0x00000154;
-  
-  FMC_Bank5_6_R->SDTR[0] = 0x00105000;
-  FMC_Bank5_6_R->SDTR[1] = 0x01010351;
 
 
   // SDRAM initialization sequence
   FMC_Bank5_6_R->SDCMR = 0x00000009;                                // Clock enable command
-  
+
   for (index = 0; index<5000; index++);                             // Delay
 
   FMC_Bank5_6_R->SDCMR = 0x0000000A;                                // PALL command
