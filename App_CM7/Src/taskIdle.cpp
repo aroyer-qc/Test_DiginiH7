@@ -33,6 +33,7 @@
 #undef  TASK_IDLE_GLOBAL
 #include "bsp.h"
 #include "./lib_digini.h"
+#include "taskTest1.h"
 
 //-------------------------------------------------------------------------------------------------
 // Define(s)
@@ -71,16 +72,11 @@ void TaskIdle(void)
       #endif
 
         Count++;
-        if (Count >= 30000)
+        if (Count >= 300000)
         {
             Count = 0;
             IO_TogglePin(IO_LED_RED);
+            TaskTest1.GiveToRunTest1();       // wake up tast Test1
         }
-
-      #if (DIGINI_USE_ETHERNET == DEF_ENABLED)
-        pTaskNetwork->Process();
-      #endif
-
-//        nOS_Yield();
     }
 }

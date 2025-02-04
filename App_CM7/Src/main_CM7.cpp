@@ -33,9 +33,6 @@
 #include "bsp.h"
 
 //-------------------------------------------------------------------------------------------------
-
-uint32_t swap(uint32_t in);
-//-------------------------------------------------------------------------------------------------
 //
 // Name:           main
 // Parameter(s):   void
@@ -46,17 +43,8 @@ uint32_t swap(uint32_t in);
 // Note(s):        Here we create the task that will start all the other
 //
 //-------------------------------------------------------------------------------------------------
-extern "C" {
 int main()
 {
-   // uint32_t testID = 0x00123456;
-   // uint32_t SwaptestID;
-   // SwaptestID = swap(testID);
-
-//printf("allo");
-  //  uint8_t* pTestID = (void*)&testID;
-
-   // ISR_Disable();
     nOS_Init();
     BSP_Initialize();                           // All hardware and system initialization
     nOS_Start();
@@ -79,7 +67,7 @@ int main()
 
 
 
-    #if 0
+    #if 0   // for 745 to switch CPU
 
         /*
      * To be independent on CM4 boot option bytes config,
@@ -115,15 +103,3 @@ int main()
 
 
 }
-
-}
-
-uint32_t swap(uint32_t in)
-{
- //uint32_t out ;
-
-  in = __builtin_bswap32(in);
- //out = (in >> 16) | (in << 16);
-  return in;
-}
-

@@ -28,12 +28,17 @@
 
 //-------------------------------------------------------------------------------------------------
 
-#ifdef KIT_735GK
+#ifdef KIT_735IG
   #include "bsp_io_def_H735IG.h"
-#endif  
+#endif
 
 #ifdef KIT_745ZI
   #include "bsp_io_def_H745ZI.h"
-#endif  
+#endif
+
+#ifdef KIT_7B5LI
+  #include "bsp_io_def_H7B3LI.h"
+#endif
+
 
 //-------------------------------------------------------------------------------------------------

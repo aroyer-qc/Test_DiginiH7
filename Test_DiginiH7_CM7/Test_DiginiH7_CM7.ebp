@@ -12,7 +12,13 @@
 				<Option object_output="obj\Debug\" />
 				<Option type="0" />
 				<Option compiler="armgcc_eb" />
-				<Option projectDeviceOptionsRelation="0" />
+				<Device>
+					<Add option="$device=cortex-m7" />
+					<Add option="$fpu=fpv5-sp-d16" />
+					<Add option="$lscript=STM32H745ZITX_FLASH.ld" />
+					<Add option="$stack=0x1000" />
+					<Add option="$heap=0x1000" />
+				</Device>
 				<Compiler>
 					<Add option="-O0" />
 					<Add option="-g2" />
@@ -37,7 +43,13 @@
 				<Option object_output="obj\Release\" />
 				<Option type="0" />
 				<Option compiler="armgcc_eb" />
-				<Option projectDeviceOptionsRelation="0" />
+				<Device>
+					<Add option="$device=cortex-m7" />
+					<Add option="$fpu=fpv5-sp-d16" />
+					<Add option="$lscript=STM32H745ZITX_FLASH.ld" />
+					<Add option="$stack=0x1000" />
+					<Add option="$heap=0x1000" />
+				</Device>
 				<Compiler>
 					<Add option="-fdata-sections" />
 					<Add option="-ffunction-sections" />
@@ -55,13 +67,19 @@
 				<Option object_output="obj\Debug\" />
 				<Option type="0" />
 				<Option compiler="armgcc_eb" />
-				<Option projectDeviceOptionsRelation="0" />
+				<Device>
+					<Add option="$device=cortex-m7" />
+					<Add option="$fpu=fpv5-sp-d16" />
+					<Add option="$lscript=STM32H735IGKX_FLASH.ld" />
+					<Add option="$stack=0x1000" />
+					<Add option="$heap=0x1000" />
+				</Device>
 				<Compiler>
 					<Add option="-O0" />
 					<Add option="-g2" />
 					<Add symbol="STM32H735xx" />
 					<Add symbol="DEBUG" />
-					<Add symbol="KIT_735GK" />
+					<Add symbol="KIT_735IG" />
 				</Compiler>
 				<Cpp>
 					<Add option="-g3" />
@@ -80,27 +98,81 @@
 				<Option object_output="obj\Release\" />
 				<Option type="0" />
 				<Option compiler="armgcc_eb" />
-				<Option projectDeviceOptionsRelation="0" />
+				<Device>
+					<Add option="$device=cortex-m7" />
+					<Add option="$fpu=fpv5-sp-d16" />
+					<Add option="$lscript=STM32H735IGKX_FLASH.ld" />
+					<Add option="$stack=0x1000" />
+					<Add option="$heap=0x1000" />
+				</Device>
 				<Compiler>
 					<Add option="-fdata-sections" />
 					<Add option="-ffunction-sections" />
 					<Add option="-O2" />
 					<Add option="-g2" />
-					<Add symbol="STM32H745xx" />
-					<Add symbol="KIT_735GK" />
+					<Add symbol="STM32H735xx" />
+					<Add symbol="KIT_735IG" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,--gc-sections" />
+				</Linker>
+			</Target>
+			<Target title="DebugH7B3LI">
+				<Option output="bin\Debug\Test_DiginiH7_CM7.elf" />
+				<Option object_output="obj\Debug\" />
+				<Option type="0" />
+				<Option compiler="armgcc_eb" />
+				<Device>
+					<Add option="$device=cortex-m7" />
+					<Add option="$fpu=fpv5-sp-d16" />
+					<Add option="$lscript=STM32H7B3LIHXQ_FLASH.ld" />
+					<Add option="$stack=0x1000" />
+					<Add option="$heap=0x1000" />
+				</Device>
+				<Compiler>
+					<Add option="-O0" />
+					<Add option="-g2" />
+					<Add symbol="STM32H7B3xx" />
+					<Add symbol="DEBUG" />
+					<Add symbol="KIT_7B3LI" />
+				</Compiler>
+				<Cpp>
+					<Add option="-g3" />
+				</Cpp>
+				<Assembler>
+					<Add option="-Wa,--gdwarf-2" />
+				</Assembler>
+				<Linker>
+					<Add option="-eb_lib=n" />
+					<Add option="-eb_start_files" />
+					<Add option="-Wl,--gc-sections" />
+				</Linker>
+			</Target>
+			<Target title="ReleaseH7B3LI">
+				<Option output="bin\Release\Test_DiginiH7_CM7.elf" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="armgcc_eb" />
+				<Device>
+					<Add option="$device=cortex-m7" />
+					<Add option="$fpu=fpv5-sp-d16" />
+					<Add option="$lscript=STM32H7B3LIHXQ_FLASH.ld" />
+					<Add option="$stack=0x1000" />
+					<Add option="$heap=0x1000" />
+				</Device>
+				<Compiler>
+					<Add option="-fdata-sections" />
+					<Add option="-ffunction-sections" />
+					<Add option="-O2" />
+					<Add option="-g2" />
+					<Add symbol="STM32H7B3xx" />
+					<Add symbol="KIT_7B35LI" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--gc-sections" />
 				</Linker>
 			</Target>
 		</Build>
-		<Device>
-			<Add option="$device=cortex-m7" />
-			<Add option="$fpu=fpv5-sp-d16" />
-			<Add option="$lscript=STM32H745ZITX_FLASH.ld" />
-			<Add option="$stack=0x1000" />
-			<Add option="$heap=0x1000" />
-		</Device>
 		<Compiler>
 			<Add option="-mfloat-abi=hard" />
 			<Add option="-std=gnu11" />
@@ -146,6 +218,7 @@
 		<Unit filename="..\App_CM7\Inc\bsp.h" />
 		<Unit filename="..\App_CM7\Inc\error.h" />
 		<Unit filename="..\App_CM7\Inc\taskIdle.h" />
+		<Unit filename="..\App_CM7\Inc\taskTest1.h" />
 		<Unit filename="..\App_CM7\Src\bsp.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -158,13 +231,34 @@
 		<Unit filename="..\App_CM7\Src\taskIdle.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\App_CM7\Src\taskTest1.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\startup_stm32h735igkx.S">
+			<Option compilerVar="CC" />
+			<Option target="DebugH735IG" />
+			<Option target="ReleaseH735IG" />
+		</Unit>
 		<Unit filename="..\App_CM7\startup_stm32h745zitx.s">
 			<Option compilerVar="ASM" />
+			<Option target="Debug745ZI" />
+			<Option target="ReleaseH745ZI" />
+		</Unit>
+		<Unit filename="..\App_CM7\startup_stm32h7b3lihxq.S">
+			<Option compilerVar="CC" />
+			<Option target="DebugH7B3LI" />
+			<Option target="ReleaseH7B3LI" />
 		</Unit>
 		<Unit filename="..\Config\bsp_io_def.h" />
+		<Unit filename="..\Config\bsp_io_def_H735IG.h" />
+		<Unit filename="..\Config\bsp_io_def_H745ZI.h" />
+		<Unit filename="..\Config\bsp_io_def_H7B3LI.h" />
 		<Unit filename="..\Config\cli_cfg.h" />
 		<Unit filename="..\Config\cli_var.h" />
 		<Unit filename="..\Config\clock_cfg.h" />
+		<Unit filename="..\Config\clock_cfg_H735IG.h" />
+		<Unit filename="..\Config\clock_cfg_H745ZI.h" />
+		<Unit filename="..\Config\clock_cfg_H7B3LI.h" />
 		<Unit filename="..\Config\console_cfg.h" />
 		<Unit filename="..\Config\console_var.h" />
 		<Unit filename="..\Config\crc_cfg.h" />
@@ -394,6 +488,9 @@
 			<code_completion />
 			<envvars />
 			<debugger>
+				<target_debugging_settings target="DebugH7B3LI">
+					<debug_interface description="STM32H745_CM7.svd" options="10" reg_filter="0" probe="STlink" device="auto" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
+				</target_debugging_settings>
 				<target_debugging_settings target="Debug745ZI">
 					<debug_interface description="STM32H745_CM7.svd" options="10" reg_filter="0" probe="STlink" device="auto" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
 				</target_debugging_settings>

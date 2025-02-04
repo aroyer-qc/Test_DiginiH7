@@ -152,13 +152,11 @@
 // LCD grouping configuration
 
 #define LCD_PIN_ON_PORT_H_ALT_14        (IO_PIN_9)
-#define LCD_PIN_ON_PORT_I_ALT_14        (IO_PIN_0  | IO_PIN_1  | IO_PIN_9  | IO_PIN_12 | IO_PIN_14 | \
-                                         IO_PIN_15)
+#define LCD_PIN_ON_PORT_I_ALT_14        (IO_PIN_0  | IO_PIN_1  | IO_PIN_9  | IO_PIN_12 | IO_PIN_14 | IO_PIN_15)
 #define LCD_PIN_ON_PORT_J_ALT_14        (IO_PIN_0  | IO_PIN_1  | IO_PIN_3  | IO_PIN_4  | IO_PIN_5  | \
                                          IO_PIN_6  | IO_PIN_7  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | \
                                          IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | IO_PIN_15)
-#define LCD_PIN_ON_PORT_K_ALT_14        (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | \
-                                         IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
+#define LCD_PIN_ON_PORT_K_ALT_14        (IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
 
 //----------------------------
 // QSPI grouping configuration (Twin QUAD Configuration = one octoSPI)
@@ -170,8 +168,8 @@
 #define QSPI_PIN_ON_PORT_G_ALT_10       (IO_PIN_6)
 #define QSPI_PIN_ON_PORT_H_ALT_9        (IO_PIN_2  | IO_PIN_3)
 
-//----------------------------
-// SDIO grouping configuration
+//-------------------------------------
+// SDIO grouping configuration FOR EMMC
 
 #define SDMMC1_PIN_ON_PORT_B_ALT12      (IO_PIN_8  | IO_PIN_9)
 #define SDMMC1_PIN_ON_PORT_C_ALT12      (IO_PIN_6  | IO_PIN_7  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | IO_PIN_11 | IO_PIN_12)

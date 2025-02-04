@@ -28,12 +28,17 @@
 
 //-------------------------------------------------------------------------------------------------
 
-#ifdef KIT_735GK
+#ifdef KIT_735IG
   #include "clock_cfg_H735IG.h"
-#endif  
+#endif
 
 #ifdef KIT_745ZI
   #include "clock_cfg_H745ZI.h"
-#endif  
+#endif
+
+#ifdef KIT_7B3LI
+  #include "clock_cfg_H7B3LI.h"
+#endif
+
 
 //-------------------------------------------------------------------------------------------------

@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File : bsp.cpp
+//  File : taskTest1.h
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2024 Alain Royer.
+// Copyright(c) 2025 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -24,76 +24,62 @@
 //
 //-------------------------------------------------------------------------------------------------
 
-//------ Note(s) ----------------------------------------------------------------------------------
-//
-//  BSP - Board support package for STM32F4-DISCO
-//
-//  this board has 128K RAM in CPU
-//                 64K CCRAM in CPU
-//
-//-------------------------------------------------------------------------------------------------
+#pragma once
 
 //-------------------------------------------------------------------------------------------------
-// Include file(s)
+// Global Macro
 //-------------------------------------------------------------------------------------------------
 
-#define BSP_GLOBAL
-#include "bsp.h"
-#undef  BSP_GLOBAL
-#include "taskTest1.h"
+#ifdef TASK_TEST1_GLOBAL
+    #define TASK_TEST1_EXTERN
+#else
+    #define TASK_TEST1_EXTERN extern
+#endif
 
 //-------------------------------------------------------------------------------------------------
-
-// because for now we don't have eeprom for this test board
-const SystemDebugLevel_e DebugLevel = SystemDebugLevel_e(0);//SystemDebugLevel_e(SYS_DEBUG_LEVEL_ETHERNET | SYS_DEBUG_LEVEL_MEMORY_POOL);
-const TempUnit_e TemperatureUnit  = TEMP_CELSIUS;
-const Language_e LanguageUsed     = LANG_ENGLISH;
-
-//-------------------------------------------------------------------------------------------------
-// Local Function(s)
+// Define(s)
 //-------------------------------------------------------------------------------------------------
 
+#define TASK_TEST1_STACK_SIZE               256
+#define TASK_TEST1_PRIO                     4
+
 //-------------------------------------------------------------------------------------------------
-//
-//  Name:           BSP_Initialize
-//  Parameter(s):   void
-//  Return:         void
-//
-//  Description:    This function should be called by your application before anything else
-//
-//  Note(s):
-//
+// Class definition(s)
 //-------------------------------------------------------------------------------------------------
-void BSP_Initialize(void)
+
+class ClassTest1
 {
-    SysTick_Config(SYSTEM_CORE_CLOCK / CFG_SYSTICK_RATE);
-    ISR_Initialize();
-    IO_InitializeAll();
-    DIGINI_Initialize();
+  public:
 
-    TaskTest1.Initialize();
-}
+
+    // Task
+    void            Run                         (void);
+    SystemState_e   Initialize                  (void);
+    void            GiveToRunTest1              (void)     { nOS_SemGive(&m_TestSem); }
+
+  private:
+
+    static nOS_Thread      m_Test1Handle;
+    static nOS_Stack       m_Test1Stack         [TASK_TEST1_STACK_SIZE];
+    nOS_Sem                m_TestSem;
+};
 
 //-------------------------------------------------------------------------------------------------
-//
-//  Name:           BSP_PostOS_Initialize
-//  Parameter(s):   void
-//  Return:         SystemState_e       SystemState
-//
-//  Description:    This function should be called by your application After OS has being started
-//
-//  Note(s):        Example: class or driver using Semaphore
-//
+// Global variable(s) and constant(s)
 //-------------------------------------------------------------------------------------------------
-SystemState_e BSP_PostOS_Initialize(void)
-{
-    SystemState_e State = SYS_READY;
 
-    myUART_Terminal.Initialize();
+TASK_TEST1_EXTERN   class ClassTest1    TaskTest1;
 
-    State = DIGINI_PostInitialize();
+#ifdef TASK_TEST1_GLOBAL
+                    class ClassTest1*   pTaskTest1 = &TaskTest1;
+#else
+    extern          class ClassTest1*   pTaskTest1;
+#endif
 
-    return State;
-}
+//-------------------------------------------------------------------------------------------------
+// Function prototype(s)
+//-------------------------------------------------------------------------------------------------
+
+extern "C" void TaskTest1_Wrapper           (void* pvParameters);
 
 //-------------------------------------------------------------------------------------------------

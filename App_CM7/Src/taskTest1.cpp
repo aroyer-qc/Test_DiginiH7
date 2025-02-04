@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File : bsp.cpp
+//  File : taskTest1.cpp
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2024 Alain Royer.
+// Copyright(c) 2025 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -24,76 +24,96 @@
 //
 //-------------------------------------------------------------------------------------------------
 
-//------ Note(s) ----------------------------------------------------------------------------------
-//
-//  BSP - Board support package for STM32F4-DISCO
-//
-//  this board has 128K RAM in CPU
-//                 64K CCRAM in CPU
-//
-//-------------------------------------------------------------------------------------------------
-
 //-------------------------------------------------------------------------------------------------
 // Include file(s)
 //-------------------------------------------------------------------------------------------------
 
-#define BSP_GLOBAL
-#include "bsp.h"
-#undef  BSP_GLOBAL
+#include "./lib_digini.h"
+
+#define TASK_TEST1_GLOBAL
 #include "taskTest1.h"
-
-//-------------------------------------------------------------------------------------------------
-
-// because for now we don't have eeprom for this test board
-const SystemDebugLevel_e DebugLevel = SystemDebugLevel_e(0);//SystemDebugLevel_e(SYS_DEBUG_LEVEL_ETHERNET | SYS_DEBUG_LEVEL_MEMORY_POOL);
-const TempUnit_e TemperatureUnit  = TEMP_CELSIUS;
-const Language_e LanguageUsed     = LANG_ENGLISH;
-
-//-------------------------------------------------------------------------------------------------
-// Local Function(s)
-//-------------------------------------------------------------------------------------------------
+#undef  TASK_TEST1_GLOBAL
 
 //-------------------------------------------------------------------------------------------------
 //
-//  Name:           BSP_Initialize
-//  Parameter(s):   void
+//   Static Variables
+//
+//-------------------------------------------------------------------------------------------------
+
+nOS_Thread ClassTest1::m_Test1Handle;
+nOS_Stack  ClassTest1::m_Test1Stack[TASK_TEST1_STACK_SIZE];
+
+//-------------------------------------------------------------------------------------------------
+//
+//  Name:           TaskNetwork_Wrapper
+//
+//  Parameter(s):   void* pvParameters
 //  Return:         void
 //
-//  Description:    This function should be called by your application before anything else
-//
-//  Note(s):
+//  Description:    main() for the taskNetwork
 //
 //-------------------------------------------------------------------------------------------------
-void BSP_Initialize(void)
+extern "C" void TaskTest1_Wrapper(void* pvParameters)
 {
-    SysTick_Config(SYSTEM_CORE_CLOCK / CFG_SYSTICK_RATE);
-    ISR_Initialize();
-    IO_InitializeAll();
-    DIGINI_Initialize();
+    (static_cast<ClassTest1*>(pvParameters))->Run();
+}
 
-    TaskTest1.Initialize();
+
+//-------------------------------------------------------------------------------------------------
+//
+//  Name:           Initialize
+//
+//  Parameter(s):   void
+//  Return:         SystemState_e
+//
+//-------------------------------------------------------------------------------------------------
+
+
+SystemState_e ClassTest1::Initialize(void)
+{
+    nOS_Error Error = NOS_OK;
+
+  #if (DIGINI_USE_STACKTISTIC == DEF_ENABLED)
+    myStacktistic.Register(&m_Test1Stack[0], TASK_TEST1_STACK_SIZE, "Test 1");
+  #endif
+
+    Error = nOS_ThreadCreate(&m_Test1Handle,
+                             TaskTest1_Wrapper,
+                             this,
+                             &m_Test1Stack[0],
+                             TASK_TEST1_STACK_SIZE,
+                             TASK_TEST1_PRIO
+                            );
+
+    nOS_SemCreate(&m_TestSem, 0, 1);
+
+    return (Error != NOS_OK) ? SYS_ERROR : SYS_READY;  // TODO  improve error handling
 }
 
 //-------------------------------------------------------------------------------------------------
 //
-//  Name:           BSP_PostOS_Initialize
+//  Name:           Run
+//
 //  Parameter(s):   void
-//  Return:         SystemState_e       SystemState
+//  Return:         void
 //
-//  Description:    This function should be called by your application After OS has being started
+//  Description:    main() loop of Test1 task
 //
-//  Note(s):        Example: class or driver using Semaphore
+//  Note(s):
 //
 //-------------------------------------------------------------------------------------------------
-SystemState_e BSP_PostOS_Initialize(void)
+void ClassTest1::Run(void)
 {
-    SystemState_e State = SYS_READY;
-
-    myUART_Terminal.Initialize();
-
-    State = DIGINI_PostInitialize();
-
-    return State;
+    while(1)
+    {
+        while(nOS_SemTake(&m_TestSem, NOS_WAIT_INFINITE) != NOS_OK){};
+        
+      #ifdef KIT_7B3LI
+        IO_TogglePin(IO_LED_BLUE);
+      #else
+        IO_TogglePin(IO_LED_GREEN);
+      #endif
+    }
 }
 
 //-------------------------------------------------------------------------------------------------

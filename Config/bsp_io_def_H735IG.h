@@ -85,8 +85,8 @@
     X_IO_CFG( IO_CFG_OSPI_AF9,                          IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP | IO_TYPE_PIN_PULL_UP,      IO_SPEED_FREQ_VERY_HIGH,  IO_AF9_OCTOSPIM_P2)    \
 /* SDIO IO's CFG -----------------------------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_SDMMC1_AF12,                       IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,                            IO_SPEED_FREQ_VERY_HIGH,  IO_AF12_SDMMC1)        \
-/* SDRAM IO's CFG ----------------------------------------------------------------------------------------------------------------------------------------------------*/\
-X_IO_CFG( IO_CFG_SDRAM_AF12,                        IO_MODE_ALTERNATE,  (IO_TYPE_PIN_PP | IO_TYPE_PIN_PULL_UP),    IO_SPEED_FREQ_VERY_HIGH,  IO_AF12_FMC)           \
+/* HYPER RAM IO's CFG ------------------------------------------------------------------------------------------------------------------------------------------------*/\
+/*  X_IO_CFG( IO_CFG_HYPERAM_AF12,                      IO_MODE_ALTERNATE,  (IO_TYPE_PIN_PP | IO_TYPE_PIN_PULL_UP),    IO_SPEED_FREQ_VERY_HIGH,  IO_AF12_FMC)   */      \
 /* SPI IO's CFG ------------------------------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_SPI_AF5,                           IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,                            IO_SPEED_FREQ_HIGH,       IO_AF5_SPI)            \
 /* UART IO's CFG -----------------------------------------------------------------------------------------------------------------------------------------------------*/\
@@ -154,43 +154,31 @@ X_IO_CFG( IO_CFG_SDRAM_AF12,                        IO_MODE_ALTERNATE,  (IO_TYPE
 #define LCD_PIN_ON_PORT_H_ALT_9         (IO_PIN_4)                                                                          // ok good 735
 #define LCD_PIN_ON_PORT_H_ALT_14        (IO_PIN_3  | IO_PIN_6  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | IO_PIN_11 | IO_PIN_15) // ok good 735
 
-//----------------------------
-// QSPI grouping configuration (Twin QUAD Configuration = one octoSPI)
+//-------------------------------
+// OCTOSPI grouping configuration
 
 #define OSPI_PIN_ON_PORT_F_ALT_9        (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | IO_PIN_12)
 #define OSPI_PIN_ON_PORT_G_ALT_3        (IO_PIN_10 | IO_PIN_12)
 #define OSPI_PIN_ON_PORT_G_ALT_9        (IO_PIN_0  | IO_PIN_1  | IO_PIN_11 | IO_PIN_12)
 
-//----------------------------
+//-------------------------------------
 // SDMMC1 (SDIO) grouping configuration
 
 #define SDMMC1_PIN_ON_PORT_C_ALT12      ( IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | IO_PIN_11 | IO_PIN_12)                         // ok good 735
 #define SDMMC1_PIN_ON_PORT_D_ALT12      (IO_PIN_2)                                                                           // ok good 735
 
-//-----------------------------
-// this is SDRAM grouping configuration  need to do HYPER RAM config
+//-----------------------------------------
+// this is HYPER RAM grouping configuration
 
-#define SDRAM_PIN_ON_PORT_D_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | \
-                                         IO_PIN_14 | IO_PIN_15)
-#define SDRAM_PIN_ON_PORT_E_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_7  | IO_PIN_8  | IO_PIN_9  | \
-                                         IO_PIN_10 | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | \
-                                         IO_PIN_15)
-#define SDRAM_PIN_ON_PORT_F_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | \
-                                         IO_PIN_5  | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | \
-                                         IO_PIN_15)
-#define SDRAM_PIN_ON_PORT_G_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_4  | IO_PIN_5  | IO_PIN_8  | \
-                                         IO_PIN_15)
-#define SDRAM_PIN_ON_PORT_H_ALT_12      (IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
+//#define HYPERRAM_PIN_ON_PORT_x_ALT_x      (IO_PIN_x  | IO_PIN_x ...)
 
-//-----------------------------
+//----------------------------
 // UART grouping configuration
-#define SPI5_PIN_ON_PORT_F_ALT_5        (IO_PIN_7 | IO_PIN_8 | IO_PIN_9)
+#define SPI5_PIN_ON_PORT_F_ALT_5        (IO_PIN_7 | IO_PIN_8 | IO_PIN_9)                                                    // ok good 735
 
-//-----------------------------
+//----------------------------
 // UART grouping configuration
 #define UART3_PIN_ON_PORT_D_ALT_7       (IO_PIN_8 | IO_PIN_9)
-
-
 
 //-------------------------------------------------------------------------------------------------
 
@@ -216,21 +204,13 @@ X_IO_CFG( IO_CFG_SDRAM_AF12,                        IO_MODE_ALTERNATE,  (IO_TYPE
     X_IO_GROUP( IO_QSPI_ON_PORT_F_AF9,      GPIOF,      OSPI_PIN_ON_PORT_F_ALT_9,       IO_CFG_OSPI_AF9)            \
     X_IO_GROUP( IO_QSPI_ON_PORT_G_AF3,      GPIOG,      OSPI_PIN_ON_PORT_G_ALT_3,       IO_CFG_OSPI_AF3)            \
     X_IO_GROUP( IO_QSPI_ON_PORT_G_AF9,      GPIOG,      OSPI_PIN_ON_PORT_G_ALT_9,       IO_CFG_OSPI_AF9)            \
-/* SDRAM ---------------------------------------------------------------------------------------------------------*/\
-X_IO_GROUP( IO_SDRAM_ON_PORT_D,         GPIOD,      SDRAM_PIN_ON_PORT_D_ALT_12,     IO_CFG_SDRAM_AF12)          \
-X_IO_GROUP( IO_SDRAM_ON_PORT_E,         GPIOE,      SDRAM_PIN_ON_PORT_E_ALT_12,     IO_CFG_SDRAM_AF12)          \
-X_IO_GROUP( IO_SDRAM_ON_PORT_F,         GPIOF,      SDRAM_PIN_ON_PORT_F_ALT_12,     IO_CFG_SDRAM_AF12)          \
-X_IO_GROUP( IO_SDRAM_ON_PORT_G,         GPIOG,      SDRAM_PIN_ON_PORT_G_ALT_12,     IO_CFG_SDRAM_AF12)          \
-X_IO_GROUP( IO_SDRAM_ON_PORT_H,         GPIOH,      SDRAM_PIN_ON_PORT_H_ALT_12,     IO_CFG_SDRAM_AF12)          \
+/* HYPERRAM ------------------------------------------------------------------------------------------------------*/\
+\
 /* SPI -----------------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_SPI5_ON_PORT_F,          GPIOF,      SPI5_PIN_ON_PORT_F_ALT_5,       IO_CFG_SPI_AF5)             \
 /* UART ----------------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_UART3_ON_PORT_D,         GPIOD,      UART3_PIN_ON_PORT_D_ALT_7,      IO_CFG_UART3_AF7)           \
 /* ---------------------------------------------------------------------------------------------------------------*/
-
-
-
-// Note(s) the pin IO_CALIB_OUT_DEBUG is only use in some debug case and must not be initialized on permanent base
 
 //-------------------------------------------------------------------------------------------------
 //
