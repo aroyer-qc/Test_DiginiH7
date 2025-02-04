@@ -483,7 +483,9 @@
 		<Unit filename="..\Module\nOS\src\port\GCC\ARM_Cortex_M7\nOSPort.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="STM32H735IGKX_FLASH.ld" />
 		<Unit filename="STM32H745ZITX_FLASH.ld" />
+		<Unit filename="STM32H7B3LIHXQ_FLASH.ld" />
 		<Extensions>
 			<code_completion />
 			<envvars />
