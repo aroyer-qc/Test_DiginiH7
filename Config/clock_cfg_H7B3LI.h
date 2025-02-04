@@ -85,12 +85,12 @@
 
 // AROYER TODO MISSING CDCPRE and adjust the clock lib  and all damn register has new name !!!!!
 
-#define CFG_HPRE_DIVIDER                            CFG_RCC_HPRE_DIV1               // (HPRE Prescaler) CFG_RCC_HPRE_DIVx -> 1,2,4,8,16,64,128,256,512
-#define CFG_D1CPRE_DIVIDER                          CFG_RCC_D1CPRE_DIV1             // (D1CPRE Prescaler) CFG_RCC_D1CPRE_DIVx -> 1,2,4,8,16,64,128,256,512
-#define CFG_D1PPRE_DIVIDER                          CFG_RCC_D1PPRE_DIV2             // (D1PPRE Prescaler) CFG_RCC_D1PPRE_DIVx   -> 1,2,4,8,16
-#define CFG_D2PPRE1_DIVIDER                         CFG_RCC_D2PPRE1_DIV2            // (D2PPRE1 Prescaler) CFG_RCC_D2PPRE1_DIVx -> 1,2,4,8,16
-#define CFG_D2PPRE2_DIVIDER                         CFG_RCC_D2PPRE2_DIV2            // (D2PPRE2 Prescaler) CFG_RCC_D2PPRE2_DIVx -> 1,2,4,8,16
-#define CFG_D3PPRE_DIVIDER                          CFG_RCC_D3PPRE_DIV2             // (D2PPRE3 Prescaler) CFG_RCC_D2PPRE3_DIVx -> 1,2,4,8,16
+#define CFG_SYSCLK_DIVIDER                          CFG_SYSCLK_DIV1                 // (SYSCLK Prescaler) CFG_SYSCLK_DIVx -> 1,2,4,8,16,64,128,256,512
+#define CFG_HCLK_DIVIDER                            CFG_HCLK_DIV1                   // (HCLK Prescaler) CFG_HCLK_DIVx -> 1,2,4,8,16,64,128,256,512
+#define CFG_APB1_DIVIDER                            CFG_APB1_DIV2                   // (APB1 Prescaler) CFG_APB1_DIVx -> 1,2,4,8,16
+#define CFG_APB2_DIVIDER                            CFG_APB2_DIV2                   // (APB2 Prescaler) CFG_APB2_DIVx -> 1,2,4,8,16
+#define CFG_APB3_DIVIDER                            CFG_APB3_DIV2                   // (APB3 Prescaler) CFG_APB3_DIVx -> 1,2,4,8,16
+#define CFG_APB4_DIVIDER                            CFG_APB4_DIV2                   // (APB4 Prescaler) CFG_APB4_DIVx -> 1,2,4,8,16
 
 #define CFG_MCO_1_DIVIDER                           CFG_RCC_MCO1PRE_DIV5            // (MCO1 Prescaler) CFG_RCC_CFGR_MCO1PRE_DIVx -> 0 to 15, if set to 0 prescaler is disabled
 #define CFG_MCO_2_DIVIDER                           CFG_RCC_MCO2PRE_DIV5            // (MCO1 Prescaler) CFG_RCC_CFGR_MCO2PRE_DIVx -> 0 to 15, if set to 0 prescaler is disabled
