@@ -36,7 +36,7 @@
   #include "bsp_io_def_H745ZI.h"
 #endif
 
-#ifdef KIT_7B5LI
+#ifdef KIT_7B3LI
   #include "bsp_io_def_H7B3LI.h"
 #endif
 

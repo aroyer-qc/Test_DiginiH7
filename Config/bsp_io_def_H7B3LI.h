@@ -73,14 +73,12 @@
     X_IO_CFG( IO_CFG_OUTPUT_PP_LS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,                            IO_SPEED_FREQ_LOW,        1)                     \
     X_IO_CFG( IO_CFG_OUTPUT_PP_HS_DEF1,                 IO_MODE_OUTPUT,     IO_TYPE_PIN_PP,                            IO_SPEED_FREQ_HIGH,       1)                     \
 /* I2Cx IO's CFG -----------------------------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_I2C4_PORT_AF4,                     IO_MODE_ALTERNATE,  IO_TYPE_PIN_OD,                            IO_SPEED_FREQ_MEDIUM,     IO_AF4_I2C4            \
+    X_IO_CFG( IO_CFG_I2C4_PORT_AF4,                     IO_MODE_ALTERNATE,  IO_TYPE_PIN_OD,                            IO_SPEED_FREQ_MEDIUM,     IO_AF4_I2C4)           \
 /* LCD IO's CFG ------------------------------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_LCD_PORT_AF14,                     IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,                            IO_SPEED_FREQ_VERY_HIGH,  IO_AF14_LTDC)          \
-/* MCO IO's CFG ------------------------------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_MCO_OUTPUT,                        IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,                            IO_SPEED_FREQ_HIGH,       IO_AF0_MCO)            \
 /* OCTOSPI IO's CFG --------------------------------------------------------------------------------------------------------------------------------------------------*/\
-    X_IO_CFG( IO_CFG_OSPI_AF9,                          IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP | IO_TYPE_PIN_PULL_UP,      IO_SPEED_FREQ_VERY_HIGH,  IO_AF9)                \
-    X_IO_CFG( IO_CFG_OSPI_AF10,                         IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP | IO_TYPE_PIN_PULL_UP,      IO_SPEED_FREQ_VERY_HIGH,  IO_AF10)               \
+    X_IO_CFG( IO_CFG_OSPI_AF9,                          IO_MODE_ALTERNATE,  (IO_TYPE_PIN_PP | IO_TYPE_PIN_PULL_UP),    IO_SPEED_FREQ_VERY_HIGH,  IO_AF9)                \
+    X_IO_CFG( IO_CFG_OSPI_AF10,                         IO_MODE_ALTERNATE,  (IO_TYPE_PIN_PP | IO_TYPE_PIN_PULL_UP),    IO_SPEED_FREQ_VERY_HIGH,  IO_AF10)               \
 /* SDIO IO's CFG -----------------------------------------------------------------------------------------------------------------------------------------------------*/\
     X_IO_CFG( IO_CFG_SDMMC1_AF12,                       IO_MODE_ALTERNATE,  IO_TYPE_PIN_PP,                            IO_SPEED_FREQ_VERY_HIGH,  IO_AF12_SDMMC1)        \
 /* SDRAM IO's CFG ----------------------------------------------------------------------------------------------------------------------------------------------------*/\
@@ -111,13 +109,13 @@
     X_IO( IO_SD_DETECT,          GPIOI,      18,     IO_CFG_INPUT_NP_LS)                          \
 /* Output IO's ---------------------------------------------------------------------------------*/\
     X_IO( IO_LED_RED,            GPIOG,      11,     IO_CFG_OUTPUT_PP_LS_DEF0)                    \
-    X_IO( IO_LED_BLUE,           GPIOG,      2,      IO_CFG_OUTPUT_PP_LS_DEF0)                    \
+    X_IO( IO_LED_BLUE,           GPIOG,      2,      IO_CFG_OUTPUT_PP_LS_DEF1)                    \
 /* SPI IO's ------------------------------------------------------------------------------------*/\
-X_IO( IO_SPI3_CLK,           GPIOxx,     3,      IO_CFG_SPI_AF5)                              \
-X_IO( IO_SPI3_MOSI,          GPIOxx,     5,      IO_CFG_SPI_AF5)                              \
-X_IO( IO_SPI1_CLK,           GPIOxx,     5,      IO_CFG_SPI_AF5)                              \
-X_IO( IO_SPI1_MOSI,          GPIOxx,     7,      IO_CFG_SPI_AF5)                              \
-X_IO( IO_SPI1_CS,            GPIOxx,     9,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
+/*X_IO( IO_SPI3_CLK,           GPIOxx,     3,      IO_CFG_SPI_AF5)*/                              \
+/*X_IO( IO_SPI3_MOSI,          GPIOxx,     5,      IO_CFG_SPI_AF5)    */                          \
+/*X_IO( IO_SPI1_CLK,           GPIOxx,     5,      IO_CFG_SPI_AF5)      */                        \
+/*X_IO( IO_SPI1_MOSI,          GPIOxx,     7,      IO_CFG_SPI_AF5)        */                      \
+/*X_IO( IO_SPI1_CS,            GPIOxx,     9,      IO_CFG_OUTPUT_PP_HS_DEF1)*/                    \
 /* LCD -----------------------------------------------------------------------------------------*/\
     X_IO( IO_LCD_DISPLAY,        GPIOA,      2,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
     X_IO( IO_LCD_BLANK_CTRL,     GPIOA,      1,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
@@ -169,23 +167,15 @@ X_IO( IO_SPI1_CS,            GPIOxx,     9,      IO_CFG_OUTPUT_PP_HS_DEF1)      
 //-----------------------------
 // SDRAM grouping configuration
 
-#define SDRAM_PIN_ON_PORT_D_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | \
-                                         IO_PIN_14 | IO_PIN_15)
-#define SDRAM_PIN_ON_PORT_E_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_7  | IO_PIN_8  | IO_PIN_9  | \
-                                         IO_PIN_10 | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | \
-                                         IO_PIN_15)
-#define SDRAM_PIN_ON_PORT_F_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | \
-                                         IO_PIN_5  | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | \
-                                         IO_PIN_15)
-#define SDRAM_PIN_ON_PORT_G_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_4  | IO_PIN_5  | IO_PIN_8  | \
-                                         IO_PIN_15)
+#define SDRAM_PIN_ON_PORT_D_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | IO_PIN_14 | IO_PIN_15)
+#define SDRAM_PIN_ON_PORT_E_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_7  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | IO_PIN_15)
+#define SDRAM_PIN_ON_PORT_F_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | IO_PIN_5  | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_14 | IO_PIN_15)
+#define SDRAM_PIN_ON_PORT_G_ALT_12      (IO_PIN_0  | IO_PIN_1  | IO_PIN_4  | IO_PIN_5  | IO_PIN_8  | IO_PIN_15)
 #define SDRAM_PIN_ON_PORT_H_ALT_12      (IO_PIN_5  | IO_PIN_6  | IO_PIN_7)
 
 //----------------------------
 // UART grouping configuration
 #define UART1_PIN_ON_PORT_A_ALT_7       (IO_PIN_9 | IO_PIN_10)
-
-
 
 //-------------------------------------------------------------------------------------------------
 
@@ -199,14 +189,14 @@ X_IO( IO_SPI1_CS,            GPIOxx,     9,      IO_CFG_OUTPUT_PP_HS_DEF1)      
     X_IO_GROUP( IO_LCD_ON_PORT_J,           GPIOJ,      LCD_PIN_ON_PORT_J_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
     X_IO_GROUP( IO_LCD_ON_PORT_K,           GPIOK,      LCD_PIN_ON_PORT_K_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
 /* OSPI ----------------------------------------------------------------------------------------------------------*/\
-    X_IO_GROUP( IO_OSPI_ON_PORT_B_ALT9      GPIOB,      OSPI_PIN_ON_PORT_B_ALT_9        IO_CFG_OSPI_AF9)            \
-    X_IO_GROUP( IO_OSPI_ON_PORT_C_ALT10     GPIOC,      OSPI_PIN_ON_PORT_C_ALT_10       IO_CFG_OSPI_AF10)           \
-    X_IO_GROUP( IO_OSPI_ON_PORT_D_ALT10     GPIOD,      OSPI_PIN_ON_PORT_D_ALT_10       IO_CFG_OSPI_AF10)           \
-    X_IO_GROUP( IO_OSPI_ON_PORT_D_ALT9      GPIOD,      OSPI_PIN_ON_PORT_D_ALT_9        IO_CFG_OSPI_AF9)            \
-    X_IO_GROUP( IO_OSPI_ON_PORT_F_ALT10     GPIOF,      OSPI_PIN_ON_PORT_F_ALT_10       IO_CFG_OSPI_AF10)           \
-    X_IO_GROUP( IO_OSPI_ON_PORT_G_ALT9      GPIOG,      OSPI_PIN_ON_PORT_G_ALT_9        IO_CFG_OSPI_AF9)            \
-    X_IO_GROUP( IO_OSPI_ON_PORT_G_ALT10     GPIOG,      OSPI_PIN_ON_PORT_G_ALT_10       IO_CFG_OSPI_AF10)           \
-    X_IO_GROUP( IO_OSPI_ON_PORT_H_ALT9      GPIOH,      OSPI_PIN_ON_PORT_H_ALT_9        IO_CFG_OSPI_AF9)            \
+    X_IO_GROUP( IO_OSPI_ON_PORT_B_ALT9,     GPIOB,      OSPI_PIN_ON_PORT_B_ALT_9,       IO_CFG_OSPI_AF9)            \
+    X_IO_GROUP( IO_OSPI_ON_PORT_C_ALT10,    GPIOC,      OSPI_PIN_ON_PORT_C_ALT_10,      IO_CFG_OSPI_AF10)           \
+    X_IO_GROUP( IO_OSPI_ON_PORT_D_ALT9,     GPIOD,      OSPI_PIN_ON_PORT_D_ALT_9,       IO_CFG_OSPI_AF9)            \
+    X_IO_GROUP( IO_OSPI_ON_PORT_D_ALT10,    GPIOD,      OSPI_PIN_ON_PORT_D_ALT_10,      IO_CFG_OSPI_AF10)           \
+    X_IO_GROUP( IO_OSPI_ON_PORT_F_ALT10,    GPIOF,      OSPI_PIN_ON_PORT_F_ALT_10,      IO_CFG_OSPI_AF10)           \
+    X_IO_GROUP( IO_OSPI_ON_PORT_G_ALT9,     GPIOG,      OSPI_PIN_ON_PORT_G_ALT_9,       IO_CFG_OSPI_AF9)            \
+    X_IO_GROUP( IO_OSPI_ON_PORT_G_ALT10,    GPIOG,      OSPI_PIN_ON_PORT_G_ALT_10,      IO_CFG_OSPI_AF10)           \
+    X_IO_GROUP( IO_OSPI_ON_PORT_H_ALT9,     GPIOH,      OSPI_PIN_ON_PORT_H_ALT_9,       IO_CFG_OSPI_AF9)            \
 /* SDIO ----------------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_SDMMC1_ON_PORT_C_AF12,   GPIOC,      SDMMC1_PIN_ON_PORT_C_ALT12,     IO_CFG_SDMMC1_AF12)         \
     X_IO_GROUP( IO_SDMMC1_ON_PORT_D_AF12,   GPIOD,      SDMMC1_PIN_ON_PORT_D_ALT12,     IO_CFG_SDMMC1_AF12)         \

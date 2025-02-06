@@ -59,8 +59,8 @@ _Min_Stack_Size = __STACK_SIZE;   /* required amount of stack */
 /* Memories definition */
 MEMORY
 {
-    ROM              (rx)  : ORIGIN = 0x08000000,   LENGTH = 2048K
-    RAM              (xrw) : ORIGIN = 0x20000000,   LENGTH = 128K
+    ROM              (rx)  : ORIGIN = 0x08000000, LENGTH = 2048K
+    RAM              (xrw) : ORIGIN = 0x20000000, LENGTH = 128K
     GFX_DISPLAY      (rwx) : ORIGIN = 0xC0000000, LENGTH = 15M
     GFX_RAM_DBASE    (rwx) : ORIGIN = 0xC0F00000, LENGTH = 1M
 }
@@ -106,14 +106,14 @@ SECTIONS
     . = ALIGN(4);
   } >ROM
 
-  .ARM.extab (READONLY) : /* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
+  .ARM.extab :
   {
     . = ALIGN(4);
     *(.ARM.extab* .gnu.linkonce.armextab.*)
     . = ALIGN(4);
   } >ROM
   
-  .ARM (READONLY) : /* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
+  .ARM :
   {
     . = ALIGN(4);
     __exidx_start = .;
@@ -122,7 +122,7 @@ SECTIONS
     . = ALIGN(4);
   } >ROM
 
-  .preinit_array (READONLY) : /* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
+  .preinit_array :
   {
     . = ALIGN(4);
     PROVIDE_HIDDEN (__preinit_array_start = .);
@@ -131,7 +131,7 @@ SECTIONS
     . = ALIGN(4);
   } >ROM
   
-  .init_array (READONLY) : /* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
+  .init_array :
   {
     . = ALIGN(4);
     PROVIDE_HIDDEN (__init_array_start = .);
@@ -141,7 +141,7 @@ SECTIONS
     . = ALIGN(4);
   } >ROM
   
-  .fini_array (READONLY) : /* The READONLY keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier. */
+  .fini_array :
   {
     . = ALIGN(4);
     PROVIDE_HIDDEN (__fini_array_start = .);
@@ -191,6 +191,7 @@ SECTIONS
     PROVIDE ( _end = . );
     . = . + _Min_Heap_Size;
     . = . + _Min_Stack_Size;
+    __HeapLimit = .;
     . = ALIGN(8);
   } >RAM
 
