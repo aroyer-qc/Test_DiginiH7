@@ -36,7 +36,7 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
-#define UART_STANDARD_CONFIGURATION_RX ( DMA_MODE_NORMAL                | \
+#define UART_STANDARD_CONFIGURATION_RX ( DMA_MODE_CIRCULAR              | \
                                          DMA_PERIPHERAL_TO_MEMORY       | \
                                          DMA_PERIPHERAL_NO_INCREMENT    | \
                                          DMA_MEMORY_INCREMENT           | \
@@ -44,8 +44,7 @@
                                          DMA_MEMORY_SIZE_8_BITS         | \
                                          DMA_PERIPHERAL_BURST_SINGLE    | \
                                          DMA_MEMORY_BURST_SINGLE        | \
-                                         DMA_PRIORITY_LEVEL_HIGH        | \
-                                         DMA_BUFFERABLE_TRANSFER_ENABLE)
+                                         DMA_PRIORITY_LEVEL_HIGH)
 
 #define UART_STANDARD_CONFIGURATION_TX ( DMA_MODE_NORMAL                | \
                                          DMA_MEMORY_TO_PERIPHERAL       | \
@@ -55,8 +54,7 @@
                                          DMA_MEMORY_SIZE_8_BITS         | \
                                          DMA_PERIPHERAL_BURST_SINGLE    | \
                                          DMA_MEMORY_BURST_SINGLE        | \
-                                         DMA_PRIORITY_LEVEL_HIGH        | \
-                                         DMA_BUFFERABLE_TRANSFER_ENABLE)
+                                         DMA_PRIORITY_LEVEL_HIGH)
 
 //-------------------------------------------------------------------------------------------------
 // Constant(s)
@@ -76,6 +74,7 @@ const UART_Info_t UART_Info[NB_OF_REAL_UART_DRIVER] =
         // DMA_RX
         {
             UART_STANDARD_CONFIGURATION_RX,                 // Configuration
+
             DMA_LIFCR_CTCIF0,                               // RX_IT_Flag
             DMA1_Stream0,                                   // RX_DMA_TypeDef
             DMA1_Stream0_IRQn,                              // RX_IRQn
@@ -131,16 +130,20 @@ const UART_Info_t UART_Info[NB_OF_REAL_UART_DRIVER] =
         // DMA_RX
         {
             UART_STANDARD_CONFIGURATION_RX,                 // Configuration
+            DMA_FIFOMODE_DISABLE,                           // FIFO Config
+            DMA_REQUEST_USART3_RX,                          // MUX Request
             DMA_LIFCR_CTCIF0,                               // RX_IT_Flag
-            DMA1_Stream0,                                   // RX_DMA_TypeDef
+            (uint32_t*)DMA1_Stream0,                        // DMA Stream or BDMA Channel
             DMA1_Stream0_IRQn,                              // RX_IRQn
         },
 
         // DMA_TX
         {
             UART_STANDARD_CONFIGURATION_TX,                 // Configuration
+            DMA_FIFOMODE_DISABLE,                           // FIFO Config
+            DMA_REQUEST_USART3_TX,                          // MUX Request
             DMA_LIFCR_CTCIF1,                               // TX_IT_Flag
-            DMA1_Stream1,                                   // TX_DMA_TypeDef
+            (uint32_t*)DMA1_Stream1,                        // DMA Stream or BDMA Channel
             DMA1_Stream1_IRQn,                              // TX_IRQn
         },
     },

@@ -61,25 +61,4 @@
 
 #define CFG_SDRAM_REFRESH_COUNT                 1539                                // ~64 mSec Refresh at 100 Mhz (This value was found in the STM32H745ZI Example.)
 
-
-  /*
-
-
-  // SDRAM initialization sequence
-  FMC_Bank5_6_R->SDCMR = 0x00000009;                                // Clock enable command
-
-  for (index = 0; index<5000; index++);                             // Delay
-
-  FMC_Bank5_6_R->SDCMR = 0x0000000A;                                // PALL command
-  FMC_Bank5_6_R->SDCMR = 0x000000EB;
-  FMC_Bank5_6_R->SDCMR = 0x0004400C;
-
-  SET_BIT(FMC_Bank5_6_R->SDRTR, (0x00000603 << 1));                 // Set refresh count
-
-  // Disable write protection
-  tmpreg = FMC_Bank5_6_R->SDCR[1];
-  FMC_Bank5_6_R->SDCR[1] = (tmpreg & 0xFFFFFDFF);
-
-  FMC_Bank1_R->BTCR[0]  |= 0x80000000;                              // FMC controller Enable
-
-*/
+//-------------------------------------------------------------------------------------------------
