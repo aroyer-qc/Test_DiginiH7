@@ -55,7 +55,7 @@
 //-------------------------------------------------------------------------------------------------
 // COMM support (Console, CLI, VT100)
 //
-#define DIGINI_USE_COMM_MODULE                          DEF_DISABLED //DEF_ENABLED
+#define DIGINI_USE_COMM_MODULE                          DEF_ENABLED
 
 #define DIGINI_USE_CONSOLE                              DEF_ENABLED
 #define DIGINI_USE_CMD_LINE                             DEF_ENABLED

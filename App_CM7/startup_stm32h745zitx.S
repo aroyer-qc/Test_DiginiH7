@@ -55,7 +55,7 @@ defined in linker script */
  * @retval : None
 */
 
-    .section  .text.Reset_Handler
+  .section  .text.Reset_Handler
   .weak  Reset_Handler
   .type  Reset_Handler, %function
 Reset_Handler:
@@ -95,7 +95,7 @@ LoopFillZerobss:
   bl __libc_init_array
 
   /* Fill the stack with watermark */
-   ldr  r3, =_StackBottom;
+  ldr  r3, =_StackBottom;
   mov   r2, sp
   movs  r4, 0xFFFFFFFF
   b     LoopFillStack
@@ -109,6 +109,7 @@ LoopFillStack:
 /* Call the application's entry point.*/
   bl  main
   bx  lr
+
 .size  Reset_Handler, .-Reset_Handler
 
 /**

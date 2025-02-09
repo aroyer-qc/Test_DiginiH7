@@ -16,8 +16,8 @@
 					<Add option="$device=cortex-m7" />
 					<Add option="$fpu=fpv5-sp-d16" />
 					<Add option="$lscript=STM32H745ZITX_FLASH.ld" />
-					<Add option="$stack=0x1000" />
-					<Add option="$heap=0x1000" />
+					<Add option="$stack=0x200" />
+					<Add option="$heap=0x400" />
 				</Device>
 				<Compiler>
 					<Add option="-O0" />
@@ -30,6 +30,7 @@
 					<Add option="-g3" />
 				</Cpp>
 				<Assembler>
+					<Add option="-Wa,--keep-locals" />
 					<Add option="-Wa,--gdwarf-2" />
 				</Assembler>
 				<Linker>
@@ -166,7 +167,7 @@
 					<Add option="-O2" />
 					<Add option="-g2" />
 					<Add symbol="STM32H7B3xx" />
-					<Add symbol="KIT_7B35LI" />
+					<Add symbol="KIT_7B3LI" />
 				</Compiler>
 				<Linker>
 					<Add option="-Wl,--gc-sections" />
@@ -483,20 +484,29 @@
 		<Unit filename="..\Module\nOS\src\port\GCC\ARM_Cortex_M7\nOSPort.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="STM32H735IGKX_FLASH.ld" />
-		<Unit filename="STM32H745ZITX_FLASH.ld" />
-		<Unit filename="STM32H7B3LIHXQ_FLASH.ld" />
+		<Unit filename="STM32H735IGKX_FLASH.ld">
+			<Option target="DebugH735IG" />
+			<Option target="ReleaseH735IG" />
+		</Unit>
+		<Unit filename="STM32H745ZITX_FLASH.ld">
+			<Option target="Debug745ZI" />
+			<Option target="ReleaseH745ZI" />
+		</Unit>
+		<Unit filename="STM32H7B3LIHXQ_FLASH.ld">
+			<Option target="DebugH7B3LI" />
+			<Option target="ReleaseH7B3LI" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger>
-				<target_debugging_settings target="DebugH7B3LI">
-					<debug_interface description="STM32H745_CM7.svd" options="10" reg_filter="0" probe="STlink" device="auto" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
-				</target_debugging_settings>
 				<target_debugging_settings target="Debug745ZI">
-					<debug_interface description="STM32H745_CM7.svd" options="10" reg_filter="0" probe="STlink" device="auto" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
+					<debug_interface description="STM32H745_CM7.svd" options="10" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
 				</target_debugging_settings>
 				<target_debugging_settings target="DebugH735IG">
+					<debug_interface description="STM32H745_CM7.svd" options="10" reg_filter="0" probe="STlink" device="auto" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
+				</target_debugging_settings>
+				<target_debugging_settings target="DebugH7B3LI">
 					<debug_interface description="STM32H745_CM7.svd" options="10" reg_filter="0" probe="STlink" device="auto" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
 				</target_debugging_settings>
 			</debugger>

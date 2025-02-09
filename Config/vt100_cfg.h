@@ -49,7 +49,7 @@
 // in fact I should move every configuration for menu item and menu built-in Digini to the digini itself
 
 #define VT100_USER_LABEL_LANGUAGE_DEF(X_VT100_USER_LBL_CFG) \
-    X_VT100_USER_LBL_CFG( VT100_LBL_MENU_TITLE,                       "Test F4 Menu",                                             "Menu Test F4"                                               ) \
+    X_VT100_USER_LBL_CFG( VT100_LBL_MENU_TITLE,                       "Test H7 Menu",                                             "Menu Test H7"                                               ) \
     X_VT100_USER_LBL_CFG( VT100_LBL_TEST,                             "Test",                                                     "Test"                                                       ) \
     X_VT100_USER_LBL_CFG( VT100_LBL_MISCELLEANEOUS,                   "Miscelleaneous",                                           "Divers"                                                     ) \
     X_VT100_USER_LBL_CFG( VT100_LBL_SYSTEM_SETTING,                   "System Settings",                                          "Configuration Syst\x8ame"                                   ) \

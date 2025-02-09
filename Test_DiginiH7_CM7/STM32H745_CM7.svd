@@ -70125,6 +70125,13 @@ Minimum value is 16</description>
               <bitWidth>2</bitWidth>
             </field>
             <field>
+              <name>TRBUFF</name>
+              <description>Peripheral bufferable transfers enable/disable
+              configuration</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
               <name>CT</name>
               <description>Current target (only in double buffer
               mode)</description>
@@ -70367,10 +70374,11 @@ Minimum value is 16</description>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>ACK</name>
-              <description>ACK</description>
+              <name>TRBUFF</name>
+              <description>Peripheral bufferable transfers enable/disable
+              configuration</description>
               <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
+              <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>CT</name>
@@ -70615,10 +70623,11 @@ Minimum value is 16</description>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>ACK</name>
-              <description>ACK</description>
+              <name>TRBUFF</name>
+              <description>Peripheral bufferable transfers enable/disable
+              configuration</description>
               <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
+              <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>CT</name>
@@ -70863,10 +70872,11 @@ Minimum value is 16</description>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>ACK</name>
-              <description>ACK</description>
+              <name>TRBUFF</name>
+              <description>Peripheral bufferable transfers enable/disable
+              configuration</description>
               <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
+              <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>CT</name>
@@ -71111,10 +71121,11 @@ Minimum value is 16</description>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>ACK</name>
-              <description>ACK</description>
+              <name>TRBUFF</name>
+              <description>Peripheral bufferable transfers enable/disable
+              configuration</description>
               <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
+              <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>CT</name>
@@ -71359,10 +71370,11 @@ Minimum value is 16</description>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>ACK</name>
-              <description>ACK</description>
+              <name>TRBUFF</name>
+              <description>Peripheral bufferable transfers enable/disable
+              configuration</description>
               <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
+              <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>CT</name>
@@ -71607,10 +71619,11 @@ Minimum value is 16</description>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>ACK</name>
-              <description>ACK</description>
+              <name>TRBUFF</name>
+              <description>Peripheral bufferable transfers enable/disable
+              configuration</description>
               <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
+              <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>CT</name>
@@ -71855,10 +71868,11 @@ Minimum value is 16</description>
               <bitWidth>2</bitWidth>
             </field>
             <field>
-              <name>ACK</name>
-              <description>ACK</description>
+              <name>TRBUFF</name>
+              <description>Peripheral bufferable transfers enable/disable
+              configuration</description>
               <bitOffset>20</bitOffset>
-              <bitWidth>1</bitWidth>
+              <bitWidth>2</bitWidth>
             </field>
             <field>
               <name>CT</name>

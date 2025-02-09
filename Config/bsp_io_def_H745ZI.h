@@ -110,7 +110,7 @@
     X_IO( IO_USER_BUTTON,        GPIOC,      13,     IO_CFG_INPUT_NP_LS)                          \
 /* Output IO's ---------------------------------------------------------------------------------*/\
     X_IO( IO_LED_RED,            GPIOJ,      2,      IO_CFG_OUTPUT_PP_LS_DEF0)                    \
-    X_IO( IO_LED_GREEN,          GPIOI,      13,     IO_CFG_OUTPUT_PP_LS_DEF0)                    \
+    X_IO( IO_LED_GREEN,          GPIOI,      13,     IO_CFG_OUTPUT_PP_LS_DEF1)                    \
 /* SPI IO's ------------------------------------------------------------------------------------*/\
     X_IO( IO_SPI3_CLK,           GPIOxx,     3,      IO_CFG_SPI_AF5)                              \
     X_IO( IO_SPI3_MOSI,          GPIOxx,     5,      IO_CFG_SPI_AF5)                              \
