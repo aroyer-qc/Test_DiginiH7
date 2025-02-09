@@ -71,20 +71,25 @@ const UART_Info_t UART_Info[NB_OF_REAL_UART_DRIVER] =
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
 
-        // DMA_RX
+
+         // DMA_RX
         {
             UART_STANDARD_CONFIGURATION_RX,                 // Configuration
-            DMA_LIFCR_CTCIF0,                               // RX_IT_Flag
-            DMA1_Stream0,                                   // RX_DMA_TypeDef
-            DMA1_Stream0_IRQn,                              // RX_IRQn
+            DMA_FIFOMODE_DISABLE,                           // FIFO Config
+            DMA_REQUEST_USART1_RX,
+            0,                                              // RX_IT_Flag
+            (uint32_t*)DMA1_Stream2,                                   // RX_DMA_TypeDef
+            ISR_IRQn_NONE,                                  // RX_IRQn
         },
 
         // DMA_TX
         {
-            UART_STANDARD_CONFIGURATION_TX,                 // Configuration
-            DMA_LIFCR_CTCIF1,                               // TX_IT_Flag
-            DMA1_Stream1,                                   // TX_DMA_TypeDef
-            DMA1_Stream1_IRQn,                              // TX_IRQn
+            UART_STANDARD_CONFIGURATION_TX,             // Configuration
+            DMA_FIFOMODE_DISABLE,                           // FIFO Config
+            DMA_REQUEST_USART1_TX,
+            DMA_LIFCR_CTCIF3,                           // TX_IT_Flag
+            (uint32_t*)DMA1_Stream3,                               // TX_DMA_TypeDef
+            DMA1_Stream3_IRQn,                          // TX_IRQn
             4,
         },
     },
@@ -130,9 +135,9 @@ const UART_Info_t UART_Info[NB_OF_REAL_UART_DRIVER] =
         {
             UART_STANDARD_CONFIGURATION_RX,                 // Configuration
             DMA_FIFOMODE_DISABLE,                           // FIFO Config
-            DMA_REQUEST_USART3_RX,                          // MUX Request
+            DMA_REQUEST_USART3_RX,
             0,                                              // RX_IT_Flag
-            (uint32_t*)DMA1_Stream0,                        // DMA Stream or BDMA Channel
+            (uint32_t*)DMA1_Stream0,                                   // RX_DMA_TypeDef
             ISR_IRQn_NONE,                                  // RX_IRQn
         },
 
@@ -142,7 +147,7 @@ const UART_Info_t UART_Info[NB_OF_REAL_UART_DRIVER] =
             DMA_FIFOMODE_DISABLE,                           // FIFO Config
             DMA_REQUEST_USART3_TX,                          // MUX Request
             DMA_LIFCR_CTCIF1,                               // TX_IT_Flag
-            (uint32_t*)DMA1_Stream1,                        // DMA Stream or BDMA Channel
+            (uint32_t*)DMA1_Stream1,                                   // DMA Stream or BDMA Channel
             DMA1_Stream1_IRQn,                              // TX_IRQn
         },
     },

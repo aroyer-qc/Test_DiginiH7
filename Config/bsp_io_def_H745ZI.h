@@ -192,7 +192,7 @@
 
 //-----------------------------
 // UART grouping configuration
-#define UART_PIN_ON_PORT_B_ALT_7        (IO_PIN_10 | IO_PIN_11)
+#define UART_PIN_ON_PORT_B_ALT_7        (IO_PIN_6  | IO_PIN_7 | IO_PIN_10 | IO_PIN_11)  // UART 1 And UART 3
 
 
 
