@@ -59,9 +59,10 @@
 //  Note(s):
 //
 //-------------------------------------------------------------------------------------------------
-int Count = 0;
 void TaskIdle(void)
 {
+    TickCount_t Tick = GetTick();
+
 
     // --------------------------------------------------------------------------------------------
     // Low level main control loop
@@ -71,10 +72,10 @@ void TaskIdle(void)
         pTaskCOMM->Process();
       #endif
 
-        Count++;
-        if (Count >= 300000)
+
+        if(TickHasTimeOut(Tick, 1000) == true)
         {
-            Count = 0;
+            Tick = GetTick();
             IO_TogglePin(IO_LED_RED);
             TaskTest1.GiveToRunTest1();       // wake up tast Test1
         }

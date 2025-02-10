@@ -41,7 +41,7 @@
 #define UART_DRIVER_TX_EMPTY_CFG                DEF_DISABLED
 #define UART_DRIVER_DMA_TX_COMPLETED_CFG        DEF_ENABLED
 
-#define UART_DRIVER_SUPPORT_UART1_CFG           DEF_ENABLED
+#define UART_DRIVER_SUPPORT_UART1_CFG           DEF_DISABLED //DEF_ENABLED
 #define UART_DRIVER_SUPPORT_UART2_CFG           DEF_DISABLED //DEF_ENABLED
 #define UART_DRIVER_SUPPORT_UART3_CFG           DEF_ENABLED
 #define UART_DRIVER_SUPPORT_UART4_CFG           DEF_DISABLED
@@ -55,8 +55,8 @@
 
 //-------------------------------------------------------------------------------------------------
 
-//#define TERMINAL_SERIAL                         UART_DRIVER_ID_3
-#define TERMINAL_SERIAL                         UART_DRIVER_ID_1
+#define TERMINAL_SERIAL                         UART_DRIVER_ID_3
+//#define TERMINAL_SERIAL                         UART_DRIVER_ID_1
 
 #if (UART_DRIVER_SUPPORT_VIRTUAL_UART_CFG == DEF_ENABLED)
 
