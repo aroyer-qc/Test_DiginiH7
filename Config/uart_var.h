@@ -151,7 +151,7 @@ const UART_Info_t UART_Info[NB_OF_REAL_UART_DRIVER] =
             DMA_FIFOMODE_DISABLE,                           // FIFO Config
             DMA_REQUEST_USART3_TX,                          // MUX Request
             DMA_LIFCR_CTCIF1,                               // TX_IT_Flag
-            (uint32_t*)DMA1_Stream1,                                   // DMA Stream or BDMA Channel
+            (uint32_t*)DMA1_Stream1,                        // DMA Stream or BDMA Channel
             DMA1_Stream1_IRQn,                              // TX_IRQn
         },
     },

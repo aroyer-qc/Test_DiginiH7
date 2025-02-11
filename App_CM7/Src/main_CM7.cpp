@@ -79,7 +79,7 @@ int main()
      * 1. Start CPU2 core
      * 2. Wait for CPU2 to enter low-power mode
      */
-    HAL_RCCEx_EnableBootCore(RCC_BOOT_C2);
+    SET_BIT(RCC->GCR, RCC_BOOT_C2);             // Enable boot core 2
 
 #ifndef DEBUG
     // In debug mode we use the free running CPU
