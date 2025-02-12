@@ -42,12 +42,12 @@ extern const char OUR_FIRMWARE_DIGINI_VERSION[7];
 extern const char OUR_FIRMWARE_BUILD_DATE[24];
 
 // Configurable value
-extern char OEM_VENDOR_NAME[7];
+extern char OEM_VENDOR_NAME[8];
 extern char OEM_MODEL_NAME[17];
 extern char OEM_SERIAL_NUMBER[SERIAL_NUMBER_SIZE];
 
 #ifdef BSP_GLOBAL
-const char OUR_FIRMWARE_NAME[12]          = { "Test DEV F4"       };
+const char OUR_FIRMWARE_NAME[12]          = { "Test DEV H7"       };
 const char OUR_FIRMWARE_VERSION[6]        = { "V1.00"             };
 const char OUR_FIRMWARE_DIGINI_NAME[11]   = { "Digini GUI"        };
 const char OUR_FIRMWARE_DIGINI_VERSION[7] = { DIGINI_VERSION      };
@@ -55,7 +55,7 @@ const char OUR_FIRMWARE_BUILD_DATE[24]     = {__DATE__ " " __TIME__};
 
  #ifdef DEBUG
 char OEM_VENDOR_NAME[]                    = { "Digini"            };
-char OEM_MODEL_NAME[]                     = { "STM32F429-DISCO"   };
+char OEM_MODEL_NAME[]                     = { "STM32H7xx DEVKIT"  };
 char OEM_SERIAL_NUMBER[]                  = { "00000000"          };
  #else
 char OEM_VENDOR_NAME[]                    = { "" };

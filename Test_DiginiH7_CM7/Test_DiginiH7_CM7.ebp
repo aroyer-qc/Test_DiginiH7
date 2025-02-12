@@ -271,6 +271,7 @@
 		<Unit filename="..\Config\driver_cfg.h" />
 		<Unit filename="..\Config\label_cfg.h" />
 		<Unit filename="..\Config\memory_cfg.h" />
+		<Unit filename="..\Config\menu_cfg.h" />
 		<Unit filename="..\Config\nOSConfig.h" />
 		<Unit filename="..\Config\project_def.h" />
 		<Unit filename="..\Config\pwm_cfg.h" />
@@ -429,6 +430,9 @@
 		</Unit>
 		<Unit filename="..\Module\Digini\Utility\inc\lib_fifo.h" />
 		<Unit filename="..\Module\Digini\Utility\src\lib_fifo.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_stacktistic.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\lib_time_and_delay.cpp">
