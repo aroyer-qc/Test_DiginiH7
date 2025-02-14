@@ -44,8 +44,15 @@ MEMORY
     FLASH            (rx)  : ORIGIN = 0x08000000, LENGTH = 2048K
     RAM              (xrw) : ORIGIN = 0x24000000, LENGTH = 512K
     ITCMRAM          (xrw) : ORIGIN = 0x00000000, LENGTH = 64K
-  /*  GFX_DISPLAY      (rwx) : ORIGIN = 0xC0000000, LENGTH = 15M*/
-  /*  GFX_RAM_DBASE    (rwx) : ORIGIN = 0xC0F00000, LENGTH = 1M*/
+/*    GFX_DISPLAY    (rwx) : ORIGIN = 0xD0000000, LENGTH = 15M
+    GFX_RAM_DBASE    (rwx) : ORIGIN = 0xD0F00000, LENGTH = 1M - 64K
+    RAM_DBASE        (rwx) : ORIGIN = 0xD0F00000, LENGTH = 64K*/
+
+    GFX_DISPLAY      (rwx) : ORIGIN = 0xD0000000, LENGTH = 7M
+    GFX_RAM_DBASE    (rwx) : ORIGIN = 0xD0700000, LENGTH = 1M - 64K
+    RAM_DBASE        (rwx) : ORIGIN = 0xD07F0000, LENGTH = 64K
+
+
 }
 
 /* Highest address of the user mode stack */
@@ -179,9 +186,9 @@ SECTIONS
 
    __StackLimit = _estack - _Min_Stack_Size;
 
- /*   __gfx_display_base__   = ORIGIN(GFX_DISPLAY);*/
-/*	__gfx_ram_data_base__  = ORIGIN(GFX_RAM_DBASE);*/
-/*	__user_ram_data_base__ = ORIGIN(RAM_DBASE); */
+    __gfx_display_base__   = ORIGIN(GFX_DISPLAY);
+	__gfx_ram_data_base__  = ORIGIN(GFX_RAM_DBASE);
+	__user_ram_data_base__ = ORIGIN(RAM_DBASE);
 /*	__gfx_qspi_data_base__ = ORIGIN(GFX_QSPI_DBASE); */
 
     /* Check if data + heap + stack exceeds RAM limit */

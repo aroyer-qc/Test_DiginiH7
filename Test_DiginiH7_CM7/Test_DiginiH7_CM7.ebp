@@ -229,6 +229,18 @@
 		<Unit filename="..\App_CM7\Src\main_CM7.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\App_CM7\Src\ressource\loading.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\Src\ressource\progress_bar.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\Src\ressource\progress_cursor.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\App_CM7\Src\service.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\App_CM7\Src\taskIdle.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -269,6 +281,7 @@
 		<Unit filename="..\Config\digini_cfg.h" />
 		<Unit filename="..\Config\dma_var.h" />
 		<Unit filename="..\Config\driver_cfg.h" />
+		<Unit filename="..\Config\grafx_cfg.h" />
 		<Unit filename="..\Config\label_cfg.h" />
 		<Unit filename="..\Config\memory_cfg.h" />
 		<Unit filename="..\Config\menu_cfg.h" />
@@ -284,6 +297,7 @@
 		<Unit filename="..\Config\uart_cfg.h" />
 		<Unit filename="..\Config\uart_var.h" />
 		<Unit filename="..\Config\vt100_cfg.h" />
+		<Unit filename="..\Config\widget_cfg.h" />
 		<Unit filename="..\Module\Digini\Comm\CmdLine\inc\lib_cli.h" />
 		<Unit filename="..\Module\Digini\Comm\CmdLine\src\lib_cli.cpp">
 			<Option compilerVar="CC" />
@@ -355,13 +369,49 @@
 		<Unit filename="..\Module\Digini\Grafx\inc\lib_grafx_skin.h" />
 		<Unit filename="..\Module\Digini\Grafx\inc\lib_grafx_typedef.h" />
 		<Unit filename="..\Module\Digini\Grafx\inc\service\lib_service.h" />
+		<Unit filename="..\Module\Digini\Grafx\src\basic\lib_basic_printf.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\color\lib_grafx_color.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\driver\lib_grafx_driver.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\Module\Digini\Grafx\src\driver\STM32H7xx\lib_STM32H7_lcd_480x272 - RK043FN48H.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\font\lib_class_font.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\layer\lib_class_layer.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Grafx\src\lib_grafx.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Grafx\src\lib_tools.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\service\lib_service.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\skin\lib_grafx_printf.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\task\lib_gui_task.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\task\lib_skin_task.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\widget\lib_widget_icon.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\widget\lib_widget_label.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Grafx\src\widget\lib_widget_variable.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\lib_digini.h" />
@@ -429,7 +479,40 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Utility\inc\lib_fifo.h" />
+		<Unit filename="..\Module\Digini\Utility\src\lib_1aschex.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_1hexasc.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_2aschex.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_2bcddec.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_2decbcd.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_4aschex.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_4bcddec.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_4decbcd.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_6aschex.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_compression.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\lib_fifo.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_raw_array.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\lib_stacktistic.cpp">
@@ -441,6 +524,14 @@
 		<Unit filename="..\Module\Digini\Utility\src\port\STM32H7xx\lib_stacktistic_STM32H7.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\Module\module_jpg\jpeg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\module_jpg\jpeg.h" />
+		<Unit filename="..\Module\module_picopng\picopng.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\module_picopng\picopng.h" />
 		<Unit filename="..\Module\nOS\inc\nOS.h" />
 		<Unit filename="..\Module\nOS\inc\port\GCC\ARM_Cortex_M7\nOSPort.h" />
 		<Unit filename="..\Module\nOS\src\nOSAlarm.c">
@@ -504,8 +595,11 @@
 			<code_completion />
 			<envvars />
 			<debugger>
-				<target_debugging_settings target="ReleaseH745ZI">
-					<debug_interface description="STM32H745_CM7.svd" options="0" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="" ip_port="" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
+				<target_debugging_settings target="DebugH7B3LI">
+					<debug_interface description="STM32H7B3.svd" options="10" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="monitor reset;" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
+				</target_debugging_settings>
+				<target_debugging_settings target="ReleaseH7B3LI">
+					<debug_interface description="STM32H7B3.svd" options="0" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="" ip_port="" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
 				</target_debugging_settings>
 				<target_debugging_settings target="ReleaseH735IG">
 					<debug_interface description="STM32H735.svd" options="0" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="" ip_port="" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
@@ -513,14 +607,11 @@
 				<target_debugging_settings target="Debug745ZI">
 					<debug_interface description="STM32H745_CM7.svd" options="10" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
 				</target_debugging_settings>
-				<target_debugging_settings target="DebugH7B3LI">
-					<debug_interface description="STM32H7B3.svd" options="10" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="monitor reset;" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
+				<target_debugging_settings target="ReleaseH745ZI">
+					<debug_interface description="STM32H745_CM7.svd" options="0" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="" ip_port="" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
 				</target_debugging_settings>
 				<target_debugging_settings target="DebugH735IG">
 					<debug_interface description="STM32H735.svd" options="10" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
-				</target_debugging_settings>
-				<target_debugging_settings target="ReleaseH7B3LI">
-					<debug_interface description="STM32H7B3.svd" options="0" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="" ip_port="" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
 				</target_debugging_settings>
 			</debugger>
 		</Extensions>

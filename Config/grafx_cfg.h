@@ -35,24 +35,23 @@
 
 #pragma once
 
-//-------------------------------------------------------------------------------------------------
-//
-// Memory mapping for STM32F746G-DISCO
-// this limitation might not exist anymore in the STM32H7
-//
-//          0xC000 0000              GRAFX base address
-//
-//          0xC000 0000              Layer 1                RGB565   = 261120 Bytes
-//          0xC003 FC00              Layer 2                ARGB8888 = 522240 Bytes
-//          0xC00B F400              Layer 3                RGB565   = 261120 Bytes
-//          0xC00F F000              Layer 4                ARGB8888 = 522240 Bytes
-//          0xC017 E800              Layer 5                ARGB8888 = 522240 Bytes             Use for skin sliding page
-//          0xC01F E000              Touch Sense layer      RGB565   = 261120 Bytes
-//          0xC023 DC00              Free memory pointer for raw skin data 5776384 Bytes free for the skin raw data
-//              ...
-//          0xC07C 0000              256K database for skin info
-//
-//-------------------------------------------------------------------------------------------------
+///------------------------------------------------------------------------------------------------
+///
+/// Memory mapping for STM32H745-DISCOVERY
+///
+///          0xD000 0000              GRAFX base address
+///
+///          0xD000 0000              Layer 1                RGB565   = 261120 Bytes
+///          0xD003 FC00              Layer 2                ARGB8888 = 522240 Bytes
+///          0xD00B F400              Layer 3                RGB565   = 261120 Bytes
+///          0xD00F F000              Layer 4                ARGB8888 = 522240 Bytes
+///          0xD017 E800              Layer 5                ARGB8888 = 522240 Bytes             Use for skin sliding page
+///          0xD01F E000              Touch Sense layer      RGB565   = 261120 Bytes
+///          0xD023 DC00              Free memory pointer for raw skin data 5776384 Bytes free for the skin raw data
+///              ...
+///          0xD07C 0000              256K database for skin info
+///
+///------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
 // Define(s)
@@ -66,12 +65,12 @@
 //-------------------------------------------------------------------------------------------------
 
 // Du to memory limitation (8M), we use unused layer for temporary decoding
-#define GRAFX_RAW_INPUT_DATA_ADDRESS                    0xC00BF400      // 128K
-#define GRAFX_DECODE_ARRAY_ADDRESS                      0xC00DF400      // 224K
-#define GRAFX_APPEND_ARRAY_ADDRESS                      0xC0117400      // 224K
-#define GRAFX_PREFIX_ARRAY_ADDRESS                      0xC014F400      // 224K
-#define GRAFX_DECOMPRESS_METHOD_ADDRESS                 0xC0187400      // 8K
-#define GRAFX_DATA_SIZE_ADDRESS                         0xC0189400      // 8K
+#define GRAFX_RAW_INPUT_DATA_ADDRESS                    0xD00BF400      // 128K
+#define GRAFX_DECODE_ARRAY_ADDRESS                      0xD00DF400      // 224K
+#define GRAFX_APPEND_ARRAY_ADDRESS                      0xD0117400      // 224K
+#define GRAFX_PREFIX_ARRAY_ADDRESS                      0xD014F400      // 224K
+#define GRAFX_DECOMPRESS_METHOD_ADDRESS                 0xD0187400      // 8K
+#define GRAFX_DATA_SIZE_ADDRESS                         0xD0189400      // 8K
 
 //-------------------------------------------------------------------------------------------------
 
@@ -121,7 +120,7 @@
 
 //#define GRAFX_USE_TIMED_WIDGET
 #define GRAFX_USE_FONT_SIZE_8                           DEF_DISABLED    // Not used on this setup
-#define GRAFX_USE_FONT_SIZE_12                          DEF_DISABLED    // Not used on this setup
+#define GRAFX_USE_FONT_SIZE_12                          DEF_ENABLED
 #define GRAFX_USE_FONT_SIZE_16                          DEF_ENABLED
 
 ///------------------------------------------------------------------------------------------------
@@ -144,12 +143,12 @@
 
 // Default service available in Grafx
 #define USE_SERV_DATE                                   DEF_ENABLED     // Service to provide the date
-#define USE_SERV_INPD                                   DEF_ENABLED     // Service to input a decimal value
-#define USE_SERV_INPF                                   DEF_ENABLED     // Service to input a float value
-#define USE_SERV_INPH                                   DEF_ENABLED     // Service to input a Hexa value
+#define USE_SERV_INPD                                   DEF_DISABLED     // Service to input a decimal value
+#define USE_SERV_INPF                                   DEF_DISABLED     // Service to input a float value
+#define USE_SERV_INPH                                   DEF_DISABLED     // Service to input a Hexa value
 #define USE_SERV_INPS                                   DEF_DISABLED    // Service to input a string
 #define USE_SERV_TIME                                   DEF_ENABLED     // Service to provide time
-#define USE_SERV_XCHG                                   DEF_ENABLED     // Special service to exchange data.
+#define USE_SERV_XCHG                                   DEF_DISABLED    // Special service to exchange data.
 
 //-------------------------------------------------------------------------------------------------
 
