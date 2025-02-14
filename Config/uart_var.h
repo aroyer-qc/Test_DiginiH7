@@ -60,7 +60,7 @@
 // Constant(s)
 //-------------------------------------------------------------------------------------------------
 
-const UART_Info_t UART_Info[NB_OF_REAL_UART_DRIVER] =
+const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
 {
   #if (UART_DRIVER_SUPPORT_UART1_CFG == DEF_ENABLED)
     {

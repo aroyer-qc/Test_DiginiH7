@@ -128,7 +128,7 @@
 #define CFG_SPI6_SOURCE_MUX                         CFG_SPI6_PLCK4
 #define CFG_SWP_SOURCE_MUX                          CFG_SWP_PCLK1
 #define CFG_UART16910_SOURCE_MUX                    CFG_USART16910_PCLK2
-#define CFG_UART234578_SOURCE_MUX                   CFG_USART234578_PLL3Q
+#define CFG_UART234578_SOURCE_MUX                   CFG_USART234578_PCLK1
 #define CFG_USB_SOURCE_MUX                          CFG_USB_PLL3Q
 
 //-------------------------------------------------------------------------------------------------

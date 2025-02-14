@@ -59,10 +59,16 @@ _Min_Stack_Size = __STACK_SIZE;   /* required amount of stack */
 /* Memories definition */
 MEMORY
 {
-    ROM              (rx)  : ORIGIN = 0x08000000, LENGTH = 2048K
-    RAM              (xrw) : ORIGIN = 0x20000000, LENGTH = 128K
-    GFX_DISPLAY      (rwx) : ORIGIN = 0xC0000000, LENGTH = 15M
-    GFX_RAM_DBASE    (rwx) : ORIGIN = 0xC0F00000, LENGTH = 1M
+
+    FLASH           (rx)  : ORIGIN = 0x08000000, LENGTH = 2048K
+    RAM             (xrw) : ORIGIN = 0x24000000, LENGTH = 256K  /* 1024K */
+    ITCMRAM         (xrw) : ORIGIN = 0x00000000, LENGTH = 64K
+    DTCMRAM1        (xrw) : ORIGIN = 0x20000000, LENGTH = 64K
+    DTCMRAM2        (xrw) : ORIGIN = 0x20010000, LENGTH = 64K
+    RAM_CD          (xrw) : ORIGIN = 0x30000000, LENGTH = 128K
+    RAM_SRD         (xrw) : ORIGIN = 0x38000000, LENGTH = 32K
+   /* GFX_DISPLAY   (rwx) : ORIGIN = 0xC0000000, LENGTH = 15M*/
+   /* GFX_RAM_DBASE (rwx) : ORIGIN = 0xC0F00000, LENGTH = 1M*/
 }
 
 /* Highest address of the user mode stack */
@@ -72,15 +78,15 @@ _StackBottom = _estack - __STACK_SIZE;
 /* Define output sections */
 SECTIONS
 {
-  /* The startup code into "ROM" Rom type memory */
+  /* The startup code goes first into FLASH */
   .isr_vector :
   {
     . = ALIGN(4);
     KEEP(*(.isr_vector)) /* Startup code */
     . = ALIGN(4);
-  } >ROM
+  } >FLASH
 
-  /* The program code and other data into "ROM" Rom type memory */
+  /* The program code and other data goes into FLASH */
   .text :
   {
     . = ALIGN(4);
@@ -95,24 +101,23 @@ SECTIONS
 
     . = ALIGN(4);
     _etext = .;        /* define a global symbols at end of code */
-  } >ROM
+  } >FLASH
 
-  /* Constant data into "ROM" Rom type memory */
+  /* Constant data goes into FLASH */
   .rodata :
   {
     . = ALIGN(4);
     *(.rodata)         /* .rodata sections (constants, strings, etc.) */
     *(.rodata*)        /* .rodata* sections (constants, strings, etc.) */
     . = ALIGN(4);
-  } >ROM
+  } >FLASH
 
-  .ARM.extab :
+  .ARM.extab   :
   {
     . = ALIGN(4);
     *(.ARM.extab* .gnu.linkonce.armextab.*)
     . = ALIGN(4);
-  } >ROM
-  
+  } >FLASH
   .ARM :
   {
     . = ALIGN(4);
@@ -120,7 +125,7 @@ SECTIONS
     *(.ARM.exidx*)
     __exidx_end = .;
     . = ALIGN(4);
-  } >ROM
+  } >FLASH
 
   .preinit_array :
   {
@@ -129,8 +134,8 @@ SECTIONS
     KEEP (*(.preinit_array*))
     PROVIDE_HIDDEN (__preinit_array_end = .);
     . = ALIGN(4);
-  } >ROM
-  
+  } >FLASH
+
   .init_array :
   {
     . = ALIGN(4);
@@ -139,8 +144,8 @@ SECTIONS
     KEEP (*(.init_array*))
     PROVIDE_HIDDEN (__init_array_end = .);
     . = ALIGN(4);
-  } >ROM
-  
+  } >FLASH
+
   .fini_array :
   {
     . = ALIGN(4);
@@ -149,25 +154,26 @@ SECTIONS
     KEEP (*(.fini_array*))
     PROVIDE_HIDDEN (__fini_array_end = .);
     . = ALIGN(4);
-  } >ROM
+  } >FLASH
 
-  /* Used by the startup to initialize data */
+  /* used by the startup to initialize data */
   _sidata = LOADADDR(.data);
 
-  /* Initialized data sections into "RAM" Ram type memory */
-  .data : 
+  /* Initialized data sections goes into RAM, load LMA copy after code */
+  .data :
   {
     . = ALIGN(4);
     _sdata = .;        /* create a global symbol at data start */
     *(.data)           /* .data sections */
     *(.data*)          /* .data* sections */
+    *(.RamFunc)        /* .RamFunc sections */
+    *(.RamFunc*)       /* .RamFunc* sections */
 
     . = ALIGN(4);
     _edata = .;        /* define a global symbol at data end */
-    
-  } >RAM AT> ROM
+  } >RAM AT> FLASH
 
-  /* Uninitialized data section into "RAM" Ram type memory */
+  /* Uninitialized data section */
   . = ALIGN(4);
   .bss :
   {
@@ -183,7 +189,7 @@ SECTIONS
     __bss_end__ = _ebss;
   } >RAM
 
-  /* User_heap_stack section, used to check that there is enough "RAM" Ram  type memory left */
+  /* User_heap_stack section, used to check that there is enough RAM left */
   ._user_heap_stack :
   {
     . = ALIGN(8);
@@ -208,8 +214,8 @@ SECTIONS
 
     __StackLimit = _estack - _Min_Stack_Size;
 
-    __gfx_display_base__   = ORIGIN(GFX_DISPLAY);
-	__gfx_ram_data_base__  = ORIGIN(GFX_RAM_DBASE);
+/*  __gfx_display_base__   = ORIGIN(GFX_DISPLAY);*/
+/*	__gfx_ram_data_base__  = ORIGIN(GFX_RAM_DBASE);*/
 /*	__user_ram_data_base__ = ORIGIN(RAM_DBASE); */
 /*	__gfx_qspi_data_base__ = ORIGIN(GFX_QSPI_DBASE); */
 

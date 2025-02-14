@@ -49,7 +49,6 @@
 #define UART_DRIVER_SUPPORT_UART6_CFG           DEF_DISABLED
 #define UART_DRIVER_SUPPORT_UART7_CFG           DEF_DISABLED
 #define UART_DRIVER_SUPPORT_UART8_CFG           DEF_DISABLED
-#define UART_DRIVER_SUPPORT_VIRTUAL_UART_CFG    DEF_DISABLED
 
 #define UART_DRIVER_INTERNAL_RX_BUFFER_SIZE     64                      // this is very unsafe setting.. need to check with who is using this setting... it must be linked to the owner of the serial port
 
@@ -57,27 +56,5 @@
 
 #define TERMINAL_SERIAL                         UART_DRIVER_ID_3
 //#define TERMINAL_SERIAL                         UART_DRIVER_ID_1
-
-#if (UART_DRIVER_SUPPORT_VIRTUAL_UART_CFG == DEF_ENABLED)
-
-//    #define INTERNAL_SERIAL                   DRIVER_UART_UART_VIRTUAL
-
-    //-------------------------------------------------------------------------------------------------
-    // Virtual UART
-
-    // Hijack interrupt for module we don't use and transform them into software interrupt
-    #define VirtualUartTX_IRQHandler            CAN3_TX_IRQHandler
-    #define VirtualUartTX_IRQn                  CAN3_TX_IRQn
-    #define VirtualUartRX_IRQHandler            CAN2_TX_IRQHandler
-    #define VirtualUartRX_IRQn                  CAN2_TX_IRQn
-
-    // Function callback of the user library or application so it can be copied to local buffer
-    //          prototype void USER_DataReceived(const uint8_t* pBuffer, uint16_t Size);
-    //
-    //   Internal UART function call            Outside callback function name
-// extern void app_VirtualDataTransmit          (const uint8_t* pBuffer, uint16_t Size);
-// #define ReceivedFromVirtualUart              App_VirtualDataTransmit
-
-#endif
 
 //-------------------------------------------------------------------------------------------------

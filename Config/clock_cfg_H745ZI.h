@@ -65,7 +65,7 @@
 #define CFG_PLL2_FRACTIONAL_VALUE                   0                               // 0 Disable the Sigma-Delta modulator (Range: 0 - 8191)
 
 #define CFG_PLL3_M_DIVIDER                          25
-#define CFG_PLL3_N_MULTIPLIER                       192                             // Needed to configure LTDC correct spee
+#define CFG_PLL3_N_MULTIPLIER                       192                             // Needed to configure LTDC correct speed
 #define CFG_PLL3_P_DIVIDER                          24
 #define CFG_PLL3_Q_DIVIDER                          4
 #define CFG_PLL3_R_DIVIDER                          20                              // LTDC source 9.6 MHz
@@ -127,10 +127,8 @@
 #define CFG_SPI45_SOURCE_MUX                        CFG_SPI45_PLCK2
 #define CFG_SPI6_SOURCE_MUX                         CFG_SPI6_PLCK4
 #define CFG_SWP_SOURCE_MUX                          CFG_SWP_PCLK1
-//#define CFG_TRACE_SOURCE_MUX                        HSI //???
 #define CFG_UART16_SOURCE_MUX                       CFG_USART16_PCLK2
 #define CFG_UART234578_SOURCE_MUX                   CFG_USART234578_PCLK1
 #define CFG_USB_SOURCE_MUX                          CFG_USB_PLL3Q
-//more to do!!
 
 //-------------------------------------------------------------------------------------------------

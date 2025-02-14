@@ -36,7 +36,7 @@ _Min_Stack_Size = __STACK_SIZE;   /* required amount of stack */
 MEMORY
 {
     ROM              (rx)  : ORIGIN = 0x08000000, LENGTH = 1024K
-    RAM              (xrw) : ORIGIN = 0x20000000, LENGTH = 128K
+    RAM              (xrw) : ORIGIN = 0x24000000, LENGTH = 128K
     ITCMRAM          (xrw) : ORIGIN = 0x00000000, LENGTH = 64K
     GFX_DISPLAY      (rwx) : ORIGIN = 0xC0000000, LENGTH = 15M
     GFX_RAM_DBASE    (rwx) : ORIGIN = 0xC0F00000, LENGTH = 1M

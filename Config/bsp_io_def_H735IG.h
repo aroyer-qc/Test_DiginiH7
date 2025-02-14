@@ -112,7 +112,7 @@
     X_IO( IO_USER_BUTTON,        GPIOC,      13,     IO_CFG_INPUT_NP_LS)                          \
 /* Output IO's ---------------------------------------------------------------------------------*/\
     X_IO( IO_LED_RED,            GPIOC,      2,      IO_CFG_OUTPUT_PP_LS_DEF0)                    \
-    X_IO( IO_LED_GREEN,          GPIOC,      3,      IO_CFG_OUTPUT_PP_LS_DEF0)                    \
+    X_IO( IO_LED_GREEN,          GPIOC,      3,      IO_CFG_OUTPUT_PP_LS_DEF1)                    \
 /* SPI IO's ------------------------------------------------------------------------------------*/\
     X_IO( IO_SPI5_CS,            GPIOF,      6,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
 /* LCD -----------------------------------------------------------------------------------------*/\
@@ -138,7 +138,7 @@
 
 #define ETH_PIN_ON_PORT_A_ALT_x         (IO_PIN_1  | IO_PIN_2  | IO_PIN_7)                                                  // ok good 735
 #define ETH_PIN_ON_PORT_B_ALT_x         (IO_PIN_10 | IO_PIN_11 | IO_PIN_12 | IO_PIN_13)                                     // ok good 735
-#define ETH_PIN_ON_PORT_C_ALT_x         (IO_PIN_1  | IO_PIN_4  | IO_PIN_5)                                                  // ok good 735
+//#define ETH_PIN_ON_PORT_C_ALT_x         (IO_PIN_1  | IO_PIN_4  | IO_PIN_5)                                                  // ok good 735
 
 //---------------------------
 // LCD grouping configuration
@@ -186,9 +186,9 @@
 /* ---------------------------------------------------------------------------------------------------------------*/\
 /*              ENUM ID of the Group,       IO Port,    IO Group Pin,                   IO ConfigMode             */\
 /* ETH -----------------------------------------------------------------------------------------------------------*/\
-  /*X_IO_GROUP( IO_ETH_ON_PORT_A,           GPIOA,      ETH_PIN_ON_PORT_A_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
-    X_IO_GROUP( IO_ETH_ON_PORT_B,           GPIOB,      ETH_PIN_ON_PORT_B_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
-    X_IO_GROUP( IO_ETH_ON_PORT_C,           GPIOC,      ETH_PIN_ON_PORT_C_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)      \
+  /*X_IO_GROUP( IO_ETH_ON_PORT_A,           GPIOA,      ETH_PIN_ON_PORT_A_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)    */\
+  /*X_IO_GROUP( IO_ETH_ON_PORT_B,           GPIOB,      ETH_PIN_ON_PORT_B_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)    */\
+  /*X_IO_GROUP( IO_ETH_ON_PORT_C,           GPIOC,      ETH_PIN_ON_PORT_C_ALT_x,        IO_CFG_ETH_PP_VHS_AFx)    */\
 /* LCD -----------------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_LCD_ON_PORT_A_ALT13,     GPIOA,      LCD_PIN_ON_PORT_A_ALT_13,       IO_CFG_LCD_PORT_AF13)       \
     X_IO_GROUP( IO_LCD_ON_PORT_A_ALT14,     GPIOA,      LCD_PIN_ON_PORT_A_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
