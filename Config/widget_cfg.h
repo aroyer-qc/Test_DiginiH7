@@ -71,6 +71,11 @@
 //-------------------------------------------------------------------------------------------------
 // Individual widget Definition
 //-------------------------------------------------------------------------------------------------
+
+//       Enum ID,         Service,      Sub, Px, Py, IMG0,             IMG_1,         IMG_2,         IMG_3,         IMG_4,         IMG_5,         IMG_6,         IMG_7,         IMG_8,         IMG_9,         IMG_10,        IMG_11,        IMG_12,        IMG_13,        IMG_14,        IMG_15,        Options
+#define BACK_DEF(X_BACK)\
+ X_BACK( BACK_LOADING,    SERV_ID_RFSH, 0,   0,  0,  LOADING_BACK,     INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, GRAFX_OPTION_DRAW_ONCE_AND_REMOVE )\
+
 //      Enum ID,         Service,      Sub, Px, Py,   Sx,   Sy,   Icon 0,  		 Icon 1, 	    Icon 2,        Icon 3,        Option,
 #define ICON_DEF(X_ICON) \
 X_ICON( ICON_STATUS,     SERV_ID_RFSH, 0,   5,  98,   0,    0,    INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, INVALID_IMAGE, GRAFX_OPTION_BLEND_CLEAR  ) \
@@ -82,6 +87,15 @@ X_ICON( ICON_STATUS,     SERV_ID_RFSH, 0,   5,  98,   0,    0,    INVALID_IMAGE,
 #define LABEL_DEF(X_LBL) \
 X_LBL( LABEL_TIME,           SERV_ID_TIME, 0,   0,    7,    128,  20,   GRAY_16, GRAY_16, GRAY_16,  SYS_FT_12,       CLEAR_BLEND,  LBL_TIME,         _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
 X_LBL( LABEL_DATE,           SERV_ID_DATE, 0,   0,    67,   128,  20,   GRAY_16, GRAY_16, GRAY_16,  SYS_FT_12,       CLEAR_BLEND,  LBL_DATE,         _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
+X_LBL( LABEL_SKIN_LOADING,   SERV_ID_SKLD, 0,   134,  222,  300,  16,   GRAY_16, GRAY_16, GRAY_16,  SYS_FT_16,       CLEAR_BLEND,  LBL_SKIN_LOADING, _X_LEFT_Y_CENTER,   GRAFX_OPTION_DRAW_ONCE)\
+
+//           Enum ID,            Service,      Sub, Px,  Py,  Sx,  Sy,  Background IMG, Bar IMG        Cursor Image,     COx,  COy,  CSV,  CEV,  CPR,  TPx,  TPy,  TSx,  TSy,  TC,      TAC,     TAC2,     Font ID,   Text Option,         Text Label,        Option
+#define PROGRESS_DEF(X_PROGRESS) \
+ X_PROGRESS( PROGRESS_LOADING,   SERV_ID_SKLD, 2,   25,  159, 430, 43,  INVALID_IMAGE,  LOADING_BAR,   LOADING_CURSOR,   20,   13,   0,    100,  384,  260,  63,   48,   16,   GRAY_16, GRAY_16, GRAY_16,  SYS_FT_16, _X_CENTER_Y_CENTER,  LBL_PERCENT,       GRAFX_OPTION_ORIENTATION_HORIZONTAL | GRAFX_OPTION_BLEND_CLEAR)\
+
+//      Enum ID,                Service,        Sub, LinkList
+//#define VIRTUAL_HUB_DEF(X_HUB) \
+ //X_HUB( VIRTUAL_MAIN_HUB,       SERV_ID_MHUB,   0,   LINK_LIST_MAIN_HUB )\
 
 //-------------------------------------------------------------------------------------------------
 

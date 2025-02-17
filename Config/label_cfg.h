@@ -38,6 +38,9 @@
 #define     DIGINI_USE_LABEL_DECIMAL_KEY        DEF_DISABLED            // Enable label 0-9 and dot, del, sign, sign inversion
 #define     DIGINI_USE_LABEL_HEXADECIMAL_KEY    DEF_DISABLED            // Enable label A-F
 
+#define USER_LABEL_LANGUAGE_DEF(X_LABEL)  \
+    X_LABEL( LBL_SKIN_LOADING,           "Skin Loading        %%",                      "Th\x82matique          %%"                     ) \
+
 #if 0
 
 #define USER_LABEL_LANGUAGE_DEF(X_LBL_CFG)

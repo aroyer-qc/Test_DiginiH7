@@ -34,9 +34,8 @@
 
 //                Enum ID,                  ID1,                 ID2,                     ID3,                 ID4,                 ID5,                 ID6,                 ID7,                 ID8
 #define LINK_LIST_DEF(X_LINK_LIST) \
-   /* X_LINK_LIST ( LINK_LIST_TEST,           LINK_TEST1,          LINK_TEST2,              INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK) */\
-    X_LINK_LIST ( LINK_LIST_MAIN,           LINK_MAIN_LOADING,   LINK_MAIN_DISPLAY,       INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK) \
-    X_LINK_LIST ( LINK_LIST_LOADING,        LINK_MAIN_PAGE,      INVALID_LINK,            INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK) \
+    X_LINK_LIST ( LINK_LIST_MAIN,           LINK_MAIN_LOADING,   INVALID_LINK,       INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK) \
+//   X_LINK_LIST ( LINK_LIST_LOADING,        LINK_MAIN_PAGE,      INVALID_LINK,            INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK,        INVALID_LINK) \
 
 
 //-------------------------------------------------------------------------------------------------

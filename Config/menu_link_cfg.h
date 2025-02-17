@@ -33,7 +33,9 @@
 //          Enum ID,              Struct object name
 #define LINK_DEF(X_LINK) \
     X_LINK( LINK_MAIN_LOADING,    PageMainDisplay      ) \
-    X_LINK( LINK_MAIN_DISPLAY,    PageMainDisplay      ) /* to change */\
+
+//    X_LINK( LINK_MAIN_HUB,        PageMainHub          ) \
+//    X_LINK( LINK_MAIN_DISPLAY,    PageMainDisplay      ) /* to change */\
     X_LINK( LINK_MAIN_PAGE,       PageMainDisplay      ) /* to change */\
 
 //-------------------------------------------------------------------------------------------------

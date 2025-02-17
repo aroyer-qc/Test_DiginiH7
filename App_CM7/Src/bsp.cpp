@@ -70,7 +70,6 @@ void BSP_Initialize(void)
     ISR_Initialize();
     IO_InitializeAll();
     DIGINI_Initialize();
-
     TaskTest1.Initialize();
 }
 
