@@ -43,13 +43,27 @@
 #define USE_IO_BUS_DRIVER           DEF_DISABLED
 #define USE_I2C_DRIVER              DEF_DISABLED
 #define USE_ETH_DRIVER              DEF_DISABLED
+
+#ifdef KIT_735IG
+  #define USE_HYPER_RAM_DRIVER      DEF_ENABLED
+#else
+  #define USE_HYPER_RAM_DRIVER      DEF_DISABLED
+#endif
+
 #define USE_I2S_DRIVER              DEF_DISABLED
+#define USE_OSPI_DRIVER             DEF_DISABLED
 #define USE_PWM_DRIVER              DEF_DISABLED //DEF_ENABLED
 #define USE_QSPI_DRIVER             DEF_DISABLED
 #define USE_RTC_DRIVER              DEF_DISABLED
 #define USE_SAI_DRIVER              DEF_DISABLED                    // Serial audio out
 #define USE_SDIO_DRIVER             DEF_DISABLED
-#define USE_SDRAM_DRIVER            DEF_ENABLED
+
+#if defined(KIT_745ZI) || defined(KIT_7B3LI)
+  #define USE_SDRAM_DRIVER          DEF_ENABLED
+#else
+  #define USE_SDRAM_DRIVER          DEF_DISABLED
+#endif
+
 #define USE_SPI_DRIVER              DEF_DISABLED //DEF_ENABLED
 #define USE_TIM_DRIVER              DEF_DISABLED //DEF_ENABLED
 #define USE_UART_DRIVER             DEF_ENABLED

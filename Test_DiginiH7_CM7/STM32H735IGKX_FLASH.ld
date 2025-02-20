@@ -38,8 +38,8 @@ MEMORY
     ROM              (rx)  : ORIGIN = 0x08000000, LENGTH = 1024K
     RAM              (xrw) : ORIGIN = 0x24000000, LENGTH = 128K
     ITCMRAM          (xrw) : ORIGIN = 0x00000000, LENGTH = 64K
-    GFX_DISPLAY      (rwx) : ORIGIN = 0xC0000000, LENGTH = 15M
-    GFX_RAM_DBASE    (rwx) : ORIGIN = 0xC0F00000, LENGTH = 1M
+    GFX_DISPLAY      (rwx) : ORIGIN = 0x70000000, LENGTH = 15M
+    GFX_RAM_DBASE    (rwx) : ORIGIN = 0x70F00000, LENGTH = 1M
 }
 
 /* Highest address of the user mode stack */
@@ -89,7 +89,7 @@ SECTIONS
     *(.ARM.extab* .gnu.linkonce.armextab.*)
     . = ALIGN(4);
   } >ROM
-  
+
   .ARM :
   {
     . = ALIGN(4);
@@ -107,7 +107,7 @@ SECTIONS
     PROVIDE_HIDDEN (__preinit_array_end = .);
     . = ALIGN(4);
   } >ROM
-  
+
   .init_array :
   {
     . = ALIGN(4);
@@ -117,7 +117,7 @@ SECTIONS
     PROVIDE_HIDDEN (__init_array_end = .);
     . = ALIGN(4);
   } >ROM
-  
+
   .fini_array :
   {
     . = ALIGN(4);
@@ -132,7 +132,7 @@ SECTIONS
   _sidata = LOADADDR(.data);
 
   /* Initialized data sections into "RAM" Ram type memory */
-  .data : 
+  .data :
   {
     . = ALIGN(4);
     _sdata = .;        /* create a global symbol at data start */
@@ -141,7 +141,7 @@ SECTIONS
 
     . = ALIGN(4);
     _edata = .;        /* define a global symbol at data end */
-    
+
   } >RAM AT> ROM
 
   /* Uninitialized data section into "RAM" Ram type memory */
@@ -187,8 +187,6 @@ SECTIONS
 
     __gfx_display_base__   = ORIGIN(GFX_DISPLAY);
 	__gfx_ram_data_base__  = ORIGIN(GFX_RAM_DBASE);
-/*	__user_ram_data_base__ = ORIGIN(RAM_DBASE); */
-/*	__gfx_qspi_data_base__ = ORIGIN(GFX_QSPI_DBASE); */
 
     /* Check if data + heap + stack exceeds RAM limit */
     ASSERT(__StackLimit >= __HeapLimit, "Region RAM overflowed with stack")

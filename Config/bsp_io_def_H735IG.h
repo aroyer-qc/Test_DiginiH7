@@ -136,45 +136,40 @@
 //---------------------------
 // ETH grouping configuration
 
-#define ETH_PIN_ON_PORT_A_ALT_x         (IO_PIN_1  | IO_PIN_2  | IO_PIN_7)                                                  // ok good 735
-#define ETH_PIN_ON_PORT_B_ALT_x         (IO_PIN_10 | IO_PIN_11 | IO_PIN_12 | IO_PIN_13)                                     // ok good 735
-//#define ETH_PIN_ON_PORT_C_ALT_x         (IO_PIN_1  | IO_PIN_4  | IO_PIN_5)                                                  // ok good 735
+//#define ETH_PIN_ON_PORT_A_ALT_x         (IO_PIN_1  | IO_PIN_2  | IO_PIN_7)
+//#define ETH_PIN_ON_PORT_B_ALT_x         (IO_PIN_10 | IO_PIN_11 | IO_PIN_12 | IO_PIN_13)
+//#define ETH_PIN_ON_PORT_C_ALT_x         (IO_PIN_1  | IO_PIN_4  | IO_PIN_5)
 
 //---------------------------
 // LCD grouping configuration
 
-#define LCD_PIN_ON_PORT_A_ALT_13        (IO_PIN_8)                                                                          // ok good 735
-#define LCD_PIN_ON_PORT_A_ALT_14        (IO_PIN_3  | IO_PIN_4  | IO_PIN_6)                                                  // ok good 735
-#define LCD_PIN_ON_PORT_B_ALT_14        (IO_PIN_0  | IO_PIN_1  | IO_PIN_8  | IO_PIN_9)                                      // ok good 735
-#define LCD_PIN_ON_PORT_C_ALT_14        (IO_PIN_7)                                                                          // ok good 735
-#define LCD_PIN_ON_PORT_D_ALT_14        (IO_PIN_0  | IO_PIN_3  | IO_PIN_6  | IO_PIN_10)                                     // ok good 735
-#define LCD_PIN_ON_PORT_E_ALT_14        (IO_PIN_0  | IO_PIN_1  | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_15)             // ok good 735
-#define LCD_PIN_ON_PORT_F_ALT_14        (IO_PIN_14 | IO_PIN_15)                                                             // ok good 735
-#define LCD_PIN_ON_PORT_G_ALT_14        (IO_PIN_14)                                                                         // ok good 735
-#define LCD_PIN_ON_PORT_H_ALT_9         (IO_PIN_4)                                                                          // ok good 735
-#define LCD_PIN_ON_PORT_H_ALT_14        (IO_PIN_3  | IO_PIN_6  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | IO_PIN_11 | IO_PIN_15) // ok good 735
+#define LCD_PIN_ON_PORT_A_ALT_13        (IO_PIN_8)
+#define LCD_PIN_ON_PORT_A_ALT_14        (IO_PIN_3  | IO_PIN_4  | IO_PIN_6)
+#define LCD_PIN_ON_PORT_B_ALT_14        (IO_PIN_0  | IO_PIN_1  | IO_PIN_8  | IO_PIN_9)
+#define LCD_PIN_ON_PORT_C_ALT_14        (IO_PIN_7)
+#define LCD_PIN_ON_PORT_D_ALT_14        (IO_PIN_0  | IO_PIN_3  | IO_PIN_6  | IO_PIN_10)
+#define LCD_PIN_ON_PORT_E_ALT_14        (IO_PIN_0  | IO_PIN_1  | IO_PIN_11 | IO_PIN_12 | IO_PIN_13 | IO_PIN_15)
+#define LCD_PIN_ON_PORT_F_ALT_14        (IO_PIN_14 | IO_PIN_15)
+#define LCD_PIN_ON_PORT_G_ALT_14        (IO_PIN_14)
+#define LCD_PIN_ON_PORT_H_ALT_9         (IO_PIN_4)
+#define LCD_PIN_ON_PORT_H_ALT_14        (IO_PIN_3  | IO_PIN_6  | IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | IO_PIN_11 | IO_PIN_15)
 
-//-------------------------------
-// OCTOSPI grouping configuration
+//---------------------------------------
+// OCTOSPI HYPERRAMgrouping configuration
 
 #define OSPI_PIN_ON_PORT_F_ALT_9        (IO_PIN_0  | IO_PIN_1  | IO_PIN_2  | IO_PIN_3  | IO_PIN_4  | IO_PIN_12)
 #define OSPI_PIN_ON_PORT_G_ALT_3        (IO_PIN_10 | IO_PIN_12)
-#define OSPI_PIN_ON_PORT_G_ALT_9        (IO_PIN_0  | IO_PIN_1  | IO_PIN_11 | IO_PIN_12)
+#define OSPI_PIN_ON_PORT_G_ALT_9        (IO_PIN_0  | IO_PIN_1  | IO_PIN_11)
 
 //-------------------------------------
 // SDMMC1 (SDIO) grouping configuration
 
-#define SDMMC1_PIN_ON_PORT_C_ALT12      ( IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | IO_PIN_11 | IO_PIN_12)                         // ok good 735
-#define SDMMC1_PIN_ON_PORT_D_ALT12      (IO_PIN_2)                                                                           // ok good 735
-
-//-----------------------------------------
-// this is HYPER RAM grouping configuration
-
-//#define HYPERRAM_PIN_ON_PORT_x_ALT_x      (IO_PIN_x  | IO_PIN_x ...)
+#define SDMMC1_PIN_ON_PORT_C_ALT12      (IO_PIN_8  | IO_PIN_9  | IO_PIN_10 | IO_PIN_11 | IO_PIN_12)
+#define SDMMC1_PIN_ON_PORT_D_ALT12      (IO_PIN_2)
 
 //----------------------------
 // UART grouping configuration
-#define SPI5_PIN_ON_PORT_F_ALT_5        (IO_PIN_7 | IO_PIN_8 | IO_PIN_9)                                                    // ok good 735
+#define SPI5_PIN_ON_PORT_F_ALT_5        (IO_PIN_7 | IO_PIN_8 | IO_PIN_9)
 
 //----------------------------
 // UART grouping configuration
@@ -200,12 +195,10 @@
     X_IO_GROUP( IO_LCD_ON_PORT_G_ALT14,     GPIOG,      LCD_PIN_ON_PORT_G_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
     X_IO_GROUP( IO_LCD_ON_PORT_H_ALT9,      GPIOH,      LCD_PIN_ON_PORT_H_ALT_9,        IO_CFG_LCD_PORT_AF9)        \
     X_IO_GROUP( IO_LCD_ON_PORT_H_ALT14,     GPIOH,      LCD_PIN_ON_PORT_H_ALT_14,       IO_CFG_LCD_PORT_AF14)       \
-/* OSPI ----------------------------------------------------------------------------------------------------------*/\
+/* OSPI HYPERRAM -------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_QSPI_ON_PORT_F_AF9,      GPIOF,      OSPI_PIN_ON_PORT_F_ALT_9,       IO_CFG_OSPI_AF9)            \
     X_IO_GROUP( IO_QSPI_ON_PORT_G_AF3,      GPIOG,      OSPI_PIN_ON_PORT_G_ALT_3,       IO_CFG_OSPI_AF3)            \
     X_IO_GROUP( IO_QSPI_ON_PORT_G_AF9,      GPIOG,      OSPI_PIN_ON_PORT_G_ALT_9,       IO_CFG_OSPI_AF9)            \
-/* HYPERRAM ------------------------------------------------------------------------------------------------------*/\
-\
 /* SPI -----------------------------------------------------------------------------------------------------------*/\
     X_IO_GROUP( IO_SPI5_ON_PORT_F,          GPIOF,      SPI5_PIN_ON_PORT_F_ALT_5,       IO_CFG_SPI_AF5)             \
 /* UART ----------------------------------------------------------------------------------------------------------*/\

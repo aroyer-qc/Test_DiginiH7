@@ -37,7 +37,7 @@
 
 ///------------------------------------------------------------------------------------------------
 ///
-/// Memory mapping for STM32H745-DISCOVERY
+/// Memory mapping for STM32H745-DISCOVERY and STM32H7B3-DK
 ///
 ///          0xD000 0000              GRAFX base address
 ///
@@ -47,9 +47,24 @@
 ///          0xD00F F000              Layer 4                ARGB8888 = 522240 Bytes
 ///          0xD017 E800              Layer 5                ARGB8888 = 522240 Bytes             Use for skin sliding page
 ///          0xD01F E000              Touch Sense layer      RGB565   = 261120 Bytes
-///          0xD023 DC00              Free memory pointer for raw skin data 5776384 Bytes free for the skin raw data
+///          0xD023 DC00              Free memory pointer for raw skin data 5776384 Bytes free for the skin raw data                            // number need to be updated.. 16M not 8M
 ///              ...
 ///          0xD07C 0000              256K database for skin info
+///
+////// Memory mapping for STM32H735-DK
+///
+///          0x7000 0000              GRAFX base address
+///
+///          0x7000 0000              Layer 1                RGB565   = 261120 Bytes
+///          0x7003 FC00              Layer 2                ARGB8888 = 522240 Bytes
+///          0x700B F400              Layer 3                RGB565   = 261120 Bytes
+///          0x700F F000              Layer 4                ARGB8888 = 522240 Bytes
+///          0x7017 E800              Layer 5                ARGB8888 = 522240 Bytes             Use for skin sliding page
+///          0x701F E000              Touch Sense layer      RGB565   = 261120 Bytes
+///          0x7023 DC00              Free memory pointer for raw skin data 5776384 Bytes free for the skin raw data                            // number need to be updated.. 16M not 8M
+///              ...
+///          0x707C 0000              256K database for skin info
+
 ///
 ///------------------------------------------------------------------------------------------------
 
@@ -64,13 +79,23 @@
 //
 //-------------------------------------------------------------------------------------------------
 
-// Du to memory limitation (8M), we use unused layer for temporary decoding
-#define GRAFX_RAW_INPUT_DATA_ADDRESS                    0xD00BF400      // 128K
-#define GRAFX_DECODE_ARRAY_ADDRESS                      0xD00DF400      // 224K
-#define GRAFX_APPEND_ARRAY_ADDRESS                      0xD0117400      // 224K
-#define GRAFX_PREFIX_ARRAY_ADDRESS                      0xD014F400      // 224K
-#define GRAFX_DECOMPRESS_METHOD_ADDRESS                 0xD0187400      // 8K
-#define GRAFX_DATA_SIZE_ADDRESS                         0xD0189400      // 8K
+#ifdef defined(KIT_745ZI) || defined(KIT_735IG)
+  #define GRAFX_RAW_INPUT_DATA_ADDRESS                  0xD00BF400      // 128K
+  #define GRAFX_DECODE_ARRAY_ADDRESS                    0xD00DF400      // 224K
+  #define GRAFX_APPEND_ARRAY_ADDRESS                    0xD0117400      // 224K
+  #define GRAFX_PREFIX_ARRAY_ADDRESS                    0xD014F400      // 224K
+  #define GRAFX_DECOMPRESS_METHOD_ADDRESS               0xD0187400      // 8K
+  #define GRAFX_DATA_SIZE_ADDRESS                       0xD0189400      // 8K
+#endif
+
+#ifdef defined(KIT_7B3LI)
+  #define GRAFX_RAW_INPUT_DATA_ADDRESS                  0x700BF400      // 128K
+  #define GRAFX_DECODE_ARRAY_ADDRESS                    0x700DF400      // 224K
+  #define GRAFX_APPEND_ARRAY_ADDRESS                    0x70117400      // 224K
+  #define GRAFX_PREFIX_ARRAY_ADDRESS                    0x7014F400      // 224K
+  #define GRAFX_DECOMPRESS_METHOD_ADDRESS               0x70187400      // 8K
+  #define GRAFX_DATA_SIZE_ADDRESS                       0x70189400      // 8K
+#endif
 
 //-------------------------------------------------------------------------------------------------
 

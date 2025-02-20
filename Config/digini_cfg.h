@@ -102,7 +102,7 @@
 // Note(s) GRAFX need DIGINI_USE_LABEL, DIGINI_USE_DATABASE, DIGINI_USE_STATIC_MEMORY_ALLOC
 //
 
-#define DIGINI_USE_GRAFX                                DEF_ENABLED //DISABLED
+#define DIGINI_USE_GRAFX                                DEF_DISABLED
 
 //-------------------------------------------------------------------------------------------------
 // Software CRC Configuration
