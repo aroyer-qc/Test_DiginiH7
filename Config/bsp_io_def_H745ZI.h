@@ -122,7 +122,7 @@
 /* LCD -----------------------------------------------------------------------------------------*/\
     X_IO( IO_LCD_DISPLAY,        GPIOD,      7,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
     X_IO( IO_LCD_BLANK_CTRL,     GPIOK,      0,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
-    X_IO( LCD_INT,               GPIOG,      2,      IO_CFG_INPUT_NP_LS)                          \
+    X_IO( IO_LCD_INT,            GPIOG,      2,      IO_CFG_INPUT_NP_LS)                          \
 /* ---------------------------------------------------------------------------------------------*/
 
 

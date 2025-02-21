@@ -33,6 +33,7 @@
 #ifdef HYPER_RAM_DRIVER_GLOBAL
 
 // S70KL1281 memory used on the STM32H735-DK
+/*
 const HYPER_RAM_Info_t HYPER_RAM_Info =
 {
     .pInstance              = OCTOSPI2,
@@ -57,7 +58,7 @@ const HYPER_RAM_Info_t HYPER_RAM_Info =
 
     .TimeOutActivation      = OSPI_TIMEOUT_COUNTER_DISABLE,
 };
-
+*/
 #else // HYPER_RAM_DRIVER_GLOBAL
 
 extern const HYPER_RAM_Info_t HYPER_RAM_Info;

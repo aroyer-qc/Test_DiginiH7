@@ -51,7 +51,7 @@
 ///              ...
 ///          0xD07C 0000              256K database for skin info
 ///
-////// Memory mapping for STM32H735-DK
+/// Memory mapping for STM32H735-DK
 ///
 ///          0x7000 0000              GRAFX base address
 ///
@@ -79,7 +79,7 @@
 //
 //-------------------------------------------------------------------------------------------------
 
-#ifdef defined(KIT_745ZI) || defined(KIT_735IG)
+#if defined(KIT_745ZI) || defined(KIT_7B3LI)
   #define GRAFX_RAW_INPUT_DATA_ADDRESS                  0xD00BF400      // 128K
   #define GRAFX_DECODE_ARRAY_ADDRESS                    0xD00DF400      // 224K
   #define GRAFX_APPEND_ARRAY_ADDRESS                    0xD0117400      // 224K
@@ -88,7 +88,7 @@
   #define GRAFX_DATA_SIZE_ADDRESS                       0xD0189400      // 8K
 #endif
 
-#ifdef defined(KIT_7B3LI)
+#if defined(KIT_735IG)
   #define GRAFX_RAW_INPUT_DATA_ADDRESS                  0x700BF400      // 128K
   #define GRAFX_DECODE_ARRAY_ADDRESS                    0x700DF400      // 224K
   #define GRAFX_APPEND_ARRAY_ADDRESS                    0x70117400      // 224K
