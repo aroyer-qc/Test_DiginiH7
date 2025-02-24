@@ -32,16 +32,14 @@
 #include "taskIdle.h"
 #include "bsp.h"
 
-
 static void CPU_CACHE_Enable(void)
 {
-  /* Enable I-Cache */
+  // Enable I-Cache
   SCB_EnableICache();
 
-  /* Enable D-Cache */
+  // Enable D-Cache
   SCB_EnableDCache();
 }
-
 
 //-------------------------------------------------------------------------------------------------
 //
@@ -56,9 +54,10 @@ static void CPU_CACHE_Enable(void)
 //-------------------------------------------------------------------------------------------------
 int main()
 {
-   // CPU_CACHE_Enable(); // this prevent the board from working properly... UART has wrong speed!!
-
-
+  #if (USE_MPU_DRIVER == DEF_ENABLED)
+    MPU_Initialize(MPU_PRIVILEGED_DEFAULT);
+    CPU_CACHE_Enable();
+  #endif
 
     nOS_Init();
     BSP_Initialize();                           // All hardware and system initialization

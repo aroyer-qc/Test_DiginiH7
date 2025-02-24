@@ -51,6 +51,7 @@
 #endif
 
 #define USE_I2S_DRIVER              DEF_DISABLED
+#define USE_MPU_DRIVER              DEF_DISABLED// if ENABLED at this time... no tick irq
 #define USE_OSPI_DRIVER             DEF_DISABLED
 #define USE_PWM_DRIVER              DEF_DISABLED //DEF_ENABLED
 #define USE_QSPI_DRIVER             DEF_DISABLED

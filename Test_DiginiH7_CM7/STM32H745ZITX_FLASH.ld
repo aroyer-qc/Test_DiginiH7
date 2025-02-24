@@ -44,15 +44,9 @@ MEMORY
     FLASH            (rx)  : ORIGIN = 0x08000000, LENGTH = 2048K
     RAM              (xrw) : ORIGIN = 0x24000000, LENGTH = 512K
     ITCMRAM          (xrw) : ORIGIN = 0x00000000, LENGTH = 64K
-/*    GFX_DISPLAY    (rwx) : ORIGIN = 0xD0000000, LENGTH = 15M
-    GFX_RAM_DBASE    (rwx) : ORIGIN = 0xD0F00000, LENGTH = 1M - 64K
-    RAM_DBASE        (rwx) : ORIGIN = 0xD0F00000, LENGTH = 64K*/
-
-    GFX_DISPLAY      (rwx) : ORIGIN = 0xD0000000, LENGTH = 7M
-    GFX_RAM_DBASE    (rwx) : ORIGIN = 0xD0700000, LENGTH = 1M - 64K
-    RAM_DBASE        (rwx) : ORIGIN = 0xD07F0000, LENGTH = 64K
-
-
+    GFX_DISPLAY      (rwx) : ORIGIN = 0xD0000000, LENGTH = 7M /*15M*/
+    GFX_RAM_DBASE    (rwx) : ORIGIN = ORIGIN(GFX_DISPLAY) + LENGTH(GFX_DISPLAY), LENGTH = 1M - 64K
+    RAM_DBASE        (rwx) : ORIGIN = ORIGIN(GFX_RAM_DBASE) + LENGTH(GFX_RAM_DBASE), LENGTH = 64K
 }
 
 /* Highest address of the user mode stack */

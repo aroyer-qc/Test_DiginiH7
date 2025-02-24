@@ -63,7 +63,10 @@ void TaskIdle(void)
 {
     TickCount_t Tick = GetTick();
 
-
+      // for(uint32_t i = 0; i < (480 * 272 * 4); i += 4)
+      //  {
+      //      *(uint32_t*)(0xd003FC00 + i) = 0xFFFFFFFF;
+      //  }
     // --------------------------------------------------------------------------------------------
     // Low level main control loop
     while(1)
