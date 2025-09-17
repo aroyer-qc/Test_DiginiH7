@@ -31,15 +31,7 @@
 #include "./lib_digini.h"
 #include "taskIdle.h"
 #include "bsp.h"
-
-static void CPU_CACHE_Enable(void)
-{
-  // Enable I-Cache
-  SCB_EnableICache();
-
-  // Enable D-Cache
-  SCB_EnableDCache();
-}
+#include "lib_solar_tracker.h"
 
 //-------------------------------------------------------------------------------------------------
 //
@@ -52,6 +44,9 @@ static void CPU_CACHE_Enable(void)
 // Note(s):        Here we create the task that will start all the other
 //
 //-------------------------------------------------------------------------------------------------
+SunPosition_t Position;
+SolarTracker SolarTrack;
+
 int main()
 {
   #if (USE_MPU_DRIVER == DEF_ENABLED)
@@ -64,17 +59,32 @@ int main()
     nOS_Start();
     BSP_PostOS_Initialize();                    // All initialization that must be done after the OS is started
 
-  #if 0 // def DEBUG
+  #if 1 // def DEBUG
     DateAndTime_t DateTime;
 
-    DateTime.Date.Day    = 25;
-    DateTime.Date.Month  = 6;
-    DateTime.Date.Year   = 2024;
-    DateTime.Time.Hour   = 15;
-    DateTime.Time.Minute = 30;
-    DateTime.Time.Second = 1;
+    DateTime.Date.Day    = 4;
+    DateTime.Date.Month  = 9;
+    DateTime.Date.Year   = 2025;
+    DateTime.Time.Hour   = 13;   // UT time  so time is 9 AM
+    DateTime.Time.Minute = 50;
+    DateTime.Time.Second = 0;
     LIB_SetDateAndTime(&DateTime);
   #endif
+
+  bool UseDegrees = true;             // Input (geographic position) and output are in degrees
+  bool UseNorthEqualsZero = true;     // Azimuth: false = South, pi/2 (90deg) = West  ->  true = North, pi/2 (90deg) = East
+  bool ComputeRefrEquatorial = true;  // Compute refraction-corrected equatorial coordinates (Hour angle, declination): false-no, true-yes
+  bool ComputeDistance = true;        // Compute the distance to the Sun in AU: false-no, true-yes
+
+  OriginLocation_t Location;
+  Location.Latitude  = 45.8944094;
+  Location.Longitude = -74.0015057;  // la maison
+  Location.Pressure = 101.0;     // Atmospheric pressure in kPa
+  Location.Temperature = 283.0;  // Atmospheric temperature in K
+
+
+  SolarTrack.SolTrack(&DateTime, &Location, &Position, UseDegrees, UseNorthEqualsZero, ComputeRefrEquatorial, ComputeDistance);
+
 
     TaskIdle();
     return 0;

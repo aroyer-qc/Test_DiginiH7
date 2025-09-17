@@ -42,7 +42,8 @@ MEMORY
     SRAM             (xrw) : ORIGIN = 0x30000000, LENGTH = 32K              /* Combine SRAM1 and SRAM2 */
     SRAM4            (xrw) : ORIGIN = 0x38000000, LENGTH = 16K
     GFX_DISPLAY      (rwx) : ORIGIN = 0x70000000, LENGTH = 15M
-    GFX_RAM_DBASE    (rwx) : ORIGIN = 0x70F00000, LENGTH = 1M
+    GFX_RAM_DBASE    (rwx) : ORIGIN = ORIGIN(GFX_DISPLAY) + LENGTH(GFX_DISPLAY), LENGTH = 1M - 64K
+    RAM_DBASE        (rwx) : ORIGIN = ORIGIN(GFX_RAM_DBASE) + LENGTH(GFX_RAM_DBASE), LENGTH = 64K
 }
 
 /* Highest address of the user mode stack */
@@ -190,6 +191,7 @@ SECTIONS
 
     __gfx_display_base__   = ORIGIN(GFX_DISPLAY);
 	__gfx_ram_data_base__  = ORIGIN(GFX_RAM_DBASE);
+	__user_ram_data_base__ = ORIGIN(RAM_DBASE);
 
     /* Check if data + heap + stack exceeds RAM limit */
     ASSERT(__StackLimit >= __HeapLimit, "Region RAM overflowed with stack")

@@ -138,7 +138,7 @@
   #define GRAFX_PDI_INVERT_Y                            DEF_DISABLED    // Not existent on this setup
 #endif
 
-#define GRAFX_USE_LOAD_SKIN                             DEF_DISABLED // DEF_ENABLED
+#define GRAFX_USE_LOAD_SKIN                             DEF_DISABLED    // DEF_ENABLED
 #define GRAFX_USE_PDI_MULTI_EVENT                       DEF_ENABLED     // Enable support for Multi-touch
 #define GRAFX_PDI_INTERRUPT_IO                          DEF_DISABLED    // Pointing device (touch) IRQ is not available on DISCO746
 
@@ -168,9 +168,9 @@
 
 // Default service available in Grafx
 #define USE_SERV_DATE                                   DEF_ENABLED     // Service to provide the date
-#define USE_SERV_INPD                                   DEF_DISABLED     // Service to input a decimal value
-#define USE_SERV_INPF                                   DEF_DISABLED     // Service to input a float value
-#define USE_SERV_INPH                                   DEF_DISABLED     // Service to input a Hexa value
+#define USE_SERV_INPD                                   DEF_DISABLED    // Service to input a decimal value
+#define USE_SERV_INPF                                   DEF_DISABLED    // Service to input a float value
+#define USE_SERV_INPH                                   DEF_DISABLED    // Service to input a Hexa value
 #define USE_SERV_INPS                                   DEF_DISABLED    // Service to input a string
 #define USE_SERV_TIME                                   DEF_ENABLED     // Service to provide time
 #define USE_SERV_XCHG                                   DEF_DISABLED    // Special service to exchange data.

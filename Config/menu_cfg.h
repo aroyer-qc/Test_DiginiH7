@@ -30,8 +30,10 @@
 
 #ifdef GFX_GLOBAL
 
-const PageWidget_t PageMainDisplay     [4] =  { {   BACK_LOADING,           INVALID_LINK        },
+const PageWidget_t PageMainDisplay     [6] =  { {   BACK_LOADING,           INVALID_LINK        },
                                                 {   LABEL_SKIN_LOADING,     INVALID_LINK        },
+                                                {   LABEL_TIME,             INVALID_LINK        },
+                                                {   LABEL_DATE,             INVALID_LINK        },
                                                 {   PROGRESS_LOADING,       INVALID_LINK        },
                                                 {   INVALID_WIDGET,         INVALID_LINK        }
                                               };
@@ -42,7 +44,7 @@ const PageWidget_t PageMainDisplay     [4] =  { {   BACK_LOADING,           INVA
 
 #else
 
-extern const PageWidget_t PageMainDisplay      [4];
+extern const PageWidget_t PageMainDisplay      [6];
 //extern const PageWidget_t PageMainHub          [2];
 
 #endif  // GFX_GLOBAL

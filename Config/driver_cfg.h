@@ -44,14 +44,14 @@
 #define USE_I2C_DRIVER              DEF_DISABLED
 #define USE_ETH_DRIVER              DEF_DISABLED
 
-#ifdef KIT_735IG
+#if defined(KIT_735IG)
   #define USE_HYPER_RAM_DRIVER      DEF_ENABLED
 #else
   #define USE_HYPER_RAM_DRIVER      DEF_DISABLED
 #endif
 
 #define USE_I2S_DRIVER              DEF_DISABLED
-#define USE_MPU_DRIVER              DEF_DISABLED// if ENABLED at this time... no tick irq
+#define USE_MPU_DRIVER              DEF_ENABLED
 #define USE_OSPI_DRIVER             DEF_DISABLED
 #define USE_PWM_DRIVER              DEF_DISABLED //DEF_ENABLED
 #define USE_QSPI_DRIVER             DEF_DISABLED

@@ -85,8 +85,8 @@ X_ICON( ICON_STATUS,     SERV_ID_RFSH, 0,   5,  98,   0,    0,    INVALID_IMAGE,
 
 //     Enum ID,              Service,      Sub, Px,   Py,   Sx,   Sy,   TC,      TAC,     TAC2,     Font ID,         Text Blend,   Text Label        Text Option         Option
 #define LABEL_DEF(X_LBL) \
-X_LBL( LABEL_TIME,           SERV_ID_TIME, 0,   0,    7,    128,  20,   GRAY_16, GRAY_16, GRAY_16,  SYS_FT_12,       CLEAR_BLEND,  LBL_TIME,         _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
-X_LBL( LABEL_DATE,           SERV_ID_DATE, 0,   0,    67,   128,  20,   GRAY_16, GRAY_16, GRAY_16,  SYS_FT_12,       CLEAR_BLEND,  LBL_DATE,         _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
+X_LBL( LABEL_TIME,           SERV_ID_TIME, 0,   0,    90,   128,  20,   GRAY_16, GRAY_16, GRAY_16,  SYS_FT_12,       CLEAR_BLEND,  LBL_TIME,         _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
+X_LBL( LABEL_DATE,           SERV_ID_DATE, 0,   0,    120,  128,  20,   GRAY_16, GRAY_16, GRAY_16,  SYS_FT_12,       CLEAR_BLEND,  LBL_DATE,         _X_LEFT_Y_CENTER,   GRAFX_OPTION_NONE) \
 X_LBL( LABEL_SKIN_LOADING,   SERV_ID_SKLD, 0,   134,  222,  300,  16,   GRAY_16, GRAY_16, GRAY_16,  SYS_FT_16,       CLEAR_BLEND,  LBL_SKIN_LOADING, _X_LEFT_Y_CENTER,   GRAFX_OPTION_DRAW_ONCE)\
 
 //           Enum ID,            Service,      Sub, Px,  Py,  Sx,  Sy,  Background IMG, Bar IMG        Cursor Image,     COx,  COy,  CSV,  CEV,  CPR,  TPx,  TPy,  TSx,  TSy,  TC,      TAC,     TAC2,     Font ID,   Text Option,         Text Label,        Option

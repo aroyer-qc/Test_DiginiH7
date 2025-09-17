@@ -53,6 +53,31 @@ const Language_e LanguageUsed     = LANG_ENGLISH;
 // Local Function(s)
 //-------------------------------------------------------------------------------------------------
 
+const HYPER_RAM_Info_t HYPER_RAM_Info =
+{
+    .pInstance              = OCTOSPI2,
+    .FifoThreshold          = 4,
+    .DeviceSize             = 24,                               // Hyper Ram Size   24 bits = 16Mb
+    .ChipSelectHighTime     = 4,
+    .ClockPrescaler         = 2,
+    .SampleShifting         = OSPI_SAMPLE_SHIFTING_NONE,
+    .DelayHoldQuarterCycle  = OSPI_DHQC_ENABLE,
+    .DelayBlockBypass       = OSPI_DELAY_BLOCK_USED,
+    .ChipSelectBoundary     = 23,
+    .Refresh                = 400,
+
+    .RW_RecoveryTime        = 3,
+    .AccessTime             = 6,
+    .WriteZeroLatency       = OSPI_LATENCY_ON_WRITE,
+    .LatencyMode            = OSPI_FIXED_LATENCY,
+
+    .DQS_Mode               = OSPI_DQS_ENABLE,
+    .Address                = 0,
+    .NbData                 = 1,
+
+    .TimeOutActivation      = OSPI_TIMEOUT_COUNTER_DISABLE,
+};
+
 //-------------------------------------------------------------------------------------------------
 //
 //  Name:           BSP_Initialize
