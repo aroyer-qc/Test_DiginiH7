@@ -116,8 +116,8 @@
 /* SPI IO's ------------------------------------------------------------------------------------*/\
     X_IO( IO_SPI5_CS,            GPIOF,      6,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
 /* LCD -----------------------------------------------------------------------------------------*/\
-    X_IO( IO_LCD_DISPLAY,        GPIOD,      10,     IO_CFG_OUTPUT_PP_HS_DEF1)                    \
-    X_IO( IO_LCD_BLANK_CTRL,     GPIOG,      15,     IO_CFG_OUTPUT_PP_HS_DEF1)                    \
+    X_IO( IO_LCD_TFT_DISPLAY,    GPIOD,      10,     IO_CFG_OUTPUT_PP_HS_DEF1)                    \
+    X_IO( IO_LCD_TFT_BL_CTRL,    GPIOG,      15,     IO_CFG_OUTPUT_PP_HS_DEF1)                    \
     X_IO( IO_LCD_RESET,          GPIOH,      6,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
     X_IO( IO_LCD_INT,            GPIOG,      2,      IO_CFG_INPUT_NP_LS)                          \
 /* ---------------------------------------------------------------------------------------------*/

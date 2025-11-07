@@ -76,7 +76,7 @@
 // Driver and/or peripheral to use with this project
 
 // LCD Display
-#define GRAFX_DRIVER_INCLUDE                "./Grafx/inc/driver/STM32H7xx/lib_STM32H7_lcd_480x272 - RK043FN48H.h"
+#define GRAFX_DRIVER_INCLUDE                "./Grafx/inc/driver/generic/lib_STM32xxx_lcd_480x272 - RK043FN48H.h"
 #define GRAFX_DRIVER_ARGUMENT               nullptr                                     // this driver does not have argument (ex. pointer on structure and/or peripheral)
 
 // Pointing device, here it is the capacitive touch screen

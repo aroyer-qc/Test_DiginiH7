@@ -117,8 +117,8 @@
 /*X_IO( IO_SPI1_MOSI,          GPIOxx,     7,      IO_CFG_SPI_AF5)        */                      \
 /*X_IO( IO_SPI1_CS,            GPIOxx,     9,      IO_CFG_OUTPUT_PP_HS_DEF1)*/                    \
 /* LCD -----------------------------------------------------------------------------------------*/\
-    X_IO( IO_LCD_DISPLAY,        GPIOA,      2,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
-    X_IO( IO_LCD_BLANK_CTRL,     GPIOA,      1,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
+    X_IO( IO_LCD_TFT_DISPLAY,    GPIOA,      2,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
+    X_IO( IO_LCD_TFT_BL_CTRL,    GPIOA,      1,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
     X_IO( LCD_INT,               GPIOH,      2,      IO_CFG_INPUT_NP_LS)                          \
 /* ---------------------------------------------------------------------------------------------*/
 

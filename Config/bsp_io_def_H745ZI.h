@@ -120,8 +120,8 @@
 /* MCO -----------------------------------------------------------------------------------------*/\
     X_IO( IO_MCO_2,              GPIOC,      9,      IO_CFG_MCO_OUTPUT)                           \
 /* LCD -----------------------------------------------------------------------------------------*/\
-    X_IO( IO_LCD_DISPLAY,        GPIOD,      7,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
-    X_IO( IO_LCD_BLANK_CTRL,     GPIOK,      0,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
+    X_IO( IO_LCD_TFT_DISPLAY,    GPIOD,      7,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
+    X_IO( IO_LCD_TFT_BL_CTRL,    GPIOK,      0,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
     X_IO( IO_LCD_INT,            GPIOG,      2,      IO_CFG_INPUT_NP_LS)                          \
 /* ---------------------------------------------------------------------------------------------*/
 
