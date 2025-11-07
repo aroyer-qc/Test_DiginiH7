@@ -99,7 +99,7 @@ void BSP_Initialize(void)
     HYPER_RAM_Initialize(&HYPER_RAM_Info);
   #endif
 
-    IO_SetPinHigh(IO_LCD_DISPLAY);
+    IO_SetPinHigh(IO_LCD_TFT_DISPLAY);
     DIGINI_Initialize();
     TaskTest1.Initialize();
 }

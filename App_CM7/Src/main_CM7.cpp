@@ -83,7 +83,7 @@ int main()
   Location.Temperature = 283.0;  // Atmospheric temperature in K
 
 
-  SolarTrack.SolTrack(&DateTime, &Location, &Position, UseDegrees, UseNorthEqualsZero, ComputeRefrEquatorial, ComputeDistance);
+//  SolarTrack.SolTrack(&DateTime, &Location, &Position, UseDegrees, UseNorthEqualsZero, ComputeRefrEquatorial, ComputeDistance);
 
 
     TaskIdle();
