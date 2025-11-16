@@ -107,19 +107,19 @@
 
 #define IO_DEF(X_IO) \
 /* ---------------------------------------------------------------------------------------------*/\
-/*        ENUM ID of the IO,     IO Port,    IO Pin, IO ConfigMode                              */\
+/*        ENUM ID of the IO,     IO Port,    IO Pin,        IO ConfigMode                       */\
 /* input IO's ----------------------------------------------------------------------------------*/\
-    X_IO( IO_USER_BUTTON,        GPIOC,      13,     IO_CFG_INPUT_NP_LS)                          \
+    X_IO( IO_USER_BUTTON,        GPIOC,      IO_PIN_13,     IO_CFG_INPUT_NP_LS)                   \
 /* Output IO's ---------------------------------------------------------------------------------*/\
-    X_IO( IO_LED_RED,            GPIOC,      2,      IO_CFG_OUTPUT_PP_LS_DEF0)                    \
-    X_IO( IO_LED_GREEN,          GPIOC,      3,      IO_CFG_OUTPUT_PP_LS_DEF1)                    \
+    X_IO( IO_LED_RED,            GPIOC,      IO_PIN_2,      IO_CFG_OUTPUT_PP_LS_DEF0)             \
+    X_IO( IO_LED_GREEN,          GPIOC,      IO_PIN_3,      IO_CFG_OUTPUT_PP_LS_DEF1)             \
 /* SPI IO's ------------------------------------------------------------------------------------*/\
-    X_IO( IO_SPI5_CS,            GPIOF,      6,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
+    X_IO( IO_SPI5_CS,            GPIOF,      IO_PIN_6,      IO_CFG_OUTPUT_PP_HS_DEF1)             \
 /* LCD -----------------------------------------------------------------------------------------*/\
-    X_IO( IO_LCD_TFT_DISPLAY,    GPIOD,      10,     IO_CFG_OUTPUT_PP_HS_DEF1)                    \
-    X_IO( IO_LCD_TFT_BL_CTRL,    GPIOG,      15,     IO_CFG_OUTPUT_PP_HS_DEF1)                    \
-    X_IO( IO_LCD_RESET,          GPIOH,      6,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
-    X_IO( IO_LCD_INT,            GPIOG,      2,      IO_CFG_INPUT_NP_LS)                          \
+    X_IO( IO_LCD_TFT_DISPLAY,    GPIOD,      IO_PIN_10,     IO_CFG_OUTPUT_PP_HS_DEF1)             \
+    X_IO( IO_LCD_TFT_BL_CTRL,    GPIOG,      IO_PIN_15,     IO_CFG_OUTPUT_PP_HS_DEF1)             \
+    X_IO( IO_LCD_RESET,          GPIOH,      IO_PIN_6,      IO_CFG_OUTPUT_PP_HS_DEF1)             \
+    X_IO( IO_LCD_INT,            GPIOG,      IO_PIN_2,      IO_CFG_INPUT_NP_LS)                   \
 /* ---------------------------------------------------------------------------------------------*/
 
 //-------------------------------------------------------------------------------------------------

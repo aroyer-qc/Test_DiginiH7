@@ -50,25 +50,25 @@
 // multiplier and Prescaler
 
 #define CFG_PLL1_M_DIVIDER                          5
-#define CFG_PLL1_N_MULTIPLIER                       160
+#define CFG_PLL1_N_MULTIPLIER                       192
 #define CFG_PLL1_P_DIVIDER                          2
-#define CFG_PLL1_Q_DIVIDER                          10
+#define CFG_PLL1_Q_DIVIDER                          20
 #define CFG_PLL1_R_DIVIDER                          4
 #define CFG_PLL1_FRACTIONAL_VALUE                   0                               // 0 Disable the Sigma-Delta modulator (Range: 0 - 8191)
 
 // Arbitrary value at this configure as needed by peripheral
-#define CFG_PLL2_M_DIVIDER                          25
-#define CFG_PLL2_N_MULTIPLIER                       50
-#define CFG_PLL2_P_DIVIDER                          2
-#define CFG_PLL2_Q_DIVIDER                          10
-#define CFG_PLL2_R_DIVIDER                          2
+#define CFG_PLL2_M_DIVIDER                          5
+#define CFG_PLL2_N_MULTIPLIER                       160
+#define CFG_PLL2_P_DIVIDER                          8
+#define CFG_PLL2_Q_DIVIDER                          8
+#define CFG_PLL2_R_DIVIDER                          10
 #define CFG_PLL2_FRACTIONAL_VALUE                   0                               // 0 Disable the Sigma-Delta modulator (Range: 0 - 8191)
 
-#define CFG_PLL3_M_DIVIDER                          5//25
-#define CFG_PLL3_N_MULTIPLIER                       160//192                             // Needed to configure LTDC correct speed
+#define CFG_PLL3_M_DIVIDER                          25
+#define CFG_PLL3_N_MULTIPLIER                       192
 #define CFG_PLL3_P_DIVIDER                          24
 #define CFG_PLL3_Q_DIVIDER                          4
-#define CFG_PLL3_R_DIVIDER                          83//20                              // LTDC source 9.6 MHz
+#define CFG_PLL3_R_DIVIDER                          20                              // LTDC source 9.6 MHz
 #define CFG_PLL3_FRACTIONAL_VALUE                   0                               // 0 Disable the Sigma-Delta modulator (Range: 0 - 8191)
 
 #define CFG_ENABLE_PLL1P                            1
@@ -76,7 +76,7 @@
 #define CFG_ENABLE_PLL1R                            0
 
 #define CFG_ENABLE_PLL2P                            0
-#define CFG_ENABLE_PLL2Q                            1
+#define CFG_ENABLE_PLL2Q                            0
 #define CFG_ENABLE_PLL2R                            1
 
 #define CFG_ENABLE_PLL3P                            0
@@ -104,7 +104,7 @@
 #define CFG_CEC_SOURCE_MUX                          CFG_CEC_LSE
 #define CFG_DFSDM1_SOURCE_MUX                       CFG_DFSDM1_PLCK2
 #define CFG_FDCAN_SOURCE_MUX                        CFG_FDCAN_HSE
-#define CFG_FMC_SOURCE_MUX                          CFG_FMC_PLL1Q
+#define CFG_FMC_SOURCE_MUX                          CFG_FMC_PLL2R
 #define CFG_I2C123_SOURCE_MUX                       CFG_I2C123_PCLK1
 #define CFG_I2C4_SOURCE_MUX                         CFG_I2C4_PCLK4
 #define CFG_HRTIM_SOURCE_MUX                        CFG_HRTIM_TIM_CLK
@@ -129,6 +129,6 @@
 #define CFG_SWP_SOURCE_MUX                          CFG_SWP_PCLK1
 #define CFG_UART16_SOURCE_MUX                       CFG_USART16_PCLK2
 #define CFG_UART234578_SOURCE_MUX                   CFG_USART234578_PCLK1
-#define CFG_USB_SOURCE_MUX                          CFG_USB_PLL3Q
+#define CFG_USB_SOURCE_MUX                          CFG_USB_PLL3Q//1Q
 
 //-------------------------------------------------------------------------------------------------

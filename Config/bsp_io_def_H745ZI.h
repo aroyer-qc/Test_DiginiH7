@@ -105,24 +105,24 @@
 
 #define IO_DEF(X_IO) \
 /* ---------------------------------------------------------------------------------------------*/\
-/*        ENUM ID of the IO,     IO Port,    IO Pin, IO ConfigMode                              */\
+/*        ENUM ID of the IO,     IO Port,    IO Pin,        IO ConfigMode                       */\
 /* input IO's ----------------------------------------------------------------------------------*/\
-    X_IO( IO_USER_BUTTON,        GPIOC,      13,     IO_CFG_INPUT_NP_LS)                          \
+    X_IO( IO_USER_BUTTON,        GPIOC,      IO_PIN_13,     IO_CFG_INPUT_NP_LS)                   \
 /* Output IO's ---------------------------------------------------------------------------------*/\
-    X_IO( IO_LED_RED,            GPIOJ,      2,      IO_CFG_OUTPUT_PP_LS_DEF0)                    \
-    X_IO( IO_LED_GREEN,          GPIOI,      13,     IO_CFG_OUTPUT_PP_LS_DEF1)                    \
+    X_IO( IO_LED_RED,            GPIOJ,      IO_PIN_2,      IO_CFG_OUTPUT_PP_LS_DEF0)             \
+    X_IO( IO_LED_GREEN,          GPIOI,      IO_PIN_13,     IO_CFG_OUTPUT_PP_LS_DEF1)             \
 /* SPI IO's ------------------------------------------------------------------------------------*/\
-    X_IO( IO_SPI3_CLK,           GPIOxx,     3,      IO_CFG_SPI_AF5)                              \
-    X_IO( IO_SPI3_MOSI,          GPIOxx,     5,      IO_CFG_SPI_AF5)                              \
-    X_IO( IO_SPI1_CLK,           GPIOxx,     5,      IO_CFG_SPI_AF5)                              \
-    X_IO( IO_SPI1_MOSI,          GPIOxx,     7,      IO_CFG_SPI_AF5)                              \
-    X_IO( IO_SPI1_CS,            GPIOxx,     9,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
+    X_IO( IO_SPI3_CLK,           GPIOxx,     IO_PIN_3,      IO_CFG_SPI_AF5)                       \
+    X_IO( IO_SPI3_MOSI,          GPIOxx,     IO_PIN_5,      IO_CFG_SPI_AF5)                       \
+    X_IO( IO_SPI1_CLK,           GPIOxx,     IO_PIN_5,      IO_CFG_SPI_AF5)                       \
+    X_IO( IO_SPI1_MOSI,          GPIOxx,     IO_PIN_7,      IO_CFG_SPI_AF5)                       \
+    X_IO( IO_SPI1_CS,            GPIOxx,     IO_PIN_9,      IO_CFG_OUTPUT_PP_HS_DEF1)             \
 /* MCO -----------------------------------------------------------------------------------------*/\
-    X_IO( IO_MCO_2,              GPIOC,      9,      IO_CFG_MCO_OUTPUT)                           \
+    X_IO( IO_MCO_2,              GPIOC,      IO_PIN_9,      IO_CFG_MCO_OUTPUT)                    \
 /* LCD -----------------------------------------------------------------------------------------*/\
-    X_IO( IO_LCD_TFT_DISPLAY,    GPIOD,      7,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
-    X_IO( IO_LCD_TFT_BL_CTRL,    GPIOK,      0,      IO_CFG_OUTPUT_PP_HS_DEF1)                    \
-    X_IO( IO_LCD_INT,            GPIOG,      2,      IO_CFG_INPUT_NP_LS)                          \
+    X_IO( IO_LCD_TFT_DISPLAY,    GPIOD,      IO_PIN_7,      IO_CFG_OUTPUT_PP_HS_DEF1)             \
+    X_IO( IO_LCD_TFT_BL_CTRL,    GPIOK,      IO_PIN_0,      IO_CFG_OUTPUT_PP_HS_DEF1)             \
+    X_IO( IO_LCD_INT,            GPIOG,      IO_PIN_2,      IO_CFG_INPUT_NP_LS)                   \
 /* ---------------------------------------------------------------------------------------------*/
 
 

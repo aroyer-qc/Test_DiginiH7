@@ -31,19 +31,19 @@
 //-------------------------------------------------------------------------------------------------
 
 // SDRAM Timing (Value 1 to 16)
-#define CFG_SDRAM_LOAD_TO_ACTIVITY_DELAY        2   // Delay between a 'load mode register' command and an 'active' or 'refresh' command
-#define CFG_SDRAM_EXIT_SELF_REFRESH_DELAY           // Delay from releasing the 'self-refresh' command to issuing the 'activate' command
-#define CFG_SDRAM_SELF_REFRESH_TIME             4   // Minimum self-refresh period
-#define CFG_SDRAM_ROW_CYCLE_DELAY               6   // Delay between the 'refresh' command and the Activate command, as well as the delay between two consecutive 'refresh' command
-#define CFG_SDRAM_WRITE_RECOVERY_TIME           2   // Delay between a 'write' and a 'pre-charge' command
-#define CFG_SDRAM_RP_DELAY                      2   // Delay between a pre-charge command and another command
-#define CFG_SDRAM_RCD_DELAY                     2   // Delay between the 'activate' command and a Read/Write command
+#define CFG_SDRAM_LOAD_TO_ACTIVITY_DELAY        2   // 2 Clock cycles 								(TMRD) Delay between a 'load mode register' command and an 'active' or 'refresh' command
+#define CFG_SDRAM_EXIT_SELF_REFRESH_DELAY       7   // min = 70 nSec (7 x 10.00 nSec)				(TXSR) Delay from releasing the 'self-refresh' command to issuing the 'activate' command
+#define CFG_SDRAM_SELF_REFRESH_TIME             4   // min = 42 nSec (5 x 10.00 nSec) max=120k(ns)	(TRAS) Minimum self-refresh period
+#define CFG_SDRAM_ROW_CYCLE_DELAY               6   // min = 63 nSec (7 x 10.00 nSec)               (TRC)  Delay between the 'refresh' command and the Activate command, as well as the delay between two consecutive 'refresh' command
+#define CFG_SDRAM_WRITE_RECOVERY_TIME           2   // 2 Clock cycles								(TWR)  Delay between a 'write' and a 'pre-charge' command
+#define CFG_SDRAM_RP_DELAY                      2   // min = 15 nSec (2 x 10.00 nSec)  				(TRP)  Delay between a pre-charge command and another command
+#define CFG_SDRAM_RCD_DELAY                     2   // min = 15 nSec (2 x 10.00 nSec)               (TRCD) Delay between the 'activate' command and a Read/Write command
 
 #define CFG_SDRAM_AUTO_REFRESH_CYCLE            8   // Auto refresh cycle
 
 #define CFG_SDRAM_MRD_WRITE_BURST_MODE          FMC_SDRAM_MRD_WRITE_BURST_MODE_SINGLE
 #define CFG_SDRAM_MRD_OPERATION_MODE            FMC_SDRAM_MRD_OPERATION_MODE_STANDARD
-#define CFG_SDRAM_MRD_CAS_LATENCY               FMC_SDRAM_MRD_CAS_LATENCY_3 //2
+#define CFG_SDRAM_MRD_CAS_LATENCY               FMC_SDRAM_MRD_CAS_LATENCY_2
 #define CFG_SDRAM_MRD_BURST_TYPE                FMC_SDRAM_MRD_BURST_TYPE_SEQUENTIAL
 #define CFG_SDRAM_MRD_BURST_LENGTH              FMC_SDRAM_MRD_BURST_LENGTH_1
 
@@ -53,7 +53,7 @@
 #define CFG_SDRAM_ROW_BITS_NUMBER               FMC_SDRAM_ROW_BITS_NUM_12
 #define CFG_SDRAM_MEMORY_DATA_WIDTH             FMC_SDRAM_MEM_BUS_WIDTH_16
 #define CFG_SDRAM_INTERNAL_BANK_NUMBER          FMC_SDRAM_INTERN_BANKS_NUM_4
-#define CFG_SDRAM_CAS_LATENCY                   FMC_SDRAM_CAS_LATENCY_3 //2
+#define CFG_SDRAM_CAS_LATENCY                   FMC_SDRAM_CAS_LATENCY_2
 #define CFG_SDRAM_WRITE_PROTECTION              FMC_SDRAM_WRITE_PROTECTION_DISABLE
 #define CFG_SDRAM_SD_CLOCK_PERIOD               FMC_SDRAM_CLOCK_PERIOD_2
 #define CFG_SDRAM_READ_BURST                    FMC_SDRAM_RBURST_ENABLE
