@@ -53,31 +53,6 @@ const Language_e LanguageUsed     = LANG_ENGLISH;
 // Local Function(s)
 //-------------------------------------------------------------------------------------------------
 
-const HYPER_RAM_Info_t HYPER_RAM_Info =
-{
-    .pInstance              = OCTOSPI2,
-    .FifoThreshold          = 4,
-    .DeviceSize             = 24,                               // Hyper Ram Size   24 bits = 16Mb
-    .ChipSelectHighTime     = 4,
-    .ClockPrescaler         = 2,
-    .SampleShifting         = OSPI_SAMPLE_SHIFTING_NONE,
-    .DelayHoldQuarterCycle  = OSPI_DHQC_ENABLE,
-    .DelayBlockBypass       = OSPI_DELAY_BLOCK_USED,
-    .ChipSelectBoundary     = 23,
-    .Refresh                = 400,
-
-    .RW_RecoveryTime        = 3,
-    .AccessTime             = 6,
-    .WriteZeroLatency       = OSPI_LATENCY_ON_WRITE,
-    .LatencyMode            = OSPI_FIXED_LATENCY,
-
-    .DQS_Mode               = OSPI_DQS_ENABLE,
-    .Address                = 0,
-    .NbData                 = 1,
-
-    .TimeOutActivation      = OSPI_TIMEOUT_COUNTER_DISABLE,
-};
-
 //-------------------------------------------------------------------------------------------------
 //
 //  Name:           BSP_Initialize
@@ -91,15 +66,6 @@ const HYPER_RAM_Info_t HYPER_RAM_Info =
 //-------------------------------------------------------------------------------------------------
 void BSP_Initialize(void)
 {
-    SysTick_Config(SYSTEM_CORE_CLOCK / CFG_SYSTICK_RATE);
-    ISR_Initialize();
-    IO_InitializeAll();
-
-  #ifdef KIT_735IG
-    HYPER_RAM_Initialize(&HYPER_RAM_Info);
-  #endif
-
-    IO_SetPinHigh(IO_LCD_TFT_DISPLAY);
     DIGINI_Initialize();
     TaskTest1.Initialize();
 }
@@ -120,7 +86,6 @@ SystemState_e BSP_PostOS_Initialize(void)
     SystemState_e State = SYS_READY;
 
     myUART_Terminal.Initialize();
-
     State = DIGINI_PostInitialize();
 
     return State;
