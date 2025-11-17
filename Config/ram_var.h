@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File :  hyper_ram_var.h
+//  File :  ram_var.h
 //
 //-------------------------------------------------------------------------------------------------
 //
@@ -23,26 +23,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 //-------------------------------------------------------------------------------------------------
+//
+//  Notes : Hyper RAM config const for STM32H735IG devkit
+//
+//-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
 // Constant(s)
 //-------------------------------------------------------------------------------------------------
 
-#ifdef HYPER_RAM_DRIVER_GLOBAL
+#ifdef HYPER_RAM_GLOBAL
 
-// S70KL1281 memory used on the STM32H735-DK
 const HYPER_RAM_Info_t HYPER_RAM_Info =
 {
     .pInstance              = OCTOSPI2,
     .FifoThreshold          = 4,
     .DeviceSize             = 24,                               // Hyper Ram Size   24 bits = 16Mb
-    .ChipSelectHighTime     = 8,
-    .ClockPrescaler         = 4,
+    .ChipSelectHighTime     = 4,
+    .ClockPrescaler         = 2,
     .SampleShifting         = OSPI_SAMPLE_SHIFTING_NONE,
     .DelayHoldQuarterCycle  = OSPI_DHQC_ENABLE,
     .DelayBlockBypass       = OSPI_DELAY_BLOCK_USED,
     .ChipSelectBoundary     = 23,
-    .Refresh                = 250,
+    .Refresh                = 400,
 
     .RW_RecoveryTime        = 3,
     .AccessTime             = 6,
@@ -56,10 +59,11 @@ const HYPER_RAM_Info_t HYPER_RAM_Info =
     .TimeOutActivation      = OSPI_TIMEOUT_COUNTER_DISABLE,
 };
 
-#else // HYPER_RAM_DRIVER_GLOBAL
+#else // HYPER_RAM_GLOBAL
 
 extern const HYPER_RAM_Info_t HYPER_RAM_Info;
 
-#endif // HYPER_RAM_DRIVER_GLOBAL
+#endif // HYPER_RAM_GLOBAL
 
 //-------------------------------------------------------------------------------------------------
+

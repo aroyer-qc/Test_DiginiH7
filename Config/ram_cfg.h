@@ -30,6 +30,8 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
+#ifdef KIT_735IG
+
 // SDRAM Timing (Value 1 to 16)
 #define CFG_SDRAM_LOAD_TO_ACTIVITY_DELAY        2   // 2 Clock cycles 								(TMRD) Delay between a 'load mode register' command and an 'active' or 'refresh' command
 #define CFG_SDRAM_EXIT_SELF_REFRESH_DELAY       7   // min = 70 nSec (7 x 10.00 nSec)				(TXSR) Delay from releasing the 'self-refresh' command to issuing the 'activate' command
@@ -60,5 +62,7 @@
 #define CFG_SDRAM_PIPE_DELAY                    FMC_SDRAM_RPIPE_DELAY_0
 
 #define CFG_SDRAM_REFRESH_COUNT                 1539                                // ~64 mSec Refresh at 100 Mhz (This value was found in the STM32H745ZI Example.)
+
+#endif
 
 //-------------------------------------------------------------------------------------------------
