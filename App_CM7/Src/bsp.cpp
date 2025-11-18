@@ -85,7 +85,6 @@ SystemState_e BSP_PostOS_Initialize(void)
 {
     SystemState_e State = SYS_READY;
 
-    myUART_Terminal.Initialize();
     State = DIGINI_PostInitialize();
 
     return State;
