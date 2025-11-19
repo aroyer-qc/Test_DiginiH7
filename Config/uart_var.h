@@ -79,7 +79,8 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
             DMA_REQUEST_USART1_RX,
             0,                                              // RX_IT_Flag
             (uint32_t*)DMA1_Stream2,                        // RX_DMA_TypeDef
-            ISR_IRQn_NONE,                                  // RX_IRQn
+            ISR_NONE_IRQn,                                  // RX_IRQn
+            4,
         },
 
         // DMA_TX
@@ -111,7 +112,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
             DMA_REQUEST_USART2_RX,
             0,                                              // RX_IT_Flag
             (uint32_t*)DMA1_Streamx,                        // RX_DMA_TypeDef
-            ISR_IRQn_NONE,                                  // RX_IRQn
+            ISR_NONE_IRQn,                                  // RX_IRQn
         },
 
         // DMA_TX
@@ -142,7 +143,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
             DMA_REQUEST_USART3_RX,
             0,                                              // RX_IT_Flag
             (uint32_t*)DMA1_Stream0,                        // RX_DMA_TypeDef
-            ISR_IRQn_NONE,                                  // RX_IRQn
+            ISR_NONE_IRQn,                                  // RX_IRQn
         },
 
         // DMA_TX
@@ -174,7 +175,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
             0,                                              // RX_IT_Flag
             DMA_xIFCR_CTCIFx,                               // RX_IT_Flag
             (uint32_t*)DMA1_Streamx,                        // RX_DMA_TypeDef
-            ISR_IRQn_NONE,                                  // RX_IRQn
+            ISR_NONE_IRQn,                                  // RX_IRQn
         },
 
         // DMA_TX
@@ -206,7 +207,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
             0,                                              // RX_IT_Flag
             DMA_xIFCR_CTCIFx,                               // RX_IT_Flag
             (uint32_t*)DMA1_Streamx,                        // RX_DMA_TypeDef
-            ISR_IRQn_NONE,                                  // RX_IRQn
+            ISR_NONE_IRQn,                                  // RX_IRQn
         },
 
         // DMA_TX
@@ -224,7 +225,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
   #if (UART_DRIVER_SUPPORT_UART6_CFG == DEF_ENABLED)
     {
         USART6,                                             // USARTx
-        ISR_IRQn_NONE,                                      // IRQn_Channel
+        ISR_NONE_IRQn,                                      // IRQn_Channel
         7,                                                  // PreempPrio
         UART_Config_e(TEST_CONFIG | UART_CFG_ENABLE_TX),
         UART_BAUD_115200,
@@ -238,7 +239,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
             0,                                              // RX_IT_Flag
             DMA_xIFCR_CTCIFx,                               // RX_IT_Flag
             (uint32_t*)DMA1_Streamx,                        // RX_DMA_TypeDef
-            ISR_IRQn_NONE,                                  // RX_IRQn
+            ISR_NONE_IRQn,                                  // RX_IRQn
         },
 
         // DMA_TX
@@ -269,7 +270,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
             0,                                              // RX_IT_Flag
             DMA_xIFCR_CTCIFx,                               // RX_IT_Flag
             (uint32_t*)DMA1_Streamx,                        // RX_DMA_TypeDef
-            ISR_IRQn_NONE,                                  // RX_IRQn
+            ISR_NONE_IRQn,                                  // RX_IRQn
         },
 
         // DMA_TX
@@ -300,7 +301,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
             0,                                              // RX_IT_Flag
             DMA_xIFCR_CTCIFx,                               // RX_IT_Flag
             (uint32_t*)DMA1_Streamx,                        // RX_DMA_TypeDef
-            ISR_IRQn_NONE,                                  // RX_IRQn
+            ISR_NONE_IRQn,                                  // RX_IRQn
         },
 
         // DMA_TX
