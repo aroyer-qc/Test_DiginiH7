@@ -106,7 +106,7 @@
 /*        ENUM ID of the IO,     IO Port,    IO Pin,        IO ConfigMode                       */\
 /* input IO's ----------------------------------------------------------------------------------*/\
     X_IO( IO_USER_BUTTON,        GPIOC,      IO_PIN_13,     IO_CFG_INPUT_NP_LS)                   \
-    X_IO( IO_SD_DETECT,          GPIOI,      IO_PIN_18,     IO_CFG_INPUT_NP_LS)                   \
+    X_IO( IO_SD_DETECT,          GPIOI,      IO_PIN_8,      IO_CFG_INPUT_NP_LS)                   \
 /* Output IO's ---------------------------------------------------------------------------------*/\
     X_IO( IO_LED_RED,            GPIOG,      IO_PIN_11,     IO_CFG_OUTPUT_PP_LS_DEF0)             \
     X_IO( IO_LED_BLUE,           GPIOG,      IO_PIN_2,      IO_CFG_OUTPUT_PP_LS_DEF1)             \
