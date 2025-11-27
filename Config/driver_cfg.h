@@ -60,7 +60,7 @@
 #define USE_SDIO_DRIVER             DEF_DISABLED
 
 #if defined(KIT_745ZI) || defined(KIT_7B3LI)
-  #define USE_SDRAM_DRIVER          DEF_ENABLED
+  //#define USE_SDRAM_DRIVER          DEF_ENABLED
 #else
   #define USE_SDRAM_DRIVER          DEF_DISABLED
 #endif
