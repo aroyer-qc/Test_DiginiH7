@@ -26,11 +26,11 @@
 
 #ifdef LIB_IP_MANAGER_GLOBAL
 
-class IP_Manager myWiredIP;
+//class IP_Manager myWiredIP;
 
 #else
 
-extern class IP_Manager myWiredIP;
+//extern class IP_Manager myWiredIP;
 
 #endif
 
