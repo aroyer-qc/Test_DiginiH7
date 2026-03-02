@@ -32,6 +32,10 @@
 
 #define CON_USE_COMM_UART                       &myUART_Terminal
 
+#define CON_USE_DEBUG_LOG                       DEF_ENABLED
+#define CON_USE_CMD_HELP                        DEF_ENABLED         // Adding the help command to the command line
+
+
 #define CON_CHILD_PROCESS_PUSH_POP_LEVEL        2   // Cascading Number of child process .
 
 // This define if enabled will trap every line starting with CON_TRAP_COMMENT_CHARACTER so the peer
@@ -44,9 +48,7 @@
 #define CON_TRAP_COMMENT_TIME_OUT               50
 
 
-// TODO is it the best place to put this....???
-
-//#define SYS_DEBUG_LEVEL_1 to 16
+// SYS_DEBUG_LEVEL_x 1 to 16
 #define SYS_DEBUG_LEVEL_SYSTEM_STATUS           SYS_DEBUG_LEVEL_1
 #define SYS_DEBUG_LEVEL_SYSTEM_ACTION           SYS_DEBUG_LEVEL_2
 #define SYS_DEBUG_LEVEL_SYSTEM_HEALTH           SYS_DEBUG_LEVEL_3
@@ -55,6 +57,7 @@
 #define SYS_DEBUG_LEVEL_ETHERNET                SYS_DEBUG_LEVEL_6
 #define SYS_DEBUG_LEVEL_NANO_IP                 SYS_DEBUG_LEVEL_7
 #define SYS_DEBUG_LEVEL_MEMORY_POOL             SYS_DEBUG_LEVEL_8
+#define SYS_DEBUG_LEVEL_APPLICATION             SYS_DEBUG_LEVEL_9
 
 //-------------------------------------------------------------------------------------------------
 

@@ -38,11 +38,6 @@
 #define DIGINI_USE_ASSERT                               DEF_DISABLED
 
 //-------------------------------------------------------------------------------------------------
-// Static memory allocation
-//
-#define DIGINI_USE_STATIC_MEMORY_ALLOC                  DEF_ENABLED
-
-//-------------------------------------------------------------------------------------------------
 // Database support
 //
 #define DIGINI_USE_DATABASE                             DEF_ENABLED
@@ -71,7 +66,7 @@
 //-------------------------------------------------------------------------------------------------
 // Ethernet
 //
-#define DIGINI_USE_ETHERNET                             DEF_DISABLED//DEF_ENABLED
+#define DIGINI_USE_ETHERNET                             DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // High level Peripheral
