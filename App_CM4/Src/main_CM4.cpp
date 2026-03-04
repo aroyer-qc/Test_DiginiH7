@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File :  console_cfg.h
+//  File : main_CM7.cpp
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2021 Alain Royer.
+// Copyright(c) 2024 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -24,43 +24,31 @@
 //
 //-------------------------------------------------------------------------------------------------
 
-#pragma once
-
 //-------------------------------------------------------------------------------------------------
-// Define(s)
+// Include file(s)
 //-------------------------------------------------------------------------------------------------
 
-#define CON_USE_COMM_UART                       &myUART_Terminal
-
-#define CON_USE_DEBUG_LOG                       DEF_ENABLED
-#define CON_USE_CMD_HELP                        DEF_ENABLED         // Adding the help command to the command line
-
-
-#define CON_CHILD_PROCESS_PUSH_POP_LEVEL        2   // Cascading number of child process.
-
-// This define if enabled will trap every line starting with CON_TRAP_COMMENT_CHARACTER so the peer
-// module connected to the serial port can send information for watching user or debugging purpose.
-// By enabling the feature the code will not parse a line with CON_TRAP_COMMENT_CHARACTER until the
-// CON_TRAP_COMMENT_END_OF_LINE_MARKER is detected.
-#define CON_TRAP_COMMENT_INCOMING_LINE          DEF_DISABLED
-#define CON_TRAP_COMMENT_CHARACTER              '#'
-#define CON_TRAP_COMMENT_END_OF_LINE_MARKER     '\n'
-#define CON_TRAP_COMMENT_TIME_OUT               50
-
-
-// SYS_DEBUG_LEVEL_x 1 to 16
-#define SYS_DEBUG_LEVEL_SYSTEM_STATUS           SYS_DEBUG_LEVEL_1
-#define SYS_DEBUG_LEVEL_SYSTEM_ACTION           SYS_DEBUG_LEVEL_2
-#define SYS_DEBUG_LEVEL_SYSTEM_HEALTH           SYS_DEBUG_LEVEL_3
-#define SYS_DEBUG_LEVEL_MONITOR_LOGS            SYS_DEBUG_LEVEL_4
-#define SYS_DEBUG_LEVEL_STACK_WARNING           SYS_DEBUG_LEVEL_5
-#define SYS_DEBUG_LEVEL_ETHERNET                SYS_DEBUG_LEVEL_6
-#define SYS_DEBUG_LEVEL_NANO_IP                 SYS_DEBUG_LEVEL_7
-#define SYS_DEBUG_LEVEL_MEMORY_POOL             SYS_DEBUG_LEVEL_8
-#define SYS_DEBUG_LEVEL_APPLICATION             SYS_DEBUG_LEVEL_9
+#include "./lib_digini.h"
+#include "taskIdle.h"
+#include "bsp.h"
 
 //-------------------------------------------------------------------------------------------------
-
-
-
-
+//
+// Name:           main
+// Parameter(s):   void
+// Return:         int
+//
+// Description:    main() what more can be said
+//
+// Note(s):        Here we create the task that will start all the other
+//
+//-------------------------------------------------------------------------------------------------
+int main()
+{
+    nOS_Init();
+    BSP_Initialize();                           // All hardware and system initialization
+    nOS_Start();
+    BSP_PostOS_Initialize();                    // All initialization that must be done after the OS is started
+    TaskIdle();
+    return 0;
+}

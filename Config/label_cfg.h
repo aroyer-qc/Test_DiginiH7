@@ -30,7 +30,7 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
-// Notes some default label exist in the file "lib_label.h", some of them can be enable/disable in this configuratio
+// Notes some default label exist in the file "lib_label.h", some of them can be enable/disable in this configuration
 
 #define     DIGINI_USE_LABEL_DATE               DEF_ENABLED
 #define     DIGINI_USE_LABEL_TIME               DEF_ENABLED

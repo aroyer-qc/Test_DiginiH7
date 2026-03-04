@@ -41,20 +41,9 @@
 #include "bsp.h"
 #undef  BSP_GLOBAL
 
-#if (DIGINI_USE_ETHERNET == DEF_ENABLED)
-#include "Task_network.h"
-#endif // (DIGINI_USE_ETHERNET == DEF_ENABLED)
-
-//-------------------------------------------------------------------------------------------------
-
-// because for now we don't have eeprom for this test board
-const TempUnit_e         TemperatureUnit = TEMP_CELSIUS;
-const SystemDebugLevel_e DebugLevel      = SystemDebugLevel_e(0);//SystemDebugLevel_e(SYS_DEBUG_LEVEL_ETHERNET | SYS_DEBUG_LEVEL_MEMORY_POOL);
-const Language_e         LanguageUsed    = LANG_ENGLISH;
-
-//#if (BSP_TEST_HARDWARE == DEF_ENABLED)
-void BSP_HardwareTest (void);
-//#endif
+//#if (DIGINI_USE_ETHERNET == DEF_ENABLED)
+//#include "Task_network.h"
+//#endif // (DIGINI_USE_ETHERNET == DEF_ENABLED)
 
 //-------------------------------------------------------------------------------------------------
 // Local Function(s)
@@ -68,15 +57,11 @@ void BSP_HardwareTest (void);
 //
 //  Description:    This function should be called by your application before anything else
 //
-//  Note(s):
-//
 //-------------------------------------------------------------------------------------------------
 void BSP_Initialize(void)
 {
-    SysTick_Config(SYSTEM_CORE_CLOCK / CFG_SYSTICK_RATE);
-    ISR_Initialize();
-    IO_InitializeAll();
-    //DIGINI_Initialize();
+    // CM4 does not initialize any IO.
+    DIGINI_Initialize();
 }
 
 //-------------------------------------------------------------------------------------------------
@@ -93,56 +78,6 @@ void BSP_Initialize(void)
 SystemState_e BSP_PostOS_Initialize(void)
 {
     SystemState_e State = SYS_READY;
-
-    // DAC
-   // mySPI_ForDAC.Initialize();
-   // DAC43508.Initialize();
-
-    // VFD
-    //mySPI_ForVFD.Initialize();              // SPI Driver for the data
-   // myTIM_VFD.Initialize();                 // Timer Driver on top of PWM for blank line
-   // myPWM_VFD_Blank.Initialize();           // PWM Driver to control blank line (dimming feature)
-   // VFD.Initialize();                       // Then initialize the VFD driver
-    //State = DIGINI_PostInitialize();
-
-    // WS2812 LED stream
-/* H7    WS281x_LedStream.Initialize();
-
-
-    WS281x_LedStream.Start();
-
-uint8_t R,G,B;
-
-    while(1)
-    {
-        WS281x_LedStream.SetLed(0, {R++,G--,B+=3});
-        WS281x_LedStream.SetLed(1, {uint8_t(R++ + 10), G--,uint8_t(B-= 10)});
-        WS281x_LedStream.SetLed(2, {uint8_t(R++ + 20), G--,uint8_t(B-= 20)});
-        WS281x_LedStream.SetLed(3, {uint8_t(R++ + 30), G--,uint8_t(B-= 30)});
-        WS281x_LedStream.SetLed(4, {uint8_t(R++ + 40), G--,uint8_t(B-= 40)});
-        WS281x_LedStream.SetLed(5, {uint8_t(R++ + 50), G--,uint8_t(B-= 50)});
-        WS281x_LedStream.SetLed(6, {uint8_t(R++ + 60), G--,uint8_t(B-= 60)});
-        WS281x_LedStream.SetLed(7, {uint8_t(R++ + 70), G--,uint8_t(B-= 70)});
-        WS281x_LedStream.SetLed(8, {uint8_t(R++ + 80), G--,uint8_t(B-= 80)});
-        WS281x_LedStream.SetLed(9, {uint8_t(R++ + 90), G--,uint8_t(B-= 90)});
-        WS281x_LedStream.SetLed(10,{uint8_t(R++ + 100),G--,uint8_t(B-= 100)});
-        WS281x_LedStream.SetLed(11,{uint8_t(R++ + 110),G--,uint8_t(B-= 110)});
-        WS281x_LedStream.SetLed(12,{uint8_t(R++ + 120),G--,uint8_t(B-= 120)});
-        WS281x_LedStream.SetLed(13,{uint8_t(R++ + 130),G--,uint8_t(B-= 130)});
-        WS281x_LedStream.SetLed(14,{uint8_t(R++ + 140),G--,uint8_t(B-= 140)});
-        WS281x_LedStream.SetLed(15,{uint8_t(R++ + 150),G--,uint8_t(B-= 150)});
-        WS281x_LedStream.SetLed(16,{uint8_t(R++ + 160),G--,uint8_t(B-= 160)});
-        WS281x_LedStream.SetLed(17,{uint8_t(R++ + 170),G--,uint8_t(B-= 170)});
-        WS281x_LedStream.SetLed(18,{uint8_t(R++ + 180),G--,uint8_t(B-= 180)});
-        WS281x_LedStream.SetLed(19,{uint8_t(R++ + 190),G--,uint8_t(B-= 190)});
-        WS281x_LedStream.SetLed(20,{uint8_t(R++ + 200),G--,uint8_t(B-= 200)});
-        WS281x_LedStream.SetLed(21,{uint8_t(R++ + 210),G--,uint8_t(B-= 210)});
-        WS281x_LedStream.SetLed(22,{uint8_t(R++ + 220),G--,uint8_t(B-= 220)});
-        WS281x_LedStream.SetLed(23,{uint8_t(R++ + 230),G--,uint8_t(B-= 230)});
-        nOS_Sleep(16);
-        WS281x_LedStream.Start();
-}
-*/
 
     return State;
 }

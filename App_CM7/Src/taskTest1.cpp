@@ -82,7 +82,8 @@ SystemState_e ClassTest1::Initialize(void)
                              this,
                              &m_Test1Stack[0],
                              TASK_TEST1_STACK_SIZE,
-                             TASK_TEST1_PRIO
+                             TASK_TEST1_PRIO,
+                             "Task Test 1"
                             );
 
     nOS_SemCreate(&m_TestSem, 0, 1);
@@ -107,7 +108,7 @@ void ClassTest1::Run(void)
     while(1)
     {
         while(nOS_SemTake(&m_TestSem, NOS_WAIT_INFINITE) != NOS_OK){};
-        
+
       #ifdef KIT_7B3LI
         IO_TogglePin(IO_LED_BLUE);
       #else

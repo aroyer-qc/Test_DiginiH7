@@ -131,13 +131,13 @@
 
 //-------------------------------------------------------------------------------------------------
 //
-// Hardware CRC for STM32F4 ( NO CRC using RefIn / RefOut are supported)
+// Hardware CRC for STM32H7
 
-#define DIGINI_USE_HW_CRC32_BZIP2           DEF_ENABLED
-#define DIGINI_USE_HW_CRC32_MPEG_2          DEF_ENABLED
-#define DIGINI_USE_HW_CRC32_POSIX           DEF_ENABLED
-#define DIGINI_USE_HW_CRC32_SATA            DEF_ENABLED
-
+#define DIGINI_USE_HW_CRC32_BZIP2           DEF_DISABLED
+#define DIGINI_USE_HW_CRC32_MPEG_2          DEF_DISABLED
+#define DIGINI_USE_HW_CRC32_POSIX           DEF_DISABLED
+#define DIGINI_USE_HW_CRC32_SATA            DEF_DISABLED
+// TODO more to come
 
 
 
