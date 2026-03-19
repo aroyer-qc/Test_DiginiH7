@@ -56,10 +56,6 @@
 #define DIGINI_USE_CMD_LINE                             DEF_ENABLED
 #define DIGINI_USE_VT100_MENU                           DEF_ENABLED
 
-#define DIGINI_USE_COMM_AS_A_TASK                       DEF_ENABLED     // Otherwise it is a process that need to be include in your choice of task
-#define TASK_COMM_PRIO                                  7
-#define TASK_COMM_STACK_SIZE                            256
-
 //-------------------------------------------------------------------------------------------------
 // Ethernet
 //
