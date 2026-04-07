@@ -71,11 +71,6 @@ void TaskIdle(void)
     // Low level main control loop
     while(1)
     {
-      #if (DIGINI_USE_COMM_MODULE == DEF_ENABLED) && (DIGINI_USE_CONSOLE == DEF_ENABLED) && (DIGINI_USE_COMM_AS_A_TASK == DEF_DISABLED)
-        pTaskCOMM->Process();
-      #endif
-
-
         if(TickHasTimeOut(Tick, 1000) == true)
         {
             Tick = GetTick();

@@ -38,11 +38,6 @@
 #define DIGINI_USE_ASSERT                               DEF_DISABLED
 
 //-------------------------------------------------------------------------------------------------
-// Static memory allocation
-//
-#define DIGINI_USE_STATIC_MEMORY_ALLOC                  DEF_ENABLED
-
-//-------------------------------------------------------------------------------------------------
 // Database support
 //
 #define DIGINI_USE_DATABASE                             DEF_ENABLED
@@ -61,17 +56,10 @@
 #define DIGINI_USE_CMD_LINE                             DEF_ENABLED
 #define DIGINI_USE_VT100_MENU                           DEF_ENABLED
 
-#define DIGINI_USE_DEBUG_IN_CONSOLE                     DEF_DISABLED        // seem to be a bug when enabled
-#define DIGINI_USE_HELP_IN_CONSOLE                      DEF_ENABLED     // Adding the help command to the command line
-
-#define DIGINI_USE_COMM_AS_A_TASK                       DEF_ENABLED     // Otherwise it is a process that need to be include in your choice of task
-#define TASK_COMM_PRIO                                  7
-#define TASK_COMM_STACK_SIZE                            256
-
 //-------------------------------------------------------------------------------------------------
 // Ethernet
 //
-#define DIGINI_USE_ETHERNET                             DEF_DISABLED//DEF_ENABLED
+#define DIGINI_USE_ETHERNET                             DEF_DISABLED
 
 //-------------------------------------------------------------------------------------------------
 // High level Peripheral
@@ -102,12 +90,12 @@
 // Note(s) GRAFX need DIGINI_USE_LABEL, DIGINI_USE_DATABASE, DIGINI_USE_STATIC_MEMORY_ALLOC
 //
 
-#define DIGINI_USE_GRAFX                                DEF_ENABLED
+#define DIGINI_USE_GRAFX                                DEF_DISABLED// DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // Software CRC Configuration
 //
-#define DIGINI_USE_SOFT_CRC                             DEF_DISABLED
+#define DIGINI_USE_SOFT_CRC                             DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 //

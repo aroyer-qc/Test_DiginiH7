@@ -43,12 +43,6 @@
 #endif
 
 //-------------------------------------------------------------------------------------------------
-// Define(s)
-//-------------------------------------------------------------------------------------------------
-
-#define BSP_TEST_HARDWARE           DEF_DISABLED
-
-//-------------------------------------------------------------------------------------------------
 // Global variable(s) and constant(s)
 //-------------------------------------------------------------------------------------------------
 
@@ -56,9 +50,19 @@
 BSP_EXTERN SystemDebugLevel_e BSP_GlobalDebugLevel;
 #endif
 
-extern const SystemDebugLevel_e DebugLevel;
-extern const TempUnit_e         TemperatureUnit;
-extern const Language_e         LanguageUsed;
+
+#ifdef BSP_GLOBAL
+SystemDebugLevel_e DebugLevel = SYS_DEBUG_LEVEL_1;
+TempUnit_e         TemperatureUnit = TEMP_CELSIUS;
+Language_e         LanguageUsed = LANG_ENGLISH;
+
+#else
+extern SystemDebugLevel_e DebugLevel;
+extern TempUnit_e         TemperatureUnit;
+extern Language_e         LanguageUsed;
+
+#endif
+
 
 //-------------------------------------------------------------------------------------------------
 // Function prototype(s)

@@ -187,8 +187,8 @@
 			<Add symbol="ARM_MATH_CM7" />
 			<Add symbol="xUSE_HAL_DRIVER" />
 			<Add symbol="xUSE_USB_FS" />
-			<Add directory="..\Module\Digini" />
-			<Add directory="..\Module\Digini\Digini\inc" />
+			<Add directory="..\Digini" />
+			<Add directory="..\Module" />
 			<Add directory="..\Module\nOS\inc" />
 			<Add directory="..\Module\Digini\Peripheral\inc\port" />
 			<Add directory="..\Module\Digini\Peripheral\inc\port\STM32H7xx" />
@@ -284,6 +284,11 @@
 		<Unit filename="..\Config\driver_cfg.h" />
 		<Unit filename="..\Config\grafx_cfg.h" />
 		<Unit filename="..\Config\grafx_display_layer_cfg.h" />
+		<Unit filename="..\Config\ip_cfg.h" />
+		<Unit filename="..\Config\hyper_ram_var.h">
+			<Option target="DebugH735IG" />
+			<Option target="ReleaseH735IG" />
+		</Unit>
 		<Unit filename="..\Config\label_cfg.h" />
 		<Unit filename="..\Config\memory_cfg.h" />
 		<Unit filename="..\Config\menu_cfg.h" />

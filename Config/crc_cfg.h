@@ -24,8 +24,6 @@
 //
 //-------------------------------------------------------------------------------------------------
 
-#pragma once
-
 //-------------------------------------------------------------------------------------------------
 // Define(s)
 //-------------------------------------------------------------------------------------------------
@@ -110,6 +108,7 @@
 #define DIGINI_USE_CRC_32                   DEF_ENABLED
 #define DIGINI_USE_CRC_32_AUTOSAR           DEF_DISABLED
 #define DIGINI_USE_CRC_32_BZIP2             DEF_DISABLED
+#define DIGINI_USE_CRC_32_B                 DEF_DISABLED
 #define DIGINI_USE_CRC_32_C                 DEF_DISABLED
 #define DIGINI_USE_CRC_32_CD_ROM_EDC        DEF_DISABLED
 #define DIGINI_USE_CRC_32_D                 DEF_DISABLED
@@ -132,13 +131,13 @@
 
 //-------------------------------------------------------------------------------------------------
 //
-// Hardware CRC for STM32F4 ( NO CRC using RefIn / RefOut are supported)
+// Hardware CRC for STM32H7
 
-#define DIGINI_USE_HW_CRC32_BZIP2           DEF_ENABLED
-#define DIGINI_USE_HW_CRC32_MPEG_2          DEF_ENABLED
-#define DIGINI_USE_HW_CRC32_POSIX           DEF_ENABLED
-#define DIGINI_USE_HW_CRC32_SATA            DEF_ENABLED
-
+#define DIGINI_USE_HW_CRC32_BZIP2           DEF_DISABLED
+#define DIGINI_USE_HW_CRC32_MPEG_2          DEF_DISABLED
+#define DIGINI_USE_HW_CRC32_POSIX           DEF_DISABLED
+#define DIGINI_USE_HW_CRC32_SATA            DEF_DISABLED
+// TODO more to come
 
 
 

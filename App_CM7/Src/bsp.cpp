@@ -26,7 +26,7 @@
 
 //------ Note(s) ----------------------------------------------------------------------------------
 //
-//  BSP - Board support package for STM32F4-DISCO
+//  BSP - Board support package for STM32H7
 //
 //  this board has 128K RAM in CPU
 //                 64K CCRAM in CPU
@@ -44,10 +44,9 @@
 
 //-------------------------------------------------------------------------------------------------
 
-// because for now we don't have eeprom for this test board
-const SystemDebugLevel_e DebugLevel = SystemDebugLevel_e(0);//SystemDebugLevel_e(SYS_DEBUG_LEVEL_ETHERNET | SYS_DEBUG_LEVEL_MEMORY_POOL);
-const TempUnit_e TemperatureUnit  = TEMP_CELSIUS;
-const Language_e LanguageUsed     = LANG_ENGLISH;
+#define CM4_START_ADDRESS           0x08100000
+
+//-------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------------------------------------------------------
 // Local Function(s)
@@ -96,13 +95,17 @@ void BSP_Initialize(void)
     SysTick_Config(SYSTEM_CORE_CLOCK / CFG_SYSTICK_RATE);
     ISR_Initialize();
     IO_InitializeAll();
+<<<<<<< HEAD
 
   #ifdef KIT_735IG
     HYPER_RAM_Initialize(&HYPER_RAM_Info);
   #endif
 
     IO_SetPinHigh(IO_LCD_TFT_DISPLAY);
+=======
+>>>>>>> 16c1d2dd7c992a0d05d5ccfac1c7b128f91c6d47
     DIGINI_Initialize();
+
     TaskTest1.Initialize();
 }
 
@@ -124,6 +127,20 @@ SystemState_e BSP_PostOS_Initialize(void)
     //myUART_Terminal.Initialize(); is it in digini?
 
     State = DIGINI_PostInitialize();
+
+  #ifdef DUAL_CORE
+    // Only when all hardware is done we start the CM4 core
+    SYSCFG->UR2 = (CM4_START_ADDRESS >> 16);
+    SET_BIT(RCC->GCR, RCC_GCR_BOOT_C2);                                                     // Enable boot core 2
+
+    uint32_t timeout = 0xFFFF;
+
+    while(((RCC->CR & RCC_CR_D2CKRDY) == 0) && (timeout-- > 0))
+    {
+        // spin
+    }
+  #endif
+
 
     return State;
 }

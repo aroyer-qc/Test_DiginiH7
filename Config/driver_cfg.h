@@ -40,9 +40,9 @@
 #define USE_CAN_DRIVER              DEF_DISABLED
 #define USE_CRC_DRIVER              DEF_DISABLED            // working on H7
 #define USE_DAC_DRIVER              DEF_DISABLED
+#define USE_ETH_DRIVER              DEF_ENABLED
 #define USE_IO_BUS_DRIVER           DEF_DISABLED
 #define USE_I2C_DRIVER              DEF_DISABLED
-#define USE_ETH_DRIVER              DEF_DISABLED
 
 #if defined(KIT_735IG)
   #define USE_HYPER_RAM_DRIVER      DEF_ENABLED
@@ -60,7 +60,7 @@
 #define USE_SDIO_DRIVER             DEF_DISABLED
 
 #if defined(KIT_745ZI) || defined(KIT_7B3LI)
-  #define USE_SDRAM_DRIVER          DEF_ENABLED
+  //#define USE_SDRAM_DRIVER          DEF_ENABLED
 #else
   #define USE_SDRAM_DRIVER          DEF_DISABLED
 #endif

@@ -52,7 +52,7 @@
 #define CFG_PLL1_M_DIVIDER                          12
 #define CFG_PLL1_N_MULTIPLIER                       280
 #define CFG_PLL1_P_DIVIDER                          2
-#define CFG_PLL1_Q_DIVIDER                          4
+#define CFG_PLL1_Q_DIVIDER                          3
 #define CFG_PLL1_R_DIVIDER                          4
 #define CFG_PLL1_FRACTIONAL_VALUE                   0                               // 0 Disable the Sigma-Delta modulator (Range: 0 - 8191)
 
@@ -86,7 +86,7 @@
 // AROYER TODO MISSING CDCPRE and adjust the clock lib  and all damn register has new name !!!!!
 
 #define CFG_SYSCLK_DIVIDER                          CFG_SYSCLK_DIV1                 // (SYSCLK Prescaler) CFG_SYSCLK_DIVx -> 1,2,4,8,16,64,128,256,512
-#define CFG_HCLK_DIVIDER                            CFG_HCLK_DIV1                   // (HCLK Prescaler) CFG_HCLK_DIVx -> 1,2,4,8,16,64,128,256,512
+#define CFG_HCLK_DIVIDER                            CFG_HCLK_DIV2                   // (HCLK Prescaler) CFG_HCLK_DIVx -> 1,2,4,8,16,64,128,256,512
 #define CFG_APB1_DIVIDER                            CFG_APB1_DIV2                   // (APB1 Prescaler) CFG_APB1_DIVx -> 1,2,4,8,16
 #define CFG_APB2_DIVIDER                            CFG_APB2_DIV2                   // (APB2 Prescaler) CFG_APB2_DIVx -> 1,2,4,8,16
 #define CFG_APB3_DIVIDER                            CFG_APB3_DIV2                   // (APB3 Prescaler) CFG_APB3_DIVx -> 1,2,4,8,16
