@@ -30,7 +30,7 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
-#ifdef KIT_735IG
+#ifdef KIT_745ZI
 
 // SDRAM Timing (Value 1 to 16)
 #define CFG_SDRAM_LOAD_TO_ACTIVITY_DELAY        2   // 2 Clock cycles 								(TMRD) Delay between a 'load mode register' command and an 'active' or 'refresh' command
