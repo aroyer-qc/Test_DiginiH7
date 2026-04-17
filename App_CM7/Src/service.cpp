@@ -40,11 +40,15 @@ Service type 7 - Return data to override position of a widget (Must be a memory 
 // Include file(s)
 //-------------------------------------------------------------------------------------------------`
 
-#include "lib_digini.h"
+#include "./Digini/lib_digini.h"
+#if (DIGINI_USE_GRAFX == DEF_ENABLED)
+#include "project_def.h"
 
 //-------------------------------------------------------------------------------------------------
+// Define(s)
+//-------------------------------------------------------------------------------------------------`
 
-#if (DIGINI_USE_GRAFX == DEF_ENABLED)
+#define SERVICE_PRINT_BUFFER_SIZE   80
 
 //-------------------------------------------------------------------------------------------------
 //
@@ -252,11 +256,11 @@ static ServiceReturn_t* SERV_VOLU(ServiceEvent_e* pServiceState)
 ServiceReturn_t* ServiceCallApp(Service_t* pService, ServiceEvent_e* pServiceState)
 {
     ServiceReturn_t* pServiceReturn = nullptr;
-    struct32_t       ServiceRange;
+    uint32_t         ServiceRange;
 
-    ServiceRange.u_32 = pService->ID;
+    ServiceRange = pService->ID;
 
-    switch(ServiceRange.u8_Array[0])        // To speed up process
+    switch(U32MACRO_A(ServiceRange))        // To speed up process
     {
         case 'C':
         {

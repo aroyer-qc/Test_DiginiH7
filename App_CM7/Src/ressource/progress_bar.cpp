@@ -40,16 +40,14 @@ const uint32_t progress_bar[18] =
     0xFF728186, 0xFFB3B9BB,
 };
 
-extern const StaticImageInfo_t SII_progress_bar;
 const StaticImageInfo_t SII_progress_bar =
 {
-    1,
+    {
+        (uint8_t*)progress_bar,
+        {1, 18},
+        PIXEL_FORMAT_ARGB8888,
+    },
     18,
-    4,
-    32,
-    (uint8_t*)progress_bar,
-    18,
-    PIXEL_FORMAT_ARGB8888,
     COMPX_COMPRESSION_NONE,
 };
 

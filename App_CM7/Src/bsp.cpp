@@ -95,15 +95,12 @@ void BSP_Initialize(void)
     SysTick_Config(SYSTEM_CORE_CLOCK / CFG_SYSTICK_RATE);
     ISR_Initialize();
     IO_InitializeAll();
-<<<<<<< HEAD
 
   #ifdef KIT_735IG
-    HYPER_RAM_Initialize(&HYPER_RAM_Info);
+    //HYPER_RAM_Initialize(&HYPER_RAM_Info);
   #endif
 
     IO_SetPinHigh(IO_LCD_TFT_DISPLAY);
-=======
->>>>>>> 16c1d2dd7c992a0d05d5ccfac1c7b128f91c6d47
     DIGINI_Initialize();
 
     TaskTest1.Initialize();

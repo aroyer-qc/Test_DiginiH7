@@ -33,12 +33,9 @@
 //-------------------------------------------------------------------------------------------------
 
 //                  IMAGE_ID        Struct Info Image
-#define STATIC_SKIN_DEF(X_STATIC_SKIN) \
-    X_STATIC_SKIN(  LOADING_BACK,   SII_loading         )\
-    X_STATIC_SKIN(  LOADING_CURSOR, SII_progress_cursor )\
-    X_STATIC_SKIN(  LOADING_BAR,    SII_progress_bar    )\
+#define STATIC_IMAGE_DEF(X_STATIC_IMAGE) \
+    X_STATIC_IMAGE(  LOADING_BACK,   &SII_loading         )\
+    X_STATIC_IMAGE(  LOADING_CURSOR, &SII_progress_cursor )\
+    X_STATIC_IMAGE(  LOADING_BAR,    &SII_progress_bar    )\
 
 //-------------------------------------------------------------------------------------------------
-
-
-
