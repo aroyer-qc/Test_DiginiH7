@@ -45,6 +45,10 @@
 //-------------------------------------------------------------------------------------------------
 int main()
 {
+    CRC_Calc CRC_Check(CRC_16_MODBUS);
+
+    volatile uint16_t Value = CRC_Check.CalculateBuffer((uint8_t*)"\x64\x03\x02\x12\x34", 5);
+
   #if (USE_MPU_DRIVER == DEF_ENABLED)
     //MPU_Initialize(MPU_PRIVILEGED_DEFAULT);
     CPU_CACHE_Enable();

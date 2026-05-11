@@ -524,8 +524,10 @@
 		<Unit filename="..\Module\Digini\String\src\lib_string.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\Module\Digini\Utility\inc\lib_class_crc.h" />
 		<Unit filename="..\Module\Digini\Utility\inc\lib_fifo.h" />
 		<Unit filename="..\Module\Digini\Utility\inc\lib_solar_tracker.h" />
+		<Unit filename="..\Module\Digini\Utility\inc\lib_utility.h" />
 		<Unit filename="..\Module\Digini\Utility\src\lib_1aschex.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -551,6 +553,12 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\lib_6aschex.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_bit_reversal.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\Module\Digini\Utility\src\lib_class_crc.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\lib_compression.cpp">
@@ -645,14 +653,14 @@
 			<code_completion />
 			<envvars />
 			<debugger>
-				<target_debugging_settings target="Debug745ZI">
-					<debug_interface description="STM32H745_CM7.svd" options="10" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
+				<target_debugging_settings target="ReleaseH735IG">
+					<debug_interface description="STM32H735.svd" options="0" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="" ip_port="" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
 				</target_debugging_settings>
 				<target_debugging_settings target="DebugH735IG">
 					<debug_interface description="STM32H735.svd" options="10" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
 				</target_debugging_settings>
-				<target_debugging_settings target="ReleaseH735IG">
-					<debug_interface description="STM32H735.svd" options="0" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="" ip_port="" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
+				<target_debugging_settings target="Debug745ZI">
+					<debug_interface description="STM32H745_CM7.svd" options="10" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset 0;" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="localhost" ip_port="2331" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />
 				</target_debugging_settings>
 				<target_debugging_settings target="ReleaseH745ZI">
 					<debug_interface description="STM32H745_CM7.svd" options="0" reg_filter="0" probe="STlink" device="stm32" speed="" bus_address="" serial="" defines="" scripts="" flash_size="" ram_size="" vcc_voltage="" verbose="4" unwind="2" rstType="0" use_jtag="false" disable_cache="false" enable_semi="false" close_eblink="false" gdb_reset="" gdb_reset_remote="reset" gdb_before_conn="" gdb_after_conn="" use_remote="false" ip_address="" ip_port="" path="" executable="" start_server="false" arguments="" flash_verify="false" flash_run="false" />

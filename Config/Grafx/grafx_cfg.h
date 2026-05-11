@@ -72,6 +72,8 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
+#define GUI_TASK_STACK_SIZE                             1024
+
 #define GRAFX_USE_LOAD_SKIN                             DEF_DISABLED    // DEF_ENABLED
 #define GRAFX_USE_POINTING_DEVICE                       DEF_DISABLED //DEF_ENABLED
 #define GRAFX_USE_PDI_MULTI_EVENT                       DEF_ENABLED     // Enable support for Multi-touch
