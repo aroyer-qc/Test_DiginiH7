@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File :  uart_cfg.h
+//  File :  console_var.h
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2020 Alain Royer.
+// Copyright(c) 2026 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -27,32 +27,23 @@
 #pragma once
 
 //-------------------------------------------------------------------------------------------------
-// Define(s)
+// Global variable(s) and constant(s)
 //-------------------------------------------------------------------------------------------------
 
-// Enable Status will (this enable the callback)
-#define UART_DRIVER_RX_PARITY_ERROR_CFG         DEF_DISABLED
-#define UART_DRIVER_RX_FRAMING_ERROR_CFG        DEF_DISABLED
-#define UART_DRIVER_RX_NOISE_DETECTED_CFG       DEF_DISABLED
-#define UART_DRIVER_RX_OVERRUN_ERROR_CFG        DEF_DISABLED
-#define UART_DRIVER_RX_IDLE_CFG                 DEF_ENABLED
-#define UART_DRIVER_RX_NOT_EMPTY_CFG            DEF_DISABLED
-#define UART_DRIVER_TX_COMPLETED_CFG            DEF_DISABLED            // TX complete does not work well with console.. use DMA
-#define UART_DRIVER_TX_EMPTY_CFG                DEF_DISABLED
-#define UART_DRIVER_DMA_TX_COMPLETED_CFG        DEF_ENABLED
+#ifdef CONSOLE_GLOBAL
 
-#define UART_DRIVER_SUPPORT_UART1_CFG           DEF_DISABLED //DEF_ENABLED
-#define UART_DRIVER_SUPPORT_UART2_CFG           DEF_DISABLED //DEF_ENABLED
-#define UART_DRIVER_SUPPORT_UART3_CFG           DEF_ENABLED
-#define UART_DRIVER_SUPPORT_UART4_CFG           DEF_DISABLED
-#define UART_DRIVER_SUPPORT_UART5_CFG           DEF_DISABLED
-#define UART_DRIVER_SUPPORT_UART6_CFG           DEF_DISABLED
-#define UART_DRIVER_SUPPORT_UART7_CFG           DEF_DISABLED
-#define UART_DRIVER_SUPPORT_UART8_CFG           DEF_DISABLED
+class Console DebugConsole;                         // This console if for the debug, CLI, VT100
+
+#else
+
+extern class Console DebugConsole;
+
+#endif // CONSOLE_GLOBAL
+
+
 
 //-------------------------------------------------------------------------------------------------
 
-#define TERMINAL_SERIAL                         UART_DRIVER_ID_3
-//#define TERMINAL_SERIAL                         UART_DRIVER_ID_1
 
-//-------------------------------------------------------------------------------------------------
+
+

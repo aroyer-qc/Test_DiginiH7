@@ -70,7 +70,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
         UART_Config_e(UART_CFG_N_8_1 | UART_CFG_OVER_8 | UART_CFG_ENABLE_RX_TX),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
-
+		64,
 
          // DMA_RX
         {
@@ -104,6 +104,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
         UART_Config_e(UART_CFG_N_8_1),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
+		64,
 
         // DMA_RX
         {
@@ -135,6 +136,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
         UART_Config_e(UART_CFG_N_8_1 | UART_CFG_OVER_8 | UART_CFG_ENABLE_RX_TX),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
+		64,
 
         // DMA_RX
         {
@@ -166,6 +168,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
         UART_Config_e(UART_CFG_N_8_1 | UART_CFG_ENABLE_RX_TX),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
+		64,
 
         // DMA_RX
         {
@@ -198,6 +201,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
         UART_Config_e(UART_CFG_N_8_1 | UART_CFG_ENABLE_RX_TX),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
+		64,
 
         // DMA_RX
         {
@@ -230,6 +234,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
         UART_Config_e(TEST_CONFIG | UART_CFG_ENABLE_TX),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
+		64,
 
         // DMA_RX
         {
@@ -262,6 +267,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
         UART_Config_e(UART_CFG_N_8_1),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
+		64,
 
         // DMA_RX
         {
@@ -293,6 +299,7 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
         UART_Config_e(UART_CFG_N_8_1),
         UART_BAUD_115200,
         UART_WAIT_ON_BUSY,
+		64,
 
         // DMA_RX
         {
@@ -319,11 +326,11 @@ const UART_Info_t UART_Info[NB_OF_UART_DRIVER] =
 
 //-------------------------------------------------------------------------------------------------
 
-class UART_Driver myUART_Terminal(TERMINAL_SERIAL);
+class UART_Driver UART_DebugTerminal(TERMINAL_SERIAL);
 
 #else // UART_DRIVER_GLOBAL
 
-extern class UART_Driver myUART_Terminal;
+extern class UART_Driver UART_DebugTerminal;
 
 #endif // UART_DRIVER_GLOBAL
 

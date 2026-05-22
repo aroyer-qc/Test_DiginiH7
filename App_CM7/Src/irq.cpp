@@ -47,12 +47,12 @@ extern "C"
 /*
 NOS_ISR(DMA1_Stream0_IRQHandler)
 {
-	myUART_Terminal.DMA_RX_IRQ_Handler();
+	UART_DebugTerminal.DMA_RX_IRQ_Handler();
 }
 */
 NOS_ISR(DMA1_Stream1_IRQHandler)
 {
-	myUART_Terminal.DMA_TX_IRQ_Handler();
+	UART_DebugTerminal.DMA_TX_IRQ_Handler();
 }
 
 /*
@@ -98,12 +98,12 @@ NOS_ISR(DMA2_Stream3_IRQHandler)
 
 NOS_ISR(USART1_IRQHandler)
 {
-    myUART_Terminal.IRQ_Handler();
+    UART_DebugTerminal.IRQ_Handler();
 }
 
 NOS_ISR(USART3_IRQHandler)
 {
-    myUART_Terminal.IRQ_Handler();
+    UART_DebugTerminal.IRQ_Handler();
 }
 
 //-------------------------------------------------------------------------------------------------

@@ -30,7 +30,7 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
-#define CON_USE_COMM_UART                       &myUART_Terminal
+#define CON_USE_COMM_UART                       &UART_DebugTerminal
 
 #define CON_USE_DEBUG_LOG                       DEF_ENABLED
 #define CON_USE_CMD_HELP                        DEF_ENABLED         // Adding the help command to the command line
