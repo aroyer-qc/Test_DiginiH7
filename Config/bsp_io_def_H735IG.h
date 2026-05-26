@@ -46,9 +46,13 @@
 //                          IO_MODE_ANALOG
 //          Parameter 3:  TYPE for the pin
 //                          IO_TYPE_PIN_DRIVE_MASK
-//                          IO_TYPE_PIN_DRIVE_SHIFT
 //                          IO_TYPE_PIN_PP
 //                          IO_TYPE_PIN_OD
+//                        then or with this IO_PULL_SHIFT
+//                          IO_TYPE_PIN_PULL_MASK
+//                          IO_TYPE_PIN_NO_PULL
+//                          IO_TYPE_PIN_PULL_UP
+//                          IO_TYPE_PIN_PULL_DOWN
 //          Parameter 4:  SPEED for the pin
 //                          IO_SPEED_FREQ_LOW
 //                          IO_SPEED_FREQ_MEDIUM
@@ -56,7 +60,7 @@
 //                          IO_SPEED_FREQ_VERY_HIGH
 //          Parameter 5:  EXTRA info for the pin
 //                          If mode is IO_MODE_INPUT,        This is not used. Put 0 there
-//                          If mode is IO_MODE_OUTPUT,       This is the default level on the pin at initialization. Put level HALIO_LEVEL_0 or HALIO_LEVEL_1 or HALIO_LEVEL_HIGH_Z
+//                          If mode is IO_MODE_OUTPUT,       This is the default level on the pin at initialization. Put level 0 or 1
 //                          If mode is IO_MODE_ALTERNATE,    This is the alternate setting
 //                                                               Example: GPIO_AF7_USART3  -  See lib_STM32H7_io.h
 //                          If mode is IO_MODE_ANALOG,       This is used to select the ADC input               // to be validated!!!

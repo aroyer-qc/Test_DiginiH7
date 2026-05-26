@@ -90,7 +90,7 @@
 // Note(s) GRAFX need DIGINI_USE_LABEL, DIGINI_USE_DATABASE, DIGINI_USE_STATIC_MEMORY_ALLOC
 //
 
-#define DIGINI_USE_GRAFX                                DEF_DISABLED //DEF_ENABLED
+#define DIGINI_USE_GRAFX                                DEF_ENABLED
 
 //-------------------------------------------------------------------------------------------------
 // Software CRC Configuration
@@ -108,3 +108,5 @@
 #define DIGINI_DEBUG_SDCARD_INFO_ON_VT100               DEF_DISABLED
 
 //-------------------------------------------------------------------------------------------------
+
+#define DIGINI_USE_DMA_MEM2MEM_FUNCTION                 DEF_DISABLED

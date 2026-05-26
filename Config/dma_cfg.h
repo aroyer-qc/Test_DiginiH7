@@ -37,6 +37,10 @@
 #define DMA_MEM2MEM_CHANNEL         7
 #define DMA_IFCR                    LIFCR
 #define DMA_FLAG                    (DMA_LIFCR_CTCIF0 | DMA_LIFCR_CHTIF0 | DMA_LIFCR_CTEIF0 | DMA_LIFCR_CDMEIF0 | DMA_LIFCR_CFEIF0)
+// from F7
+//#define DMA_ISR                     LISR                    // or HISR according to stream
+//#define DMA_TCIF                    DMA_LISR_TCIF0
+//#define DMA_ERRIF                   (DMA_LISR_TEIF0 | DMA_LISR_DMEIF0 | DMA_LISR_FEIF0)
 #define DMA_MUTEX_GUARD_TIME        10
 
 //-------------------------------------------------------------------------------------------------

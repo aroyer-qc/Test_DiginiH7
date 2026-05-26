@@ -1,10 +1,10 @@
 //-------------------------------------------------------------------------------------------------
 //
-//  File :  Static_skin_image.h
+//  File :  Static_image_def.h
 //
 //-------------------------------------------------------------------------------------------------
 //
-// Copyright(c) 2020 Alain Royer.
+// Copyright(c) 2026 Alain Royer.
 // Email: aroyer.qc@gmail.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software
@@ -32,10 +32,10 @@
 
 //-------------------------------------------------------------------------------------------------
 
-//                  IMAGE_ID        Struct Info Image
+//                  IMAGE_ID         Struct Info Image
 #define STATIC_IMAGE_DEF(X_STATIC_IMAGE) \
-    X_STATIC_IMAGE(  LOADING_BACK,   &SII_loading         )\
-    X_STATIC_IMAGE(  LOADING_CURSOR, &SII_progress_cursor )\
-    X_STATIC_IMAGE(  LOADING_BAR,    &SII_progress_bar    )\
+    X_STATIC_IMAGE(  LOADING_BACK,   SII_loading         )\
+    X_STATIC_IMAGE(  LOADING_CURSOR, SII_progress_cursor )\
+    X_STATIC_IMAGE(  LOADING_BAR,    SII_progress_bar    )\
 
 //-------------------------------------------------------------------------------------------------

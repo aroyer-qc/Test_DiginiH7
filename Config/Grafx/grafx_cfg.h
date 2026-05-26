@@ -72,12 +72,13 @@
 // Define(s)
 //-------------------------------------------------------------------------------------------------
 
-#define GUI_TASK_STACK_SIZE                             1024
+#define GUI_TASK_STACK_SIZE                             320
 
 #define GRAFX_USE_LOAD_SKIN                             DEF_DISABLED    // DEF_ENABLED
 #define GRAFX_USE_POINTING_DEVICE                       DEF_DISABLED //DEF_ENABLED
 #define GRAFX_USE_PDI_MULTI_EVENT                       DEF_ENABLED     // Enable support for Multi-touch
 #define GRAFX_PDI_INTERRUPT_IO                          DEF_DISABLED    // Pointing device (touch) IRQ is not available on DISCO746
+#define GRAFX_USE_CUSTOM_COLOR                          DEF_ENABLED    	// Need color_cfg.h
 
 //#define GRAFX_USE_TIMED_WIDGET
 
@@ -176,7 +177,6 @@
 
 #define GRAFX_USE_CONSTRUCTION_ON_SINGLE_LAYER          DEF_DISABLED
 #define GRAFX_USE_FULL_FRAME_CONSTRUCTION_LAYER         DEF_ENABLED
-//#define GRAFX_USE_BACKGROUND_LAYER                      DEF_ENABLED     // if you're LCD support more than 1 layer
 #define GRAFX_USE_CONSTRUCTION_BACKGROUND_LAYER         DEF_ENABLED     // if there is enough memory to construct on a hidden layer. (prevent glitch)
 #define GRAFX_USE_CONSTRUCTION_FOREGROUND_LAYER         DEF_ENABLED
 #define GRAFX_DEBUG_GUI                                 DEF_DISABLED

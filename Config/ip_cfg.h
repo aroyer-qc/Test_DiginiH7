@@ -112,7 +112,7 @@
 
 #define SOCKET_MAX_COUNT                        10
 #define DNS_MAX_PENDING_COUNT                   4
-#define TCP_DEFAULT_WINDOW_SIZE                 1024
+#define TCP_DEFAULT_WINDOW_SIZE                 HTONS(4 * TCP_MSS)
 #define VENDOR_CLASS                            "Digini"
 #define IF_ETH_DEF(X_IF) \
 /*        ENUM ID       Hostname           Protocol Flag         Default static IP,         Default Gateway,         Default subnet,            Default Static DNS,      MAC Address,          ETH LinkDriver          */ \
