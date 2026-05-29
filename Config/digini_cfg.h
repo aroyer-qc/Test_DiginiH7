@@ -75,8 +75,11 @@
 //-------------------------------------------------------------------------------------------------
 // FAT FS Peripheral support
 //
+#ifdef CORE_CM7
 #define DIGINI_USE_FATFS                                DEF_DISABLED
-
+#else //  CORE_CM4
+#define DIGINI_USE_FATFS                                DEF_DISABLED
+#endif
 #define DIGINI_FATFS_USE_SPI_FLASH_CHIP                 DEF_DISABLED  // to be added to peripheral list
 #define DIGINI_FATFS_USE_QSPI                           DEF_DISABLED  // to be added to peripheral list
 #define DIGINI_FATFS_USE_SDIO_SD_CARD                   DEF_DISABLED
@@ -87,10 +90,11 @@
 //-------------------------------------------------------------------------------------------------
 // GRAFX Configuration
 //
-// Note(s) GRAFX need DIGINI_USE_LABEL, DIGINI_USE_DATABASE, DIGINI_USE_STATIC_MEMORY_ALLOC
-//
-
+#ifdef CORE_CM7
 #define DIGINI_USE_GRAFX                                DEF_ENABLED
+#else // CORE_CM4
+#define DIGINI_USE_GRAFX                                DEF_DISABLED
+#endif
 
 //-------------------------------------------------------------------------------------------------
 // Software CRC Configuration

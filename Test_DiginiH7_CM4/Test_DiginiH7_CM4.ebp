@@ -200,6 +200,9 @@
 		<Unit filename="..\Module\Digini\NanoIP\inc\lib_ethernet_enum.h" />
 		<Unit filename="..\Module\Digini\NanoIP\inc\lib_ethernet_helper.h" />
 		<Unit filename="..\Module\Digini\NanoIP\inc\lib_ethernet_typedef.h" />
+		<Unit filename="..\Module\Digini\NanoIP\src\Driver\Adapters\ETH_STM32_Adapter.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\Module\Digini\NanoIP\src\Driver\MAC\lib_class_PHY_LAN8742A.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -246,6 +249,7 @@
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\lib_system_clock.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_class_STM32H7_crc.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_class_STM32H7_dma.h" />
+		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_class_STM32H7_uart.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_STM32H7_io.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_STM32H7_isr.h" />
 		<Unit filename="..\Module\Digini\Peripheral\inc\port\STM32H7xx\lib_STM32H7_system_clock.h" />
@@ -276,13 +280,17 @@
 		<Unit filename="..\Module\Digini\Utility\inc\lib_fifo.h">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\Module\Digini\Utility\inc\lib_utility.h" />
+		<Unit filename="..\Module\Digini\Utility\src\lib_delay.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\lib_fifo.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\lib_stacktistic.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\Module\Digini\Utility\src\lib_time_and_delay.cpp">
+		<Unit filename="..\Module\Digini\Utility\src\lib_time.cpp">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\Module\Digini\Utility\src\port\STM32H7xx\lib_stacktistic_STM32H7.cpp">

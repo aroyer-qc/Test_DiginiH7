@@ -79,8 +79,9 @@
 #define GRAFX_USE_PDI_MULTI_EVENT                       DEF_ENABLED     // Enable support for Multi-touch
 #define GRAFX_PDI_INTERRUPT_IO                          DEF_DISABLED    // Pointing device (touch) IRQ is not available on DISCO746
 #define GRAFX_USE_CUSTOM_COLOR                          DEF_ENABLED    	// Need color_cfg.h
+//  #define GRAFX_USE_TIMED_WIDGET   // TODO in future widget refresh
 
-//#define GRAFX_USE_TIMED_WIDGET
+//-------------------------------------------------------------------------------------------------
 
 #define GRAFX_USE_HARD_DATABASE                         DEF_DISABLED
 #define GRAFX_USE_QUAD_SPI_FOR_DATABASE                 DEF_DISABLED
@@ -119,10 +120,10 @@
 
 //-------------------------------------------------------------------------------------------------
 
-
 #define GRAFX_USE_DISPLAY_RAM                           DEF_ENABLED
-#define GRAFX_USE_RAM_DATA                              DEF_ENABLED     // this setting is not very clear at this point... probably for LCD with ram access
+#define GRAFX_USE_RAM_DATA                              DEF_ENABLED
 #define GRAFX_USE_ROM_DATA                              DEF_DISABLED
+#define GRAFX_USE_DISPLAY_LAYER							DEF_ENABLED    // The display is able to support layer directly in mapped memory
 
 #define GRAFX_USE_MULTI_LINE                            DEF_ENABLED
 
@@ -178,6 +179,7 @@
 #define GRAFX_USE_CONSTRUCTION_ON_SINGLE_LAYER          DEF_DISABLED
 #define GRAFX_USE_FULL_FRAME_CONSTRUCTION_LAYER         DEF_ENABLED
 #define GRAFX_USE_CONSTRUCTION_BACKGROUND_LAYER         DEF_ENABLED     // if there is enough memory to construct on a hidden layer. (prevent glitch)
+#define GRAFX_USE_FOREGROUND_LAYER           			DEF_ENABLED
 #define GRAFX_USE_CONSTRUCTION_FOREGROUND_LAYER         DEF_ENABLED
 #define GRAFX_DEBUG_GUI                                 DEF_DISABLED
 
